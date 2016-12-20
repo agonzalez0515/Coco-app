@@ -74,6 +74,10 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
+  
+  # heroku websocket
+  config.web_socket_server_url = "wss://coco-counselor.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://coco-counselor.herokuapp.com', 'http://coco-counselor.herokuapp.com']
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)

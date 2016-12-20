@@ -1,3 +1,5 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+chat_appender = (body) ->
+  $('#chats-table').append body
+
+$(document).on 'turbolinks:load', ->
+  chat_appender
