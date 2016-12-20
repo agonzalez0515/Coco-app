@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
-      redirect_to message_comments_path
+      redirect_to messages_path
     else
       render "new"
     end
@@ -37,16 +37,19 @@ class MessagesController < ApplicationController
   def destroy
     @message = Message.find(params[:id])
     if @message.destroy
-      render status: 200
+      redirect_to messages_path
     else
-      render json: ErrorSerializer.serialize(@comment.errors), status: 422
+      redirect to message_comments_path(@message)
     end
   end
 
 private
 
 def message_params
-  params.require(:message).permit(:title, :body, :user_id)
+  message_params = { title: params[:message][:title],
+                     body: params[:message][:body],
+                     user_id: current_user.id }
+
 end
 
 end

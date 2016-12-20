@@ -1,0 +1,18 @@
+<div><h3> <%= @message.title %> </h3>
+
+
+ <%= @message.body %> 
+ <%= link_to 'Edit Post', edit_message_path(@message) %>  |  
+ <%= link_to 'Delete Post', message_path(@message), method: :delete, data: {confirm: 'Are you sure?'} %>
+</div>
+<br/ >
+<div><b> Comments: </b>
+<ul>
+<% @comments.each do |comment| %>
+  <li>
+  <%= comment.body %><br/ >
+  posted by: <%= comment.user.first_name %>
+  </li>
+<% end %>
+</ul>
+  </div>
