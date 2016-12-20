@@ -4,7 +4,7 @@
 
   <% if @errors %>
     <ul>
-    <% @errors.full_messages.each do |error| %>
+    <% @errors.each do |error| %>
       <li><%= error %></li>
     <% end %>
     </ul>
