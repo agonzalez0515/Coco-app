@@ -1,5 +1,4 @@
 #this is not APPLICATIONS controller. this is for inheriting.
-
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
