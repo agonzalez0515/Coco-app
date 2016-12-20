@@ -1,0 +1,66 @@
+<div class="requirements-show">
+  <style>
+  table, th, td {
+      border: 1px solid black;
+      width: 500px;
+  }
+  th, td {
+      padding: 15px;
+  }
+  </style>
+
+  <h1>A-G Requirements</h1>
+  <p>
+    To attend a University of California (UC) or a California State University(CSU),
+    all high school students need to complete the A-G requirements. The following
+    are a list of the required subjects and number of years.
+  </p>
+  <p>
+    You must receive a grade of C or better. You can also use test scores. The classes must<br>
+    be from the approved list.
+    Click <a href="http://admission.universityofcalifornia.edu/freshman/requirements/a-g-requirements/">here</a>
+    for more information from UC website.
+  </p>
+  <p>
+    <%=link_to "Click here if you would like to use our A-G Tracker", user_requirements_path(@user)%>
+  </p>
+  <div>
+    <table>
+      <tr>
+        <th>Subject</th>
+        <th colspan="2">Years</th>
+      </tr>
+      <tr>
+        <td>A: Historical/Social Science</td>
+        <td colspan="2">2 required</td>
+      </tr>
+      <tr>
+        <td>B: English</td>
+        <td colspan="2">4 required</td>
+      </tr>
+      <tr>
+        <td>C: Mathematics</td>
+        <td>3 required</td>
+        <td>4 recommended</td>
+      </tr>
+      <tr>
+        <td>D: Lab Science</td>
+        <td>2 required</td>
+        <td> 4 recommended</td>
+      </tr>
+      <tr>
+        <td>E: Language other than English</td>
+        <td>2 required</td>
+        <td>3 recommended</td>
+      </tr>
+      <tr>
+        <td>F: Visual and Performing Arts</td>
+        <td colspan="2">1 required</td>
+      </tr>
+      <tr>
+        <td>G: College-prep Elective</td>
+        <td colspan="2">1 required</td>
+      </tr>
+    </table>
+  </div>
+</div>
