@@ -14,4 +14,11 @@ class SatsController < ApplicationController
     end
   end
 
+
+  def locationsList
+    # Approach 3
+    # make a new route
+    # it renders the SATlocation list partial
+  end
+
 end

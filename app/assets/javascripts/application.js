@@ -56,7 +56,22 @@ function fetchSats(response) {
     placeMarkers(sat.latitude, sat.longitude)
     // var url = 'http://maps.googleapis.com/maps/api/geocode/json?address='+encodeURI(response[i].address)+'&sensor=false';
     // $.getJSON(url, null, placeMarkers);
+    // append to text list of locations
+    addToLocationList(sat.name, sat.address, sat.phoneNumber);
   }
+}
+
+var addToLocationList = function(name, address, phoneNumber) {
+  // Approach 1 -> template right in javascript
+  //var template = "<li>" + name + "<span class='address'></span></li>";
+
+  // Approach 2 -> have a hidden template in the view already rendered
+  var template = $('li-template').clone();
+  $(template).find('.address').html(address);
+  $(template).find('.phone-number').html(phoneNumber);
+  // take off the hidden class after you append
+
+  $('.sats-list').append(template);
 }
 
 function placeMarkers(lat, lng) {
