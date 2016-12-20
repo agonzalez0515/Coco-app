@@ -22,7 +22,7 @@ class ChatsController < ApplicationController
 
     def get_chats
       @chats = Chat.for_display
-      @chat  = curr ent_user.chats.build
+      @chat  = current_user.chats.build
     end
 
     def chat_params
