@@ -11,6 +11,16 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
+
+        @user.requirements.create(subject:"History", years: 0, user_id: @user.id)
+        @user.requirements.create(subject:"English", years: 0, user_id: @user.id)
+        @user.requirements.create(subject:"Math", years: 0, user_id: @user.id)
+        @user.requirements.create(subject:"Science", years: 0, user_id: @user.id)
+        @user.requirements.create(subject:"Language", years: 0, user_id: @user.id)
+        @user.requirements.create(subject:"Arts", years: 0, user_id: @user.id)
+        @user.requirements.create(subject:"Elective", years: 0, user_id: @user.id)
+
+
       redirect_to user_path(@user)
     else
       @errors = @user.errors
