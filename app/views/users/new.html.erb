@@ -1,0 +1,44 @@
+<h1>Sign Up</h1>
+
+<%= form_for @user do |f| %>
+
+  <% if @errors %>
+    <ul>
+    <% @errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+    </ul>
+  <% end %>
+
+First Name: <%= f.text_field :first_name %><br />
+
+Last Name: <%= f.text_field :last_name %><br />
+
+You are a: <%= f.radio_button :user_type, 'student' %>Student
+    <%= f.radio_button :user_type, 'parent' %>Parent<br />
+
+Email Address: <%= f.text_field :email %><br />
+
+Password: <%= f.password_field :password %><br />
+
+Confirm Password: <%= f.password_field :password_confirmation %><br />
+
+Phone Number: <%= f.text_field :phone_number %><br />
+
+Street Address: <%= f.text_field :street_address %><br />
+
+City: <%= f.text_field :city %><br />
+
+State: <%= f.text_field :state %><br />
+
+Zip Code: <%= f.text_field :zip_code %><br />
+
+Language Preference: <%= f.radio_button :lang_preference, 'english' %>English
+    <%= f.radio_button :lang_preference, 'spanish' %>Spanish<br />
+
+Grade Level: <%= f.radio_button :grade_level, '9' %>9th
+    <%= f.radio_button :grade_level, '10' %>10th <%= f.radio_button :grade_level, '11' %>11th <%= f.radio_button :grade_level, '12' %>12th<br />
+
+  <%= f.submit "Submit" %>
+
+<% end %>
