@@ -1,0 +1,2 @@
+class Tip < ApplicationRecord
+end
