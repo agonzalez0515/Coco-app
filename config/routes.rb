@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # INFORMATIONAL PAGES:
   resources :sats, only: [:index]
-  get '/requirements' => 'requirements#information'
+  get '/agrequirements' => 'requirements#information'
 
   resources :applications, only: [:index]
 
