@@ -21,9 +21,16 @@
     Click <a href="http://admission.universityofcalifornia.edu/freshman/requirements/a-g-requirements/">here</a>
     for more information from UC website.
   </p>
-  <p>
-    <%=link_to "Click here if you would like to use our A-G Tracker", user_requirements_path(@user)%>
-  </p>
+  <% if current_user %>
+    <p>
+      <%=link_to "Click here if you would like to use our A-G Tracker", user_requirements_path(current_user)%>
+    </p>
+  <% else %>
+    <p>
+      <%=link_to "Click here if you would like to use our A-G Tracker", login_path %>
+    </p>
+  <% end %>
+
   <div>
     <table>
       <tr>
