@@ -1,1 +1,13 @@
 <h1>events#new</h1>
+<h1>Google Map for SAT locations</h1>
+<form id='date'>
+  <select type="date" name="date">
+    <%@dates.each do |date|%>
+      <option value="<%=date%>"><%=date.strftime('%A %b %e %Y')%></option>
+    <%end%>
+  </select>
+  <input type="submit">
+</form>
+<div id="map">
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['MAP']%>&callback=initMap"></script>
+</div>
