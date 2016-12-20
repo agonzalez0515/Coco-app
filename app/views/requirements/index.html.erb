@@ -1,6 +1,13 @@
 <h1> Track your Requirements </h1>
 
-
+<ul>
 <% @requirements.each do |requirement| %>
-  <%= requirement.subject %> <%= requirement.years %>
+  <li>
+<%= form_for :requirement, url: user_requirements_path(current_user.id) do |f| %>
+  <%= requirement.subject %> <%= f.text_field :years %>
+<%= f.submit %>
+  </li>
 <% end %>
+<% end %>
+</ul>
+

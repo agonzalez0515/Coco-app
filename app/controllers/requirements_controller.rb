@@ -20,14 +20,24 @@ class RequirementsController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:user_id])
+    @requirement = Requirement.find(params[:id])
   end
 
   def update
+    @user = User.find(params[:user_id])
+    @requirement = Requirement.find(params[:id])
+    if @requirement.update(requirement_params)
+      redirect_to user_requirements_path(@user)
+    else 
+      render "index"
+    end
   end
 
 private
 
   def requirement_params
+    requirement_params = { years: params[:requirement][:years] }
   end
 
 end

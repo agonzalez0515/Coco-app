@@ -12,14 +12,10 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
 
-        @user.requirements.create(subject:"History", years: 0, user_id: @user.id)
-        @user.requirements.create(subject:"English", years: 0, user_id: @user.id)
-        @user.requirements.create(subject:"Math", years: 0, user_id: @user.id)
-        @user.requirements.create(subject:"Science", years: 0, user_id: @user.id)
-        @user.requirements.create(subject:"Language", years: 0, user_id: @user.id)
-        @user.requirements.create(subject:"Arts", years: 0, user_id: @user.id)
-        @user.requirements.create(subject:"Elective", years: 0, user_id: @user.id)
-
+      subjects = ["History", "English", "Math", "Science", "Language", "Arts", "Elective"]
+      subjects.each do |subject|
+        @user.requirements.create(subject: subject, years: 0, user_id: @user.id)
+      end 
 
       redirect_to user_path(@user)
     else
