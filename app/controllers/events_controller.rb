@@ -1,12 +1,15 @@
 class EventsController < ApplicationController
 
   def index
+
     @user = User.find(params[:user_id])
     @events = @user.events
   end
 
   def new
     @event = Event.new
+    @dates = Sat.pluck(:date).uniq
+
   end
 
   def create
