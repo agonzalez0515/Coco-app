@@ -37,4 +37,5 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   get '/signup' => 'users#new'
 
+  mount ActionCable.server, at: '/cable'
 end
