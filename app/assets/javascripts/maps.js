@@ -8,7 +8,7 @@ var initMap = function() {
  });
 $('#date').on('submit', function(e) {
   e.preventDefault();
-  $.getJSON('/sats?'+$(e.target).serialize(), null, function(response) {
+  $.getJSON('/events/new?'+$(e.target).serialize(), null, function(response) {
     for (var i = 0; i < response.length; i++) {
 
       var url = 'http://maps.googleapis.com/maps/api/geocode/json?address='+encodeURI(response[i].address)+'&sensor=false';

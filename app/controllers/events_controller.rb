@@ -3,10 +3,16 @@ class EventsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @events = @user.events
+
   end
 
   def new
     @event = Event.new
+    @sats = Sat.where(date: Date.parse(params[:date]))
+    puts "Found #{@sats.size} SATs on #{@sats.map(&:date).uniq}"
+    respond_to do |format|
+      format.js {render json: @sats.map(&:attributes)}
+    end
   end
 
   def create
