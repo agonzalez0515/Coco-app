@@ -1,9 +1,11 @@
 <div><h3> <%= @message.title %> </h3>
 
 
- <%= @message.body %> 
- <%= link_to 'Edit Post', edit_message_path(@message) %>  |  
- <%= link_to 'Delete Post', message_path(@message), method: :delete, data: {confirm: 'Are you sure?'} %>
+<%= @message.body %> 
+<% if current_user == @message.user %>
+  <%= link_to 'Edit Post', edit_message_path(@message) %>  |  
+  <%= link_to 'Delete Post', message_path(@message), method: :delete, data: {confirm: 'Are you sure?'} %>
+<% end %>
 </div>
 <br/ >
 <div><b> Comments: </b>
@@ -12,7 +14,13 @@
   <li>
   <%= comment.body %><br/ >
   posted by: <%= comment.user.first_name %>
+  <% if current_user == comment.user %>
+  <%= link_to 'Edit Comment', edit_message_comment_path(@message, comment) %>  |  
+  <%= link_to 'Delete Comment', message_comment_path(@message, comment), method: :delete, data: {confirm: 'Are you sure?' } %>
+  <% end %>
   </li>
 <% end %>
 </ul>
+
+<%= render 'form' %>
   </div>

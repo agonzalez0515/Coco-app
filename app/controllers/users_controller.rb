@@ -11,6 +11,12 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
+
+      subjects = ["History", "English", "Math", "Science", "Language", "Arts", "Elective"]
+      subjects.each do |subject|
+        @user.requirements.create(subject: subject, years: 0, user_id: @user.id)
+      end 
+
       redirect_to user_path(@user)
     else
       @errors = @user.errors
