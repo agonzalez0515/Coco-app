@@ -4,6 +4,12 @@ class EventsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @events = @user.events
+    p 
+    p params
+    respond_to do |format|
+      format.html
+      format.json {render json: @events.to_json}
+    end
   end
 
 
