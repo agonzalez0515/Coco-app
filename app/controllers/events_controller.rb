@@ -9,6 +9,7 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
     @dates = Sat.pluck(:date).uniq
+    # Events for a particular date and time
 
   end
 
