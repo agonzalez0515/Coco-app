@@ -9,7 +9,7 @@ class SatsController < ApplicationController
       #format.js {render json: @sats.map(&:attributes)}
       format.js {render json: @sats}
       format.html {render :index}
-    end
+      end
   end
 
 
