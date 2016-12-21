@@ -20,12 +20,6 @@ Rails.application.routes.draw do
     resources :events
   end
 
-  # resources :requirements, except: [:index, :show, :new, :create, :edit, :update, :destroy] do
-  #   member do
-  #     post 'decrease_years'
-  #   end
-  # end
-
   # TIPS FOR ADMIN USE
   resources :tips, only: [:index]
 
