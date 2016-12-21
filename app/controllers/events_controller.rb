@@ -1,7 +1,6 @@
 class EventsController < ApplicationController
-
+  # before_action :set_event, only: [:show, :edit, :update, :destroy]
   def index
-
     @user = User.find(params[:user_id])
     @events = @user.events
   end
@@ -74,6 +73,9 @@ class EventsController < ApplicationController
   end
 
 private
+  # def set_event
+  #   @event = Event.find(params[:id])
+  # end
   def event_params
       params.require(:event).permit(:user_id, :sat_id)
   end

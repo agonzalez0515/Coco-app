@@ -56,18 +56,13 @@ function fetchSats(response) {
   for (var i = 0; i < response.length; i++) {
     var sat = response[i];
     placeMarkers(sat.latitude, sat.longitude)
-    // var url = 'http://maps.googleapis.com/maps/api/geocode/json?address='+encodeURI(response[i].address)+'&sensor=false';
-    // $.getJSON(url, null, placeMarkers);
   }
 }
 
 function placeMarkers(lat, lng) {
-  // if (data.status != "ZERO_RESULTS") {
-    // var p = data.results[0].geometry.location
     var latlng = new google.maps.LatLng(lat, lng);
     new google.maps.Marker({
       position: latlng,
       map: map
     });
-  // }
 }
