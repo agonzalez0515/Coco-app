@@ -10,6 +10,7 @@ class SatsController < ApplicationController
       format.js {render json: @sats}
       format.html {render :index}
       end
+    end
   end
 
   # def locationsList
