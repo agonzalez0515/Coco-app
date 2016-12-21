@@ -13,4 +13,6 @@
 class Comment < ApplicationRecord
   belongs_to :message
   belongs_to :user
+
+  validates_presence_of :body
 end

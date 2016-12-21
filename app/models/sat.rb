@@ -18,4 +18,8 @@ class Sat < ApplicationRecord
 
   # geocoded_by :address
   # after_validation :geocode
+
+  validate_presence_of :date
+  validate_presence_of :address
+  validate_presence_of :location_name
 end
