@@ -1,72 +1,72 @@
-require 'open-uri'
-#Scraping for SAT locations
-page1 = Nokogiri::HTML(open("https://collegereadiness.collegeboard.org/api/v1/test-center-search?test_date=201701&country=US&state=CA&city="))
-
- january_nokogiri = page1.css('div.test-center-results-row')
- january_locations = []
-
- january_nokogiri.each do |school|
-   schools = {}
-   schools[:name] = school.css('h3').text
-   schools[:address] = school.css('.test-center-result-value').text.split(" ")[0...-1].join(' ')
-   january_locations << schools
- end
-
-
- january_locations.each do |school|
-   Sat.create(location_name: school[:name], address: school[:address], date: Date.parse('2017-01-21') )
- end
-
-################################################################################
-page2 = Nokogiri::HTML(open("https://collegereadiness.collegeboard.org/api/v1/test-center-search?test_date=201703&country=US&state=CA&city="))
-march_nokogiri = page2.css('div.test-center-results-row')
-march_locations = []
-
-march_nokogiri.each do |school|
-  schools = {}
-  schools[:name] = school.css('h3').text
-  schools[:address] = school.css('.test-center-result-value').text.split(" ")[0...-1].join(' ')
-  march_locations << schools
-end
-
-
-march_locations.each do |school|
-  Sat.create(location_name: school[:name], address: school[:address], date: Date.parse('2017-03-11') )
-end
-################################################################################
-page3 = Nokogiri::HTML(open("https://collegereadiness.collegeboard.org/api/v1/test-center-search?test_date=201705&country=US&state=CA&city="))
-may_nokogiri = page3.css('div.test-center-results-row')
-may_locations = []
-
-may_nokogiri.each do |school|
-  schools = {}
-  schools[:name] = school.css('h3').text
-  schools[:address] = school.css('.test-center-result-value').text.split(" ")[0...-1].join(' ')
-  may_locations << schools
-end
-
-
-may_locations.each do |school|
-  Sat.create(location_name: school[:name], address: school[:address], date: Date.parse('2017-05-06') )
-end
-
-################################################################################
-page4 = Nokogiri::HTML(open("https://collegereadiness.collegeboard.org/api/v1/test-center-search?test_date=201706&country=US&state=CA&city="))
-june_nokogiri = page4.css('div.test-center-results-row')
-june_locations = []
-
-june_nokogiri.each do |school|
-  schools = {}
-  schools[:name] = school.css('h3').text
-  schools[:address] = school.css('.test-center-result-value').text.split(" ")[0...-1].join(' ')
-  june_locations << schools
-end
-
-
-june_locations.each do |school|
-  Sat.create(location_name: school[:name], address: school[:address], date: Date.parse('2017-06-03') )
-end
-
+# require 'open-uri'
+# #Scraping for SAT locations
+# page1 = Nokogiri::HTML(open("https://collegereadiness.collegeboard.org/api/v1/test-center-search?test_date=201701&country=US&state=CA&city="))
+#
+#  january_nokogiri = page1.css('div.test-center-results-row')
+#  january_locations = []
+#
+#  january_nokogiri.each do |school|
+#    schools = {}
+#    schools[:name] = school.css('h3').text
+#    schools[:address] = school.css('.test-center-result-value').text.split(" ")[0...-1].join(' ')
+#    january_locations << schools
+#  end
+#
+#
+#  january_locations.each do |school|
+#    Sat.create(location_name: school[:name], address: school[:address], date: Date.parse('2017-01-21') )
+#  end
+#
+# ################################################################################
+# page2 = Nokogiri::HTML(open("https://collegereadiness.collegeboard.org/api/v1/test-center-search?test_date=201703&country=US&state=CA&city="))
+# march_nokogiri = page2.css('div.test-center-results-row')
+# march_locations = []
+#
+# march_nokogiri.each do |school|
+#   schools = {}
+#   schools[:name] = school.css('h3').text
+#   schools[:address] = school.css('.test-center-result-value').text.split(" ")[0...-1].join(' ')
+#   march_locations << schools
+# end
+#
+#
+# march_locations.each do |school|
+#   Sat.create(location_name: school[:name], address: school[:address], date: Date.parse('2017-03-11') )
+# end
+# ################################################################################
+# page3 = Nokogiri::HTML(open("https://collegereadiness.collegeboard.org/api/v1/test-center-search?test_date=201705&country=US&state=CA&city="))
+# may_nokogiri = page3.css('div.test-center-results-row')
+# may_locations = []
+#
+# may_nokogiri.each do |school|
+#   schools = {}
+#   schools[:name] = school.css('h3').text
+#   schools[:address] = school.css('.test-center-result-value').text.split(" ")[0...-1].join(' ')
+#   may_locations << schools
+# end
+#
+#
+# may_locations.each do |school|
+#   Sat.create(location_name: school[:name], address: school[:address], date: Date.parse('2017-05-06') )
+# end
+#
+# ################################################################################
+# page4 = Nokogiri::HTML(open("https://collegereadiness.collegeboard.org/api/v1/test-center-search?test_date=201706&country=US&state=CA&city="))
+# june_nokogiri = page4.css('div.test-center-results-row')
+# june_locations = []
+#
+# june_nokogiri.each do |school|
+#   schools = {}
+#   schools[:name] = school.css('h3').text
+#   schools[:address] = school.css('.test-center-result-value').text.split(" ")[0...-1].join(' ')
+#   june_locations << schools
+# end
+#
+#
+# june_locations.each do |school|
+#   Sat.create(location_name: school[:name], address: school[:address], date: Date.parse('2017-06-03') )
+# end
+#
 
 ################################################################################
 zara = User.create(first_name:"Zara", last_name: "Aslam", email:"zara@zara.com", password: "password", phone_number: "+15105579120", street_address: "221 7th Street", city:"San Francisco", state: "CA", zip_code: 94105, lang_preference: "spanish", grade_level: 9, user_type: "parent")
@@ -121,3 +121,15 @@ tips = ["Welcome to fall! Make sure your child meets with the school counselor t
 tips.each do |tip|
   Tip.create(body: tip)
 end
+################################################################################
+# Read SAT locations from csv file
+school_file = File.open('./db/school_data.csv', 'r')
+school_csv = CSV.parse(school_file, :headers => false)
+
+school_csv.each do |school|
+  Sat.create({date:school[1],
+              location_name:school[2],
+              address:school[3],
+              latitude:school[4].to_f,
+              longitude:school[5].to_f})
+            end

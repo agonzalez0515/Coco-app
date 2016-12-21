@@ -46,9 +46,7 @@ function getSatsNearMapCenter() {
 function getNearbySats(results, status) {
   if (status === 'OK') {
     var date = $('#date').serialize()
-    var params = date + "&address=" + encodeURI(results[1].formatted_address)
-
-    $.getJSON('/sats?'+params, null, fetchSats);
+    $.getJSON('/sats?'+date, null, fetchSats);
   }
 }
 
@@ -60,6 +58,7 @@ function fetchSats(response) {
 }
 
 function placeMarkers(lat, lng) {
+
     var latlng = new google.maps.LatLng(lat, lng);
     new google.maps.Marker({
       position: latlng,
