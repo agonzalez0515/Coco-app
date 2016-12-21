@@ -4,14 +4,12 @@ class EventsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @events = @user.events
-    p 
-    p params
+
     respond_to do |format|
       format.html
       format.json {render json: @events.to_json}
     end
   end
-
 
   def new
     @event = Event.new
@@ -75,9 +73,7 @@ class EventsController < ApplicationController
   end
 
 private
-  # def set_event
-  #   @event = Event.find(params[:id])
-  # end
+
   def event_params
       params.require(:event).permit(:user_id, :sat_id)
   end
@@ -87,10 +83,3 @@ private
   end
 
 end
-
-# date: "2017-06-03"
-# location_name: "YUCAIPA HS"
-
-    # p '*******' * 20
-    # p @user.id
-    # p '*******' * 20
