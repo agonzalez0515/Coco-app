@@ -60,10 +60,23 @@ function fetchSats(response) {
   for (var i = 0; i < response.length; i++) {
     var sat = response[i];
     placeMarkers(sat.latitude, sat.longitude)
+    //Append input into form with sat id
+    $('.sat-locations').append('<li><input type="radio" name="sat_id" value=" class="new-event-sat-location"'+sat.id+'">'+sat.address+'</li>')
 
   }
 }
+$()
+$('form').on('click','.sat-locations', function(event){
+  event.preventDefault();
+  var checked = $(":checked").val();
+  console.log(checked);
+})
 
+function eventParams(e){
+  e.preventDefault();
+  var sat = $('#date').serialize()
+
+}
 function placeMarkers(lat, lng) {
 
     var latlng = new google.maps.LatLng(lat, lng);
