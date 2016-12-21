@@ -20,21 +20,6 @@ initialize_calendar = function() {
         calendar.fullCalendar('unselect');
       },
 
-      eventDrop: function(event, delta, revertFunc) {
-        event_data = {
-          event: {
-            id: event.id,
-            start: event.start.format(),
-            end: event.end.format()
-          }
-        };
-        $.ajax({
-            url: event.update_url,
-            data: event_data,
-            type: 'PATCH'
-        });
-      },
-
       eventClick: function(event, jsEvent, view) {
         $.getScript(event.edit_url, function() {});
       }
