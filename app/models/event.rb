@@ -14,4 +14,9 @@
 class Event < ApplicationRecord
   belongs_to :sat
   belongs_to :user
+
+  def start_time
+    "February 1, 2017"
+  end
+
 end

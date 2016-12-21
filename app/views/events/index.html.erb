@@ -8,4 +8,9 @@ To add a new event:
 <%= link_to 'New Event', new_user_event_path %>
 
 
-<div id="calendar"></div>
+<%= month_calendar events: @events do |date, events| %>
+  <%= date %>
+  <% events.each do |event|%>
+    <%=link_to event.title, user_event_path(current_user.id, event)%>
+    <% end %>
+  <% end %>
