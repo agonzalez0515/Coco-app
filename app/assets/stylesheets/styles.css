@@ -27,3 +27,16 @@ body {
 table {
 	border-style: none;
 }
+
+#chats-table {
+	max-height: 20%;
+}
+.chat {
+	background-color: lightgrey;
+}
+.chat-content-en {
+	background-color: #94618E;
+}
+.chat-content-es {
+	background-color: grey;
+}
