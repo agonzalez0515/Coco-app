@@ -1,0 +1,31 @@
+# == Schema Information
+#
+# Table name: chats
+#
+#  id         :integer          not null, primary key
+#  body       :text
+#  user_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  body_en    :text
+#  body_es    :text
+#
+
+<<<<<<< HEAD
+=======
+#  body_en    :text
+#  body_es    :text
+>>>>>>> dcf9bcda57c36b8b524ef33b1c9c962d43b0e232
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+# column: value
