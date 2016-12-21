@@ -21,6 +21,7 @@ class Sat < ApplicationRecord
   validates_presence_of :address
   validates_presence_of :location_name
 
+
   # geocoded_by :address
   # after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 

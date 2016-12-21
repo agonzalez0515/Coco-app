@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       member do
         post 'decrease_years'
       end
-    end 
+    end
     resources :events
   end
 
