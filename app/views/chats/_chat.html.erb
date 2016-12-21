@@ -1,9 +1,12 @@
 <div class="chat">
   <div class="chat-user">
-    <p> Name: <%= chat.user.first_name %> </p>
+    <p><%= chat.user.first_name %>: </p>
   </div>
-  <div class="chat-content">
-    <p> Message: <%= chat.body %> </p>
-    <br>
-  </div>
+ 		<div class="chat-content-en">
+ 		  <p><%= chat.body_en %> </p>
+ 		</div>
+ 		<div class="chat-content-es">
+   		<p><%= chat.body_es %> </p>
+  	</div>
+  	<br>
 </div>
