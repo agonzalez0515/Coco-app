@@ -1,10 +1,17 @@
 class EventsController < ApplicationController
-
   before_action :set_event, only: [:index, :create, :show, :edit, :update, :destroy]
 
   def index
+    @user = User.find(params[:user_id])
     @events = @user.events
+    p 
+    p params
+    respond_to do |format|
+      format.html
+      format.json {render json: @events.to_json}
+    end
   end
+
 
   def new
     @event = Event.new
@@ -69,6 +76,9 @@ class EventsController < ApplicationController
   end
 
 private
+  # def set_event
+  #   @event = Event.find(params[:id])
+  # end
   def event_params
       params.require(:event).permit(:user_id, :sat_id)
   end

@@ -60,7 +60,6 @@ function fetchSats(response) {
   for (var i = 0; i < response.length; i++) {
     var sat = response[i];
     placeMarkers(sat.latitude, sat.longitude)
-
   }
 }
 
@@ -71,8 +70,8 @@ function placeMarkers(lat, lng) {
       position: latlng,
       map: map
     });
+
     markers.push(new_marker);
-}
 
 // Sets the map on all markers in the array.
 var setMapOnAll = function(map) {
