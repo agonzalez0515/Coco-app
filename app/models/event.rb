@@ -16,7 +16,7 @@ class Event < ApplicationRecord
   belongs_to :user
 
   def start_time
-    "February 1, 2017"
+    self.sat.date
   end
 
 end

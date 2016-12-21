@@ -13,3 +13,23 @@
 		</ul>
 	</div>
 </nav>
+<table>
+  <tr>
+    <td>
+      <%= button_to 'SAT Information', sats_path, :class => "header-nav-btn", :method => :get %></li>
+    </td>
+    <td>
+      <%= button_to 'Application Information', applications_path, :class => "header-nav-btn", :method => :get %></li>
+    </td>
+    <td>
+      <%= button_to 'A-G Requirements', agrequirements_path, :class => "header-nav-btn", :method => :get %></li>
+    </td>
+    <td>
+      <%= button_to 'Chat Room', chats_path, :class => "header-nav-btn", :method => :get %></li>
+    </td>
+    <td>
+      <%= button_to 'Forums', messages_path, :class => "header-nav-btn", :method => :get %></li>
+    </td>
+  </tr>
+</table>
+<hr>
