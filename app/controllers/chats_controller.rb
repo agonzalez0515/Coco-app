@@ -1,25 +1,22 @@
-
 class ChatsController < ApplicationController
-	# before_action :logged_in_user
+  # before_action :logged_in_user
   before_action :get_chats
 
   def index
   end
 
   def create
-
     chat = current_user.chats.build(chat_params)
-
-     # if user.prefernce = 'es'
-    p "*" * 10
-    p chat.body = EasyTranslate.translate(chat.body, :to => :es, :key => ENV['TRANSLATE'])
-
-    p "*" * 10
-    if chat.save
+    chat.body_en = EasyTranslate.translate(chat.body, :to => :en, :key => ENV['NEW_KEY_TRANSLATE'])
+    chat.body_es = EasyTranslate.translate(chat.body, :to => :es, :key => ENV['NEW_KEY_TRANSLATE'])
+    chat.save
+    if chat.body_es && chat.body_en
+      p chat.body_es
       ActionCable.server.broadcast 'room_channel',
-                                   body: chat.body,
-                                   name: chat.user.first_name
-      head :ok
+            body_en: chat.body_en,
+            body_es: chat.body_es,
+            name: chat.user.first_name
+      head :ok 
     end
   end
 

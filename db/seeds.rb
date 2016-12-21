@@ -1,7 +1,15 @@
-require 'open-uri'
-#Scraping for SAT locations
+# require 'open-uri'
+# Scraping for SAT locations
 # page1 = Nokogiri::HTML(open("https://collegereadiness.collegeboard.org/api/v1/test-center-search?test_date=201701&country=US&state=CA&city="))
 
+#  january_nokogiri = page1.css('div.test-center-results-row')
+#  january_locations = []
+
+
+# require 'open-uri'
+# #Scraping for SAT locations
+# page1 = Nokogiri::HTML(open("https://collegereadiness.collegeboard.org/api/v1/test-center-search?test_date=201701&country=US&state=CA&city="))
+#
 #  january_nokogiri = page1.css('div.test-center-results-row')
 #  january_locations = []
 
@@ -12,6 +20,9 @@ require 'open-uri'
 #    january_locations << schools
 #  end
 
+#  january_locations.each do |school|
+#    Sat.create(location_name: school[:name], address: school[:address], date: Date.parse('2017-01-21') )
+#  end
 
 #  january_locations.each do |school|
 #    Sat.create(location_name: school[:name], address: school[:address], date: Date.parse('2017-01-21') )
@@ -29,7 +40,6 @@ require 'open-uri'
 #   march_locations << schools
 # end
 
-
 # march_locations.each do |school|
 #   Sat.create(location_name: school[:name], address: school[:address], date: Date.parse('2017-03-11') )
 # end
@@ -45,6 +55,9 @@ require 'open-uri'
 #   may_locations << schools
 # end
 
+# may_locations.each do |school|
+#   Sat.create(location_name: school[:name], address: school[:address], date: Date.parse('2017-05-06') )
+# end
 
 # may_locations.each do |school|
 #   Sat.create(location_name: school[:name], address: school[:address], date: Date.parse('2017-05-06') )
@@ -62,11 +75,15 @@ require 'open-uri'
 #   june_locations << schools
 # end
 
-
 # june_locations.each do |school|
 #   Sat.create(location_name: school[:name], address: school[:address], date: Date.parse('2017-06-03') )
 # end
 
+#
+# june_locations.each do |school|
+#   Sat.create(location_name: school[:name], address: school[:address], date: Date.parse('2017-06-03') )
+# end
+#
 
 ################################################################################
 zara = User.create(first_name:"Zara", last_name: "Aslam", email:"zara@zara.com", password: "password", phone_number: "+15105579120", street_address: "221 7th Street", city:"San Francisco", state: "CA", zip_code: 94105, lang_preference: "spanish", grade_level: 9, user_type: "parent")
@@ -121,3 +138,15 @@ tips = ["Welcome to fall! Make sure your child meets with the school counselor t
 tips.each do |tip|
   Tip.create(body: tip)
 end
+################################################################################
+# Read SAT locations from csv file
+school_file = File.open('./db/school_data.csv', 'r')
+school_csv = CSV.parse(school_file, :headers => false)
+
+school_csv.each do |school|
+  Sat.create({date:school[1],
+              location_name:school[2],
+              address:school[3],
+              latitude:school[4].to_f,
+              longitude:school[5].to_f})
+            end
