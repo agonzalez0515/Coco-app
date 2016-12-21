@@ -44,9 +44,7 @@ function getSatsNearMapCenter() {
 function getNearbySats(results, status) {
   if (status === 'OK') {
     var date = $('#date').serialize()
-    var params = date + "&address=" + encodeURI(results[1].formatted_address)
-
-    $.getJSON('/sats?'+params, null, fetchSats);
+    $.getJSON('/sats?'+date, null, fetchSats);
   }
 }
 
@@ -54,29 +52,12 @@ function fetchSats(response) {
   for (var i = 0; i < response.length; i++) {
     var sat = response[i];
     placeMarkers(sat.latitude, sat.longitude)
-    // var url = 'http://maps.googleapis.com/maps/api/geocode/json?address='+encodeURI(response[i].address)+'&sensor=false';
-    // $.getJSON(url, null, placeMarkers);
-    // append to text list of locations
-    addToLocationList(sat.name, sat.address, sat.phoneNumber);
+
   }
 }
 
-var addToLocationList = function(name, address, phoneNumber) {
-  // Approach 1 -> template right in javascript
-  //var template = "<li>" + name + "<span class='address'></span></li>";
-
-  // Approach 2 -> have a hidden template in the view already rendered
-  var template = $('li-template').clone();
-  $(template).find('.address').html(address);
-  $(template).find('.phone-number').html(phoneNumber);
-  // take off the hidden class after you append
-
-  $('.sats-list').append(template);
-}
-
 function placeMarkers(lat, lng) {
-  // if (data.status != "ZERO_RESULTS") {
-    // var p = data.results[0].geometry.location
+
     var latlng = new google.maps.LatLng(lat, lng);
     new google.maps.Marker({
       position: latlng,
