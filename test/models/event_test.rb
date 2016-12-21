@@ -8,6 +8,7 @@
 #  completed  :boolean          default("false")
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  title      :string
 #
 
 require 'test_helper'
