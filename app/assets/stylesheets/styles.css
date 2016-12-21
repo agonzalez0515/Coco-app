@@ -25,3 +25,7 @@ a {
 .btn {
 	background-color: grey;
 }
+
+table {
+	border-style: none;
+}
