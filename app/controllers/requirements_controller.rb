@@ -6,6 +6,7 @@ class RequirementsController < ApplicationController
   def index
     userid=current_user.id
     @requirements = Requirement.where(user_id: userid)
+
   end
 
   def new
@@ -27,17 +28,37 @@ class RequirementsController < ApplicationController
   def update
     @user = User.find(params[:user_id])
     @requirement = Requirement.find(params[:id])
-    if @requirement.update(requirement_params)
-      redirect_to user_requirements_path(@user)
-    else 
-      render "index"
-    end
+
+    respond_to do |format|
+      format.js do 
+        @requirement.update(requirement_params)
+        render 'update'
+      end 
+    end 
   end
+  
+  def decrease_years
+    @user = User.find(params[:user_id])
+    @requirement = Requirement.find(params[:id])
+
+    respond_to do |format|
+      format.js do 
+        @requirement.update(decrease_requirement_params)
+        render 'update'
+      end 
+    end
+  end 
 
 private
 
   def requirement_params
-    requirement_params = { years: params[:requirement][:years] }
+    current_years = @requirement.years
+    requirement_params = { years: (current_years + 1) }
   end
+
+  def decrease_requirement_params
+    current_years = @requirement.years
+    decrease_requirement_params = {years: (current_years - 1)}
+  end 
 
 end
