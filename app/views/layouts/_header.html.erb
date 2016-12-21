@@ -1,0 +1,44 @@
+<p class="app-title">CoCo: Your College Counselor</p>
+<p class="app-statement">Keeping students on track and parents informed.</p>
+
+        <% if current_user %>
+          <%= button_to current_user, :class => "header-log-btn" do %>
+            <strong>Track Your Progress <%= current_user.first_name %></strong>
+          <% end %>
+        <% else %>
+        <table>
+          <tr>
+            <td><%= button_to 'Log In', login_path, :class => "header-log-btn", :method => :get %></td>
+            <td><%= button_to 'Sign Up', signup_path, :class => "header-log-btn", :method => :get %></td>
+          </tr>
+        </table>
+        <% end %>
+
+<table>
+  <tr>
+    <td>
+      <%= button_to "Home", root_path, :class => "header-nav-btn", :method => :get %>
+    </td>
+    <td>
+      <%= button_to 'SAT Information', sats_path, :class => "header-nav-btn", :method => :get %></li>
+    </td>
+    <td>
+      <%= button_to 'Application Information', applications_path, :class => "header-nav-btn", :method => :get %></li>
+    </td>
+    <td>
+      <%= button_to 'A-G Requirements', agrequirements_path, :class => "header-nav-btn", :method => :get %></li>
+    </td>
+    <td>
+      <%= button_to 'Chat Room', chats_path, :class => "header-nav-btn", :method => :get %></li>
+    </td>
+    <td>
+      <%= button_to 'Forums', messages_path, :class => "header-nav-btn", :method => :get %></li>
+    </td>
+    <td>
+      <% if current_user %>
+        <%= button_to 'Log Out', logout_path, :class => "header-nav-btn", method: "delete" %>
+      <% end %>
+    </td>
+  </tr>
+</table>
+<hr>
