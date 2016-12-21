@@ -1,6 +1,7 @@
 body {
 	background-color: white;
 	max-width: 1200px;
+	min-width: 200px;
 }
 
 #map {
@@ -12,10 +13,6 @@ body {
 	background-color: #49274A;
 }
 
-a {
-	color: #49274A;
-}
-
 .footer {
   bottom:0;
   position:fixed;
@@ -24,6 +21,7 @@ a {
 }
 .btn {
 	background-color: grey;
+	
 }
 
 table {

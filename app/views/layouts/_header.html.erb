@@ -1,6 +1,7 @@
 <nav>
-  <div class="nav-wrapper col s6">
-  	<ul class="left hide-on-med-and-down">
+  <div class="row">
+  <div class="nav-wrapper grid-example col s12">
+  	<ul class="center">
 		<% if current_user %>
 			<li><%= link_to "Your profile", user_path(current_user) %></li>
 		  <li><%= link_to 'Home', root_path %></li> 
@@ -12,23 +13,5 @@
 		<% end %>
 		</ul>
 	</div>
+  </div>
 </nav>
-<table>
-  <tr>
-    <td>
-      <%= button_to 'SAT Information', sats_path, :class => "waves-effect waves-light btn", :method => :get %></li>
-    </td>
-    <td>
-      <%= button_to 'Application Information', applications_path, :class => "waves-effect waves-light btn", :method => :get %></li>
-    </td>
-    <td>
-      <%= button_to 'A-G Requirements', agrequirements_path, :class => "waves-effect waves-light btn", :method => :get %></li>
-    </td>
-    <td>
-      <%= button_to 'Chat Room', chats_path, :class => "waves-effect waves-light btn", :method => :get %></li>
-    </td>
-    <td>
-      <%= button_to 'Forums', messages_path, :class => "waves-effect waves-light btn", :method => :get %></li>
-    </td>
-  </tr>
-</table>
