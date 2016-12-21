@@ -16,7 +16,6 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
     @dates = Sat.pluck(:date).uniq
-
   end
 
   def create
