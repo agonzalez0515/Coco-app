@@ -24,30 +24,15 @@ var initMap = function() {
     zoom: 5
   });
 
-  $('#date').on('submit', fetchResults)
+  $('#date').on('submit', fetchParams)
 };
 
-function fetchResults(e) {
+function fetchParams(e) {
   e.preventDefault();
-  getSatsNearMapCenter()
+  var date = $('#date').serialize()
+  $.getJSON('/sats?'+date, null, fetchSats);
+
 }
-
-function getSatsNearMapCenter() {
-  var geocoder = new google.maps.Geocoder;
-  var lat = map.getCenter().lat()
-  var lng = map.getCenter().lng()
-
-  var latlng = {lat: lat, lng: lng};
-  geocoder.geocode({'location': latlng}, getNearbySats);
-}
-
-function getNearbySats(results, status) {
-  if (status === 'OK') {
-    var date = $('#date').serialize()
-    $.getJSON('/sats?'+date, null, fetchSats);
-  }
-}
-
 function fetchSats(response) {
   for (var i = 0; i < response.length; i++) {
     var sat = response[i];
@@ -57,11 +42,24 @@ function fetchSats(response) {
 }
 
 function placeMarkers(lat, lng) {
-
-    var latlng = new google.maps.LatLng(lat, lng);
-    new google.maps.Marker({
-      position: latlng,
-      map: map
-    });
+  var latlng = new google.maps.LatLng(lat, lng);
+  new google.maps.Marker({
+    position: latlng,
+    map: map
+  });
   // }
 }
+
+// function getSatsNearMapCenter() {
+//   var geocoder = new google.maps.Geocoder;
+//   var lat = map.getCenter().lat()
+//   var lng = map.getCenter().lng()
+//
+//   var latlng = {lat: lat, lng: lng};
+//   geocoder.geocode({'location': latlng}, getNearbySats);
+// }
+
+// function getNearbySats(results, status) {
+//   if (status === 'OK') {
+//   }
+// }
