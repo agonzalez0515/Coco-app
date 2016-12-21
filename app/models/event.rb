@@ -8,9 +8,15 @@
 #  completed  :boolean          default("false")
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  title      :string
 #
 
 class Event < ApplicationRecord
   belongs_to :sat
   belongs_to :user
+
+  def start_time
+    self.sat.date
+  end
+
 end
