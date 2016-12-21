@@ -17,8 +17,6 @@
 //= require turbolinks
 //= require_tree .
 
-
-
 var map;
 var markers = [];
 
