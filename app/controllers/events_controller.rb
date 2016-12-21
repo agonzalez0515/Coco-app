@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
-  
+
   before_action :set_event, only: [:index, :create, :show, :edit, :update, :destroy]
-  
+
   def index
     @events = @user.events
   end
@@ -9,6 +9,7 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
     @dates = Sat.pluck(:date).uniq
+
   end
 
   def create
