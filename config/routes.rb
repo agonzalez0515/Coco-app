@@ -12,9 +12,19 @@ Rails.application.routes.draw do
 
   # USERS PROFILE ROUTES
   resources :users do
-    resources :requirements, except: [:destroy]
+    resources :requirements, except: [:destroy] do
+      member do
+        post 'decrease_years'
+      end
+    end 
     resources :events
   end
+
+  # resources :requirements, except: [:index, :show, :new, :create, :edit, :update, :destroy] do
+  #   member do
+  #     post 'decrease_years'
+  #   end
+  # end
 
   # TIPS FOR ADMIN USE
   resources :tips, only: [:index]
