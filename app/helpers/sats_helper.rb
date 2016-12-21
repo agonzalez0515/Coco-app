@@ -1,0 +1,2 @@
+module SatsHelper
+end
