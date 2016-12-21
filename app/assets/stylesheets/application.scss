@@ -15,8 +15,5 @@
  *= require_self
  */
 
-
- #map {
-       height: 500px;
-       max-width: 50%;
-     }
+@import "materialize";
+@import "styles";
