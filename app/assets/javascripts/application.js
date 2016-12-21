@@ -65,3 +65,40 @@ function placeMarkers(lat, lng) {
       map: map
     });
 }
+
+
+// $(document).ready(function(){
+//   voteForPost();
+// })
+
+// var voteForPost = function(){
+//   $(".testing1").on("click", function(event){
+//     event.preventDefault();
+//     var $button = $(this);
+//     var method = $button.attr("method"); 
+//     var url = $button.attr("action"); 
+
+//     console.log(method)
+//     console.log(url)
+
+//     $.ajax({
+//       method: method,
+//       url: url,
+//       // data: $button.parent().serialize
+//     }).done(function(response){
+//       console.log(response); 
+//     }).fail(function(err) {
+//       console.log(err)
+//     })
+//   })
+// }
+
+
+
+
+
+
+
+
+
+
