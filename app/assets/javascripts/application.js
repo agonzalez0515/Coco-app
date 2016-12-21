@@ -26,10 +26,6 @@ var initMap = function() {
   });
 
   $('#date').on('submit', fetchParams)
-
-};
-
-
   var infoWindow = new google.maps.InfoWindow({map: map});
 
   // Try HTML5 geolocation.
@@ -53,7 +49,6 @@ var initMap = function() {
 };
 
 
-
 function fetchParams(e) {
   e.preventDefault();
   var date = $('#date').serialize()
@@ -65,18 +60,11 @@ function fetchSats(response) {
   for (var i = 0; i < response.length; i++) {
     var sat = response[i];
     placeMarkers(sat.latitude, sat.longitude)
+
   }
 }
 
 function placeMarkers(lat, lng) {
-
-  var latlng = new google.maps.LatLng(lat, lng);
-  new google.maps.Marker({
-    position: latlng,
-    map: map
-  });
-  // }
-
 
     var latlng = new google.maps.LatLng(lat, lng);
     new_marker = new google.maps.Marker({
@@ -84,7 +72,6 @@ function placeMarkers(lat, lng) {
       map: map
     });
     markers.push(new_marker);
-
 }
 
 // Sets the map on all markers in the array.
@@ -115,21 +102,6 @@ var deleteMarkers = function() {
 //   geocoder.geocode({'location': latlng}, getNearbySats);
 // }
 
-// function getSatsNearMapCenter() {
-//   var geocoder = new google.maps.Geocoder;
-//   var lat = map.getCenter().lat()
-//   var lng = map.getCenter().lng()
-//
-//   var latlng = {lat: lat, lng: lng};
-//   geocoder.geocode({'location': latlng}, getNearbySats);
-// }
-
-// function getNearbySats(results, status) {
-//   if (status === 'OK') {
-//   }
-// }
-
-
 // $(document).ready(function(){
 //   voteForPost();
 // })
@@ -150,8 +122,3 @@ var deleteMarkers = function() {
 //       // data: $button.parent().serialize
 //     }).done(function(response){
 //       console.log(response);
-//     }).fail(function(err) {
-//       console.log(err)
-//     })
-//   })
-// }
