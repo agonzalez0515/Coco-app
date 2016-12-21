@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+    
+  before_action :set_message, only: [ :show, :edit, :update, :destroy]
 
   def index
     @messages = Message.all
@@ -13,20 +15,18 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to messages_path
     else
+      @errors = @message.errors.full_messages
       render "new"
     end
   end
 
   def show
-    @message = Message.find(params[:id])
   end
 
   def edit
-    @message = Message.find(params[:id])
   end
 
   def update
-    @message = Message.find(params[:id])
     if @message.update(message_params)
       redirect_to message_comments_path(@message)
     else
@@ -35,7 +35,6 @@ class MessagesController < ApplicationController
   end
 
   def destroy
-    @message = Message.find(params[:id])
     if @message.destroy
       redirect_to messages_path
     else
@@ -45,11 +44,14 @@ class MessagesController < ApplicationController
 
 private
 
-def message_params
-  message_params = { title: params[:message][:title],
+  def set_message
+    @message = Message.find(params[:id])
+  end
+
+  def message_params
+    message_params = { title: params[:message][:title],
                      body: params[:message][:body],
                      user_id: current_user.id }
-
-end
+  end
 
 end

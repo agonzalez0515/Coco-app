@@ -1,20 +1,18 @@
 class EventsController < ApplicationController
 
-  def index
+  before_action :set_event, only: [:index, :create, :show, :edit, :update, :destroy]
 
-    @user = User.find(params[:user_id])
+  def index
     @events = @user.events
   end
 
   def new
     @event = Event.new
     @dates = Sat.pluck(:date).uniq
-    # Events for a particular date and time
 
   end
 
   def create
-    @user = User.find(params[:user_id])
     @sat = Sat.where(location_name: params[:location_name], date: params[:date]).first
     @event = Event.new(user_id: @user.id, sat_id: @sat.id, completed: false)
 
@@ -36,17 +34,14 @@ class EventsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
     @event = Event.find(params[:id])
   end
 
   def edit
-    @user = User.find(params[:user_id])
     @event = Event.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:user_id])
     @sat = Sat.where(location_name: params[:location_name], date: params[:date]).first
     @event = Event.find(params[:id])
 
@@ -68,7 +63,6 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
     @event = Event.find(params[:id])
     @event.destroy
     redirect_to user_events_path
@@ -77,6 +71,10 @@ class EventsController < ApplicationController
 private
   def event_params
       params.require(:event).permit(:user_id, :sat_id)
+  end
+
+  def set_event
+    @user = User.find(params[:user_id])
   end
 
 end

@@ -101,3 +101,40 @@ var deleteMarkers = function() {
 //   var latlng = {lat: lat, lng: lng};
 //   geocoder.geocode({'location': latlng}, getNearbySats);
 // }
+
+// $(document).ready(function(){
+//   voteForPost();
+// })
+
+// var voteForPost = function(){
+//   $(".testing1").on("click", function(event){
+//     event.preventDefault();
+//     var $button = $(this);
+//     var method = $button.attr("method");
+//     var url = $button.attr("action");
+
+//     console.log(method)
+//     console.log(url)
+
+//     $.ajax({
+//       method: method,
+//       url: url,
+//       // data: $button.parent().serialize
+//     }).done(function(response){
+//       console.log(response);
+//     }).fail(function(err) {
+//       console.log(err)
+//     })
+//   })
+// }
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 379ab59aad253232c3fdb007222ee12541d68e56
