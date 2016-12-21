@@ -28,6 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'easy_translate'
 gem 'geocoder'
 gem 'annotate'
+gem 'hirb'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

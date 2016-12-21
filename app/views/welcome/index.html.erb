@@ -1,7 +1,17 @@
 <h1>welcome to coco: the college counselor </h1>
 
-<%= link_to 'Chat Room', chats_path %>  |  
-<%= link_to 'Forum', messages_path %>  |  
-<%= link_to 'A-G Requirements Information', agrequirements_path %>  |  
-<%= link_to 'SAT Information', sats_path %>  |  
+<%= link_to 'Chat Room', chats_path %>  |
+<%= link_to 'Forum', messages_path %>  |
+<%= link_to 'A-G Requirements Information', agrequirements_path %>  |
+<%= link_to 'SAT Information', sats_path %>  |
 <%= link_to 'Application Information', applications_path %>
+
+
+
+<h4>SATs within 50 miles</h4>
+<ul>
+  <% @sats = close_by_sats("2017-01-21", 37.784, -122.395) %>
+  <% @sats.each do |sat| %>
+    <li><%=haversine(37.784, -122.395, sat.latitude, sat.longitude)%>   ***   <%=sat.location_name%>  ***   <%=sat.date%></li>
+  <% end %>
+</ul>
