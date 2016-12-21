@@ -22,3 +22,6 @@ a {
   z-index:150;
   height:35px;
 }
+.btn {
+	background-color: grey;
+}
