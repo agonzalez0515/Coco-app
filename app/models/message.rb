@@ -14,6 +14,6 @@ class Message < ApplicationRecord
   has_many :comments
   belongs_to :user
 
-  validate_presence_of :title
-  validate_presence_of :body
+  validates_presence_of :title
+  validates_presence_of :body
 end

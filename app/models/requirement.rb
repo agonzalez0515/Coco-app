@@ -12,5 +12,5 @@
 
 class Requirement < ApplicationRecord
   belongs_to :user
-  validate_presence_of :subject
+  validates_presence_of :subject
 end
