@@ -25,11 +25,4 @@ class Sat < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
-
-
-  def self.search(search)
-  	where("date LIKE ?", "%#{search}%") 
-  	where("address LIKE ?", "%#{search}%")
-  	where("location_name LIKE ?", "%#{search}%")
-	end
 end

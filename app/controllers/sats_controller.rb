@@ -1,11 +1,7 @@
 class SatsController < ApplicationController
 
   def index
-    @sats = Sat.all
-    if params[:search]
-      p @sats = Sat.search(params[:search]).order("created_at DESC")
-      redirect_to sats_path
-    elsif params[:date]
+    if params[:date]
       @sats = Sat.where(date: Date.parse(params[:date]))
       puts "Found #{@sats.size} SATs on #{@sats.map(&:date).uniq}"
 
@@ -14,7 +10,6 @@ class SatsController < ApplicationController
       format.js {render json: @sats}
       format.html {render :index}
       end
-    end
   end
 
 

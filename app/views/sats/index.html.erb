@@ -32,14 +32,3 @@
     </p>
   </div>
 </div>
-
-<%= form_tag(sats_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-  <%= submit_tag "Search" %>
-<% end %>
-
-<% if @sats.present? %>
-  <%= render @sats %>
-<% else %>
-  <p>There are no Sats containing the term(s) <%= params[:search] %>.</p>
-<% end %>
