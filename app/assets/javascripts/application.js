@@ -13,6 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.turbolinks
+//= require materialize
+//= require materialize-sprockets
+//= require_tree .
+
+//= require jquery
+//= require jquery.turbolinks
+//= require jquery_ujs
+//= require bootstrap
+//= require turbolinks
 //= require_tree .
 
 
@@ -65,7 +75,7 @@ function fetchSats(response) {
 
   }
 }
-$()
+
 $('form').on('click','.sat-locations', function(event){
   event.preventDefault();
   var checked = $(":checked").val();
@@ -104,34 +114,3 @@ var deleteMarkers = function() {
   clearMarkers();
   markers = [];
 }
-
-
-// function getSatsNearMapCenter() {
-//   var geocoder = new google.maps.Geocoder;
-//   var lat = map.getCenter().lat()
-//   var lng = map.getCenter().lng()
-//
-//   var latlng = {lat: lat, lng: lng};
-//   geocoder.geocode({'location': latlng}, getNearbySats);
-// }
-
-// $(document).ready(function(){
-//   voteForPost();
-// })
-
-// var voteForPost = function(){
-//   $(".testing1").on("click", function(event){
-//     event.preventDefault();
-//     var $button = $(this);
-//     var method = $button.attr("method");
-//     var url = $button.attr("action");
-
-//     console.log(method)
-//     console.log(url)
-
-//     $.ajax({
-//       method: method,
-//       url: url,
-//       // data: $button.parent().serialize
-//     }).done(function(response){
-//       console.log(response);
