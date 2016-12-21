@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 
 // $('.sat-locations').on('click', "li", function(){
 //   // var data = $(this).val();
 //   console.log("hello");
 // })
+=======
+$(document).ready(function() {
+
+});
+>>>>>>> b8948a69169145b0c540feb3f3901c4069080291
 
 var map;
 var markers = [];
@@ -15,6 +21,8 @@ var initMap = function() {
 
   $('#date').on('submit', fetchParams)
   var infoWindow = new google.maps.InfoWindow({map: map});
+
+
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
@@ -37,17 +45,31 @@ var initMap = function() {
 };
 
 
+$('form').on('click','.sat-locations', function(event){
+  event.preventDefault();
+  var checked = $(":checked").val();
+  console.log(checked);
+});
+
+
 function fetchParams(e) {
   e.preventDefault();
-  var date = $('#date').serialize()
-  $.getJSON('/sats?'+date, null, fetchSats);
+  var date = $('#date').serialize();
+  var ajax_lat = map.getCenter().lat();
+  var ajax_long = map.getCenter().lng();
+  // $.getJSON('/sats?'+date, null, fetchSats);
+  $.getJSON('/sats?'+date+'&user_lat='+ajax_lat+'&user_long='+ajax_long, null, fetchSats);
 }
 
 function fetchSats(response) {
   deleteMarkers();
   for (var i = 0; i < response.length; i++) {
     var sat = response[i];
+    console.log(response)
     placeMarkers(sat.latitude, sat.longitude)
+    //Append input into form with sat id
+    $('.sat-locations').append('<li><input type="radio" name="sat_id" value=" class="new-event-sat-location"'+sat.id+'">'+sat.address+'</li>')
+
   }
 }
 
@@ -84,6 +106,14 @@ var getMapCenter = function() {
   var user_long = map.getCenter().lng();
   return [user_lat, user_long];
 }
+
+// google.maps.event.addListener(map, "click", function(latLng) {
+//     document.getElementById("latFld").value = latLng.lat();
+//     document.getElementById("longFld").value = latLng.lng();
+//     alert(latLng);
+// });
+
+
 // function getSatsNearMapCenter() {
 //   var geocoder = new google.maps.Geocoder;
 //   var lat = map.getCenter().lat()

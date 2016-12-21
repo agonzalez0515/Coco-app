@@ -1,13 +1,11 @@
 class SatsController < ApplicationController
-
+  # include EventHelper
   def index
     if params[:date]
-      @sats = Sat.where(date: Date.parse(params[:date]))
-      puts "Found #{@sats.size} SATs on #{@sats.map(&:date).uniq}"
+      @sats = helpers.close_by_sats(params[:date], params[:user_lat], params[:user_long]).take(10)
 
     respond_to do |format|
-      #format.js {render json: @sats.map(&:attributes)}
-      format.js {render json: @sats[0..10]}
+      format.js {render json: @sats}
       format.html {render :index}
       end
     end
@@ -20,5 +18,3 @@ class SatsController < ApplicationController
   # end
 
 end
-
-

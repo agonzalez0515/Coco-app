@@ -21,6 +21,8 @@ module EventsHelper
   end
 
   def close_by_sats(date, lat_user, long_user)
+    lat_user = lat_user.to_f
+    long_user = long_user.to_f
     @sats = Sat.where(date:date)
     @close_sats=[]
 
@@ -28,9 +30,15 @@ module EventsHelper
       distance = haversine(lat_user, long_user, sat.latitude, sat.longitude)
 
       if distance < 50
-        @close_sats.push(sat)
+        @close_sats.push([sat, distance])
       end
     end
-    @close_sats
+    @sorted_sats = @close_sats.sort {|a,b| a[1] <=> b[1]}
+    @subset = []
+
+    @sorted_sats.each do |sat|
+      @subset.push(sat[0])
+    end
+    @subset
   end
 end
