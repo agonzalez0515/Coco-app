@@ -16,8 +16,6 @@ class Sat < ApplicationRecord
   has_many :events
   has_many :users, through: :events
 
-  # geocoded_by :address
-  # after_validation :geocode
 
   validates_presence_of :date
   validates_presence_of :address
