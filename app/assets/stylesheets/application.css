@@ -16,4 +16,5 @@
 
  #map {
        height: 500px;
+       max-width: 50%;
      }

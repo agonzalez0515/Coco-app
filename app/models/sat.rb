@@ -16,6 +16,6 @@ class Sat < ApplicationRecord
   has_many :events
   has_many :users, through: :events
 
-  # geocoded_by :address
-  # after_validation :geocode
+  geocoded_by :address
+  after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 end
