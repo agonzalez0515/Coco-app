@@ -127,14 +127,3 @@ var deleteMarkers = function() {
 //     })
 //   })
 // }
-
-
-
-
-
-
-
-
-
-
->>>>>>> 379ab59aad253232c3fdb007222ee12541d68e56
