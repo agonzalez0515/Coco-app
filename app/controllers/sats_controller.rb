@@ -7,7 +7,7 @@ class SatsController < ApplicationController
 
     respond_to do |format|
       #format.js {render json: @sats.map(&:attributes)}
-      format.js {render json: @sats}
+      format.js {render json: @sats[0..10]}
       format.html {render :index}
       end
     end
