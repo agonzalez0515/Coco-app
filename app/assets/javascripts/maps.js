@@ -62,6 +62,7 @@ $('form').on('click','.sat-locations', function(event){
 function fetchParams(e) {
   e.preventDefault();
   $('#nearest-locations').show();
+  $('#date').hide()
   var date = $('#date').serialize();
   var ajax_lat = map.getCenter().lat();
   var ajax_long = map.getCenter().lng();

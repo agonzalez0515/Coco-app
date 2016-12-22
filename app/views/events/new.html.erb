@@ -7,8 +7,8 @@
 
 
     <div class="col s3 m3">
-      <h8>Choose the best location for you and add it to your calendar to get SAT tips and reminders:</h8>
       <form id='date'>
+        <h8>Choose the best location for you and add it to your calendar to get SAT tips and reminders:</h8>
         <% i = 0 %>
         <% @dates.each do |date| %>
 
@@ -20,9 +20,9 @@
         <% end %>
         <input type="submit">
       </form>
-      
+
       <div id="nearest-locations">
-        <h6>Here are the nearest SAT locations(select only ONE location):</h6><br>
+        <h6>Here are the nearest SAT locations(select only ONE location):</h6>
 
         <%= form_for :event, url: user_events_path(current_user.id), :html => {:class => "sat-form"}, remote: true do |f| %>
           <ul class="sat-locations">
