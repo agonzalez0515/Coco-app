@@ -1,15 +1,29 @@
 body {
-	background-color: white;
-	max-width: 1200px;
 	min-width: 200px;
 	display: flex;
   flex-direction: column;
   margin-bottom: 10%;
 }
 
+body.index {
+	background-image: url(https://s23.postimg.org/tcaxzkdwb/books_magazines_building_school.jpg);
+	background-repeat: no-repeat;
+	max-width: 1200px;
+	min-width: 300px;
+}
+
 main {
   flex: 1 0 auto;
 }
+
+.section {
+	position: absolute;
+  left:0px;
+  top:0px;
+  width:100%;
+  height:100%;
+}
+
 .container.parallax {
   position: absolute;
   left:0px;
@@ -54,7 +68,6 @@ main {
 }
 
 .btn {
-
 	background-color: #F2882F;	
 }
 
@@ -62,7 +75,17 @@ main {
 	background-color: #F7C331;	
 }
 
-.container.col.s12.z-depth-5 {
+h1.header, h5.header {
+		color: #F2882F;
+		text-shadow:10px 10px 10px #42649b;
+	}
+
+
+.section no-pad-bot {
+	width: 100%;
+}
+
+.container.col.s12 {
 	width: 100%;
 	text-align: center;
 	position: inline-block;
@@ -71,7 +94,6 @@ main {
 .container.new-form {
 	margin-top: 15%;
 	background-color: grey;
-
 }
 
 table {
