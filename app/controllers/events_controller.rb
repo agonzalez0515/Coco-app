@@ -13,7 +13,6 @@ class EventsController < ApplicationController
 
   def create
     @sat = Sat.find(params[:sat_id])
-    @user = current_user
     @event = Event.new(user_id: @user.id, sat_id: @sat.id, completed: false)
 
     if @event.save
@@ -21,11 +20,11 @@ class EventsController < ApplicationController
         name: @user.first_name,
         phone_number: @user.phone_number,
         date: @sat.date.to_s,
-        location: @sat.location_name
+        location: @sat.location_name,
+        address: @sat.address
             }
 
       ReminderJob.set(wait: 1.minute).perform_later(event_information)
-      ReminderJob.set(wait: 3.minutes).perform_later(event_information)
 
       redirect_to user_events_path
     else

@@ -1,16 +1,13 @@
-
-<h1>events#index</h1>
-
-Here are all your events!
-
-
-To add a new event:
-<%= link_to 'New Event', new_user_event_path %>
-
-
+<h3>
+  Your Upcoming Events:
+</h3>
+<div>
+  Click here to check out all upcoming SAT dates: <%= link_to 'Add SAT to your calendar', new_user_event_path %>
+</div>
+<div class="divider"></div>
 <%= month_calendar events: @events do |date, events| %>
-  <%= date %>
+  <%= date.strftime("%d") %><br>
   <% events.each do |event|%>
-    <%=link_to event.title, user_event_path(current_user.id, event)%>
+    <%=link_to "SAT Day!", user_event_path(current_user.id, event)%><br>
     <% end %>
   <% end %>
