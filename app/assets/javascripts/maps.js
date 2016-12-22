@@ -77,19 +77,32 @@ function fetchSats(response) {
   deleteMarkers();
   for (var i = 0; i < response.length; i++) {
     var sat = response[i];
-    placeMarkers(sat.latitude, sat.longitude)
+    placeMarkers(sat.latitude, sat.longitude, sat.location_name)
     //Append input into form with sat id
     $('.sat-locations').append('<li><input type="radio" name="sat_id" value="'+sat.id+'" class="with-gap" id="'+sat.id+'" ><label for="'+sat.id+'">'+sat.address+'</label></li>' )
   }
 }
 // Plot a marker
-function placeMarkers(lat, lng) {
-  var latlng = new google.maps.LatLng(lat, lng);
-  new_marker = new google.maps.Marker({
-    position: latlng,
-    map: map
-  });
-  markers.push(new_marker);
+
+function placeMarkers(lat, lng, loc_name) {
+  var pinIcon = {
+    url: "https://s30.postimg.org/68ej2wfu9/marker3.png",
+    size: null, /* size is determined at runtime */
+    origin: new google.maps.Point(0,0), /* origin is 0,0 */
+    anchor: null, /* anchor is bottom center of the scaled image */
+    scaledSize: null
+  };
+
+    var latlng = new google.maps.LatLng(lat, lng);
+
+    new_marker = new google.maps.Marker({
+      icon: pinIcon,
+      position: latlng,
+      title: (loc_name),
+      map: map
+    });
+    markers.push(new_marker);
+
 }
 
 // Sets the map on all markers in the array.

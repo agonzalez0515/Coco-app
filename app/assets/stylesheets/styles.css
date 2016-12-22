@@ -1,5 +1,5 @@
 body {
-	min-width: 200px;
+	font-family: Helvetica;
 	display: flex;
   flex-direction: column;
   margin-bottom: 10%;
@@ -8,8 +8,7 @@ body {
 body.index {
 	background-image: url(https://s23.postimg.org/tcaxzkdwb/books_magazines_building_school.jpg);
 	background-repeat: no-repeat;
-	max-width: 1200px;
-	min-width: 300px;
+  background-position: top; 
 }
 
 main {
@@ -31,7 +30,9 @@ main {
   width:100%;
   height:100%;
 }
-
+.row.size {
+	font-size: 25px;
+}
 
 .coco-bar {
 	text-align: center;
@@ -40,28 +41,25 @@ main {
 	text-shadow: 1px 1px 1px #000;
 }
 
-
 #small_map {
-    height: 400px;
-    max-width: 50%;
+  height: 400px;
+  max-width: 50%;
 }
 
 .nav-wrapper {
 	background-color: #42649b;
-	font-family: Helvetica;
-	font-size: 20px;
 }
 
 .footer {
 	background-color: #6B7A8F;
-	font-family: Helvetica;
-	font-size: 20px;
+	font-size: 10px;
 	text-align: center;
   bottom: 0;
   position: fixed;
   z-index: 150;
-  height: 40px;
+  height: 50px;
 }
+
 #new-form, h3.form {
 	background-color: white;
 }
@@ -74,8 +72,10 @@ main {
 }
 
 h1.header, h5.header {
-		color: #F2882F;
+		color: #42649b;
 		text-shadow:10px 10px 10px #42649b;
+		font-style: bold;
+		background-color: white;
 	}
 
 
