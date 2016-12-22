@@ -2,6 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// .grid-example col s12 {
+//   background-color: pink;
+// }
+//
+// .col.m12.s12.12 {
+//   text-align: center;
+// }
+
+// .col.s6.m6.6
+.col {
+  padding:0px;
+  box-sizing:border-box;
+}
+
+body.events {
+  max-width: 1200px;
+  min-width: 300px;
+  padding:10px;
+  margin-left:0px;
+}
+
+.container {
+  margin-left: 0px;
+}
+
+#map {
+  height: 500px;
+  max-width: 100%;
+
 .simple-calendar {
   table {
     -webkit-border-horizontal-spacing: 0px;
@@ -89,4 +119,5 @@
   .current-month {}
 
   .has-events {}
+
 }

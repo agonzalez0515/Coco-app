@@ -1,43 +1,43 @@
-<h1>events#new</h1>
-<div class="google-map-sat">
-    <h1>Google Map for SAT locations</h1>
-    <!-- <form id='date'>
-        <select type="date" name="date">
-            <%@dates.each do |date|%>
-            <option value="<%=date%>"><%=date.strftime('%A %b %e %Y')%></option>
-            <%end%>
-        </select>
-        <input type="submit">
-    </form> -->
-    <form id='date'>
-      <% i = 0 %>
-      <% @dates.each do |date| %>
+<body class="events">
+  <div class="row">
 
-      <p>
-        <input class="with-gap" name="date" value="<%=date%>" type="radio" id="test<%= i %>">
-        <label for="test<%= i %>"><%=date.strftime('%A %b %e %Y')%></label>
-      </p>
-      <% i += 1 %>
-      <% end %>
-      <input type="submit">
-    </form>
-    <div id="map">
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['MAP']%>&callback=initMap"></script>
+    <div class="grid-example col s12">
+      <h2>New Events</h2>
     </div>
-</div>
 
-<div class="sat-nearest-locations">
-  <h4>Choose the best location for you and add it to your calendar to get SAT tips and reminders</h4>
-  <h2>Here are the nearest SAT locations:</h2><br>
-  <h4>Select only ONE location:</h4>
 
-    <%= form_for :event, url: user_events_path(current_user.id), :html => {:class => "sat-form"}, remote: true do |f| %>
-      <ul class="sat-locations">
+    <div class="col s3 m3">
+      <h6>Google Map for SAT locations</h6>
+      <form id='date'>
+        <% i = 0 %>
+        <% @dates.each do |date| %>
 
-      </ul>
+        <p>
+          <input class="with-gap" name="date" value="<%=date%>" type="radio" id="test<%= i %>">
+          <label for="test<%= i %>"><%=date.strftime('%A %b %e %Y')%></label>
+        </p>
+        <% i += 1 %>
+        <% end %>
+        <input type="submit">
+      </form>
+      <h8>Choose the best location for you and add it to your calendar to get SAT tips and reminders</h8>
+      <h6>Here are the nearest SAT locations:</h6><br>
+      <h8>Select only ONE location:</h8>
 
-      <%= f.submit %>
-    <% end %>
+        <%= form_for :event, url: user_events_path(current_user.id), :html => {:class => "sat-form"}, remote: true do |f| %>
+          <ul class="sat-locations">
 
-  <h4>***Remember to <b>register</b> on: </h4><a href="https://collegereadiness.collegeboard.org/sat/register">SAT registration</a>
-</div>
+          </ul>
+
+          <%= f.submit %>
+        <% end %>
+
+      <h8>***Remember to <b>register</b> on: </h8><a href="https://collegereadiness.collegeboard.org/sat/register">SAT registration</a>
+    </div>
+    <div class="col s9 m9">
+      <div id="map">
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['MAP']%>&callback=initMap"></script>
+      </div>
+    </div>
+  </div>
+</body>
