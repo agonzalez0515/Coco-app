@@ -1,0 +1,11 @@
+<h1> Track your Requirements </h1>
+
+<ul>
+<% @requirements.each do |requirement| %>
+  <li>
+  <%= requirement.subject %> <div id="years-<%= requirement.id %>"><%= requirement.years %></div>
+  <%= button_to '+1', user_requirement_path(current_user.id, requirement.id), remote: true, method: :put %>
+  <%= button_to '-1', decrease_years_user_requirement_path(current_user.id, requirement.id), remote: true, method: :post %>
+  </li>
+<% end %>
+</ul>
