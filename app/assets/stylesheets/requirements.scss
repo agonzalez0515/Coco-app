@@ -2,3 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+table.requirements.stripped, th.requirements, td.requirements{
+      border: 1px solid black;
+      width: 500px;
+  }
+th.requirements, td.requirements {
+    padding: 15px;
+}
+
+.requirements-show {
+	text-align: center;
+}
+
+.floated {
+  float:left;
+  margin-right: 10px;
+  position: inline-block;
+}
