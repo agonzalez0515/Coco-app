@@ -1,0 +1,10 @@
+<div class="comment">
+  <p>
+    <%= comment.body %><br/ >
+    posted by: <%= comment.user.first_name.capitalize %>
+      <% if current_user == comment.user %>
+      <%= link_to 'Edit Comment', edit_message_comment_path(@message, comment) %>  |
+      <%= link_to 'Delete Comment', message_comment_path(@message, comment), method: :delete, data: {confirm: 'Are you sure?' } %>
+    <% end %>
+  </p>
+</div>
