@@ -34,6 +34,12 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @sat_lat = @event.sat.latitude
+    @sat_long = @event.sat.longitude
+    # respond_to do |format|
+    #   format.js { render json: {event_id: @event.id, user_id: current_user.id, sats: @event, lat: @sat_lat, long: @sat_long} }
+    #   format.html {render :index}
+    # end
   end
 
   def edit
