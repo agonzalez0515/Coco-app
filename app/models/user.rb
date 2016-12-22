@@ -31,7 +31,7 @@ class User < ApplicationRecord
 
   validates_presence_of :user_type, :email, :first_name, :last_name, :password_digest, 
   											:phone_number, :street_address, :city, :state, :zip_code,
-  											:lang_preference, :grade_level
+  											:lang_preference
   validates_uniqueness_of :email
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
 end
