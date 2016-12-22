@@ -1,0 +1,12 @@
+<h1>welcome to the forum</h1>
+
+Here are all the messages we have: 
+<ul>
+<% @messages.each do |message| %>
+  <li>
+  <%= link_to message.title, message_comments_path(message) %>
+  </li>
+<% end %>
+</ul>
+
+<%= link_to 'Add Message', new_message_path %>

@@ -1,0 +1,34 @@
+body {
+	background-color: white;
+	max-width: 1200px;
+	min-width: 200px;
+}
+
+#map {
+    height: 500px;
+    max-width: 50%;
+}
+
+#small_map {
+    height: 400px;
+    max-width: 50%;
+}
+
+.nav-wrapper {
+	background-color: #49274A;
+}
+
+.footer {
+  bottom:0;
+  position:fixed;
+  z-index:150;
+  height:35px;
+}
+
+.btn {
+	background-color: grey;
+}
+
+table {
+	border-style: none;
+}

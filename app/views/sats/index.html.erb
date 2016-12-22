@@ -1,0 +1,41 @@
+<div class="sats-index">
+  <h1>This is the index page for the SATS. All of the SAT info</h1>
+  <p>Created by the College Board, the SAT is an entrance exam used by most colleges and <br>
+    universities to make admissions decisions.<br>
+    SAT registration deadlines fall approximately five weeks before each test date.<br>
+    Register online on the College Board website. You can also register by mail by <br>
+    filling out the registration form in the College Board's The Student Registration Guide <br>
+    for the SAT and SAT Subject Tests. You can get a free copy of this publication from <br>
+    your school counselor. Or you can call ETS at 609-771-7600, and they'll send you one free of charge.
+  </p>
+  <ul>
+    <li>Frequency:	7 times/year</li>
+    <li>Duration:	3 hours, 50 minutes</li>
+    <li>Sections:	Math, Evidence-Based Reading and Writing, Optional Essay</li>
+    <li>Cost:	$54.50 ($43 without Essay). But there's always waivers!</li>
+    <li>Max. Score:	800/section (Essay reported separately)</li>
+  </ul>
+  <p></p>
+  <div>
+    <h3>
+    Announced Dates:<br>
+    </h3>
+    <p>
+      <h4>
+        <ul>
+          <li>January 21, 2017 | Deadline: Dec 21, 2016</li>
+          <li>March 11, 2017 | Deadline: Feb 10, 2017</li>
+          <li>May 6, 2017 | Deadline: Apr 07, 2017</li>
+          <li>June 3, 2017 | Deadline: May 09, 2017</li>
+        </ul>
+      </h4>
+      <h3>
+        <% if current_user %>
+          <%= link_to 'Click here to add your SAT date', new_user_event_path(current_user.id) %><br>
+        <% else %>
+          <%= link_to 'Click here to add your SAT date', login_path %>
+        <% end %>
+      </h3>
+    </p>
+  </div>
+</div>
