@@ -1,6 +1,14 @@
+<div class="row">
+  <div class="col s3">Subject</div>
+  <div class="col s3">Years Completed</div>
+  <div class="col s3">Add Year</div>
+  <div class="col s3">Decrease Year</div>
+</div>
 <% current_user.requirements.reorder('id').each do |requirement| %>
-  <center><div class="col s12 buttons">
-  Subject:<%= requirement.subject %> <div id="years-<%= requirement.id %>"> Required years: <%= requirement.years %></div>
-  Add: <%= button_to '+1', user_requirement_path(current_user.id, requirement.id), class: 'btn-floating btn  waves-effect #F7C331', remote: true, method: :put %> Remove: <%= button_to '-1', decrease_years_user_requirement_path(current_user.id, requirement.id), class: 'btn-floating btn waves-effect #F7C331', remote: true, method: :post %>
-  </div></center><br
+  <center><div class="row buttons">
+  <div class="col s3"><%= requirement.subject %></div> <div id="years-<%= requirement.id %>" class="col s3"><%= requirement.years %></div>
+  <div class="col s3"><%= button_to '+1', user_requirement_path(current_user.id, requirement.id), class: 'btn-floating btn  waves-effect #F7C331', remote: true, method: :put %></div> <div class="col s3"><%= button_to '-1', decrease_years_user_requirement_path(current_user.id, requirement.id), class: 'btn-floating btn waves-effect #F7C331', remote: true, method: :post %></div>
 <% end %>
+
+
+

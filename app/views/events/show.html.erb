@@ -12,3 +12,11 @@ Here is this particular event's detail.
 <div class="map", id="small_map">
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['MAP']%>&callback=initSmallMap"></script>
 </div>
+
+
+
+
+
+
+
+<%= link_to 'Delete Event', user_event_path(current_user.id, @event), method: :delete, data: {confrim: "Are you sure?"} %>

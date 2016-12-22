@@ -6,12 +6,17 @@
       <h5> Profile Details: </h5>
       <%= render 'information' %>
     </div>
+    <br><br>
+
+    <div class="divider"></div>
 
     <div>
       <h5> Upcoming Events: </h5>
+      <%= button_to 'Add SAT', new_user_event_path(current_user.id), method: :get, class: 'btn' %>
       <%= render 'events/event' %>
-      <%= link_to 'Add Your SAT Date', new_user_event_path(current_user.id) %><br>
     </div>
+
+    <div class="divider"></div>
 
     <div>
       <ul><h5> Useful Links: </h5>
@@ -25,12 +30,15 @@
 
   <div class="col s8">
     <div>
-      <h5> Track your A-G Requirements: </h5>
-      <%= render 'requirements/requirement' %>
+      <%= render 'events/calendar' %>
     </div>
 
+    <br><br>
+    <div class="divider"></div>
+
     <div>
-      <%= render 'events/calendar' %>
+      <h5> Track your A-G Requirements: </h5>
+      <%= render 'requirements/requirement' %>
     </div>
 
   </div>
