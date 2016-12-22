@@ -1,21 +1,21 @@
 
 $(document).ready(function() {
-
+  // $('#nearest-locations').hide();
+  // $.ajaxSetup({ cache: false });
 });
-
-
 var map;
 var markers = [];
 
 // Initialize a Map for SAT Location selection.
 var initMap = function() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 33.999656, lng: -118.087183},
+    center: {lat: 36.915294, lng:-120.20511},
     zoom: 5
   });
 
   $('#date').on('submit', fetchParams)
   var infoWindow = new google.maps.InfoWindow({map: map});
+
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
@@ -42,13 +42,15 @@ var initMap = function() {
 $('form').on('click','.sat-locations', function(event){
   event.preventDefault();
   var checked = $(":checked").val();
-  console.log(checked);
+  // console.log(checked);
 });
 
 // Find 10 closest SAT locations to center of SAT selection map
 
 function fetchParams(e) {
   e.preventDefault();
+  $("#nearest-locations").css('visibility', 'visible');
+  $('#date').hide()
   var date = $('#date').serialize();
   var ajax_lat = map.getCenter().lat();
   var ajax_long = map.getCenter().lng();
@@ -68,6 +70,7 @@ function fetchSats(response) {
   }
 }
 // Plot a marker
+
 function placeMarkers(lat, lng, loc_name) {
   var pinIcon = {
     url: "https://s30.postimg.org/68ej2wfu9/marker3.png",
@@ -86,6 +89,7 @@ function placeMarkers(lat, lng, loc_name) {
       map: map
     });
     markers.push(new_marker);
+
 }
 
 // Sets the map on all markers in the array.

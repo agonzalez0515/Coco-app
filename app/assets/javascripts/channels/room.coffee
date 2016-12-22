@@ -8,14 +8,10 @@ App.room = App.cable.subscriptions.create "RoomChannel",
   received: (data) ->
     unless data.body_es.blank?
       $('#chats-table').append '<div class="chat">' +
-        '<div class="chat-user">' + '<p>' + data.name + ":" + '</p>' + '</div>' +
-        '<div class="chat-content-en">' + '<p>' + data.body_en + '</p>' + '</div>' + '</div>' +
-        '<div class="chat-content-es">' + '<p>' + data.body_es + '</p>' + '</div>' + '</div>' + '<br>'
+        '<div class="chat-user">' + '<p>' + data.name + " at " + data.created_at + ":" + '</p>' + '</div>' +
+        '<div class="chat-content-en">' + '<p>' + data.body_en + '</p>' + '</div>' +
+        '<div class="chat-content-es">' + '<p>' + data.body_es + '</p>' + '</div>' + '<br>'
       $('#chat_body').val ' '
-      scroll_bottom()
 
-$(document).on 'turbolinks:load', ->
-  scroll_bottom()
 
-scroll_bottom = () ->
-  $('#chats').scrollTop($('#chats')[0].scrollHeight)
+

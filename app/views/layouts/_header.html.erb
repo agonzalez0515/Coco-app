@@ -8,10 +8,34 @@
 		  <li><%= link_to 'Log Out', logout_path, method: "delete" %></li>
 		<% else %>  
 		  	<li><%= link_to 'Home', root_path %></li> 
-		  	<li><%= link_to 'Log In', login_path %></li>  
-		  	<li><%= link_to 'Sign Up', signup_path %></li>
+		  	<li><%= link_to 'Log In', "#login-form", "data-toggle" => "modal" %></li>  
+		  	<li><%= link_to 'Sign Up', "#signup-form" %></li>
 		<% end %>
 		</ul>
 	</div>
   </div>
 </nav>
+
+
+
+  <!-- For Modals -->
+<div id="login-form" class="modal">
+  <div class="modal-content">
+    <h4>Log In</h4>
+    <p><%= render 'sessions/form' %></p>
+  </div>
+</div>
+
+  <div id="signup-form" class="modal">
+  <div class="modal-content">
+    <h4>Sign Up</h4>
+    <p><%= render 'users/form' %></p>
+  </div>
+</div>
+
+
+<script>
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+</script>
