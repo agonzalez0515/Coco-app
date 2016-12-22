@@ -11,8 +11,31 @@ table {
 	max-height: 20%;
 }
 .chat-content-en {
-	background-color: lightgrey;
+
+	background-color: #f9da81;
 }
 .chat-content-es {
-	background-color: #6f9fd6;
+
+	background-color: #f9ecc7;
+}
+
+.chat {
+position: relative;
+	background-color: #F7C331;
+	min-width: 10%;
+	max-width: 70%;
+	padding: 1%;
+	padding-letf: 3%;
+	padding-right: 3%;
+}
+
+.chat-user {
+	background-color: white;
+	color: #42649b;
+	font-weight: bold;
+}
+.chat-input {
+	min-width: 10%;
+	max-width: 70%;
+	padding: 1%;
 }
