@@ -12,19 +12,10 @@ App.room = App.cable.subscriptions.create "RoomChannel",
         '<div class="chat-content-en">' + '<p>' + data.body_en + '</p>' + '</div>' + '</div>' +
         '<div class="chat-content-es">' + '<p>' + data.body_es + '</p>' + '</div>' + '</div>' + '<br>'
       $('#chat_body').val ' '
-      scroll_bottom = () ->
-  			# $('#chats-table').scrollTop($('#chats-table')[0].scrollHeight)
+      scroll_bottom()
 
 $(document).on 'turbolinks:load', ->
   scroll_bottom()
-  submit_message()
-
-submit_message = () ->
-  $('#chat_body').on 'keydown', (event) ->
-    if event.keyCode is 13
-      $('input').click()
-      event.target.value = " "
-      event.preventDefault()
 
 scroll_bottom = () ->
-  # $('#chats-table').scrollTop($('#chats-table')[0].scrollHeight)
+  $('#chats').scrollTop($('#chats')[0].scrollHeight)

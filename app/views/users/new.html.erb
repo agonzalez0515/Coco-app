@@ -1,5 +1,5 @@
 <div class="container new-form">
-<h3>Signup form:</h3>
+<h3 class="form">Signup form:</h3>
 
 <% if @errors %>
     <ul>
@@ -9,7 +9,7 @@
     </ul>
   <% end %>
 
-<form method="POST" action="/users">
+<form id="new-form" method="POST" action="/users">
 <%= token_tag %> 
   <p>First Name:<input type="text" name="user[first_name]"></p>
   <p>Last Name:<input type="text" name="user[last_name]"></p>
