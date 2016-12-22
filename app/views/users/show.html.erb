@@ -1,7 +1,9 @@
 
 <h3> user#show </h3>
 
-<%= link_to 'A-G Requirements', user_requirements_path(@user) %>  |  
 <%= link_to 'Events', user_events_path(@user) %>  |  
 <%= link_to 'Add Your SAT Date', new_user_event_path(current_user.id) %><br>
 
+
+<%= render 'information' %>
+<%= render 'requirements/requirement'  %>
