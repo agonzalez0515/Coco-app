@@ -13,14 +13,21 @@
 // .col.s6.m6.6
 .col {
   padding:0px;
-  background-color: pink;
   box-sizing:border-box;
 }
 
 body.events {
   max-width: 1200px;
   min-width: 300px;
-  background-color: pink;
-  padding:0px;
-  margin:0px;
+  padding:10px;
+  margin-left:0px;
+}
+
+.container {
+  margin-left: 0px;
+}
+
+#map {
+  height: 500px;
+  max-width: 100%;
 }

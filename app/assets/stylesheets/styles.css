@@ -40,10 +40,6 @@ main {
 	text-shadow: 1px 1px 1px #000;
 }
 
-#map {
-  height: 500px;
-  max-width: 50%;
-}
 
 #small_map {
     height: 400px;
