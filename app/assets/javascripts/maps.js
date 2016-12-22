@@ -8,7 +8,7 @@ var markers = [];
 // Initialize a Map for SAT Location selection.
 var initMap = function() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 33.999656, lng: -118.087183},
+    center: {lat: 36.915294, lng:-120.20511},
     zoom: 5
   });
 
