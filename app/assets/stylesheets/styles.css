@@ -6,7 +6,6 @@ body {
 }
 
 body.index {
-	background-image: url(https://s23.postimg.org/tcaxzkdwb/books_magazines_building_school.jpg);
 	background-repeat: no-repeat;
   background-position: top;
 
@@ -24,13 +23,7 @@ main {
   height:100%;
 }
 
-.container.parallax {
-  position: absolute;
-  left:0px;
-  top:0px;
-  width:100%;
-  height:100%;
-}
+
 .row.size {
 	font-size: 25px;
 }

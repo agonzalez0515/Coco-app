@@ -31,6 +31,7 @@ gem 'annotate'
 gem 'hirb'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'materialize-sass'
 gem 'simple_calendar', "~>2.0"
 gem 'twilio-ruby'
 
