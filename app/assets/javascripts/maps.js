@@ -1,6 +1,8 @@
+
 $(document).ready(function() {
 
 });
+
 
 var map;
 var markers = [];
@@ -57,6 +59,7 @@ $('form').on('click','.sat-locations', function(event){
 });
 
 // Find 10 closest SAT locations to center of SAT selection map
+
 function fetchParams(e) {
   e.preventDefault();
   var date = $('#date').serialize();
@@ -74,8 +77,7 @@ function fetchSats(response) {
     var sat = response[i];
     placeMarkers(sat.latitude, sat.longitude)
     //Append input into form with sat id
-    $('.sat-locations').append('<li><input type="radio" name="sat_id" value=" class="new-event-sat-location"'+sat.id+'">'+sat.address+'</li>')
-
+    $('.sat-locations').append('<li><input type="radio" name="sat_id" value="'+sat.id+'" class="with-gap" id="'+sat.id+'" ><label for="'+sat.id+'">'+sat.address+'</label></li>' )
   }
 }
 // Plot a marker
@@ -110,4 +112,14 @@ var getMapCenter = function() {
   var user_lat = map.getCenter().lat();
   var user_long = map.getCenter().lng();
   return [user_lat, user_long];
+}
+
+
+function getSatsNearMapCenter() {
+  var geocoder = new google.maps.Geocoder;
+  var lat = map.getCenter().lat()
+  var lng = map.getCenter().lng()
+
+  var latlng = {lat: lat, lng: lng};
+  geocoder.geocode({'location': latlng}, getNearbySats);
 }

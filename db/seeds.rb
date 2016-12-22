@@ -119,7 +119,7 @@ comment3 = Comment.create(body:"Simple and free resources on Khan Academy for SA
 comment4 = Comment.create(body:"Where can I apply for scholarships and financial aid?", user_id: rob.id, message_id: message4.id)
 
 ################################################################################
-users = [jose,maria,arlene]
+users = [zara, rob, julia, angie, jose, maria, arlene]
 users.each do |user|
   user.requirements.create(subject:"History", years: 0)
   user.requirements.create(subject:"English", years: 0)
