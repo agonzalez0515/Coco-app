@@ -6,7 +6,7 @@
     <li>
       <b>Title:</b> <%= event.title %>
         <li><b>Date:</b> <%= event.sat.date.strftime('%A %b %e %Y') %></li>
-        <li><b>Location:</b> <%= event.sat.location_name %></li>
+        <li><b>Location:</b> <%= event.sat.location_name.titlecase %></li>
         <li><b>Address:</b> <%= event.sat.address %></li>
     </li><br>
   <% end %>
