@@ -12,7 +12,8 @@ class EventsController < ApplicationController
   end
 
   def create
-    @sat = Sat.where(location_name: params[:location_name], date: params[:date]).first
+    @sat = Sat.find(params[:sat_id])
+    @user = current_user
     @event = Event.new(user_id: @user.id, sat_id: @sat.id, completed: false)
 
     if @event.save

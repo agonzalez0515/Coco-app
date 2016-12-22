@@ -1,6 +1,8 @@
+
 $(document).ready(function() {
 
 });
+
 
 var map;
 var markers = [];
@@ -37,13 +39,6 @@ var initMap = function() {
 };
 
 
-$('form').on('click','.sat-locations', function(event){
-  event.preventDefault();
-  var checked = $(":checked").val();
-  console.log(checked);
-});
-
-
 function fetchParams(e) {
   e.preventDefault();
   var date = $('#date').serialize();
@@ -60,8 +55,7 @@ function fetchSats(response) {
     console.log(response)
     placeMarkers(sat.latitude, sat.longitude)
     //Append input into form with sat id
-    $('.sat-locations').append('<li><input type="radio" name="sat_id" value=" class="new-event-sat-location"'+sat.id+'">'+sat.address+'</li>')
-
+    $('.sat-locations').append('<li><input type="radio" name="sat_id" value="'+sat.id+'" class="with-gap" id="'+sat.id+'" ><label for="'+sat.id+'">'+sat.address+'</label></li>' )
   }
 }
 
@@ -99,36 +93,36 @@ var getMapCenter = function() {
   return [user_lat, user_long];
 }
 
-// google.maps.event.addListener(map, "click", function(latLng) {
-//     document.getElementById("latFld").value = latLng.lat();
-//     document.getElementById("longFld").value = latLng.lng();
-//     alert(latLng);
-// });
+google.maps.event.addListener(map, "click", function(latLng) {
+    document.getElementById("latFld").value = latLng.lat();
+    document.getElementById("longFld").value = latLng.lng();
+    alert(latLng);
+});
 
 
-// function getSatsNearMapCenter() {
-//   var geocoder = new google.maps.Geocoder;
-//   var lat = map.getCenter().lat()
-//   var lng = map.getCenter().lng()
+function getSatsNearMapCenter() {
+  var geocoder = new google.maps.Geocoder;
+  var lat = map.getCenter().lat()
+  var lng = map.getCenter().lng()
+
+  var latlng = {lat: lat, lng: lng};
+  geocoder.geocode({'location': latlng}, getNearbySats);
+}
 //
-//   var latlng = {lat: lat, lng: lng};
-//   geocoder.geocode({'location': latlng}, getNearbySats);
-// }
-
 // $(document).ready(function(){
 //   voteForPost();
 // })
-
+//
 // var voteForPost = function(){
 //   $(".testing1").on("click", function(event){
 //     event.preventDefault();
 //     var $button = $(this);
 //     var method = $button.attr("method");
 //     var url = $button.attr("action");
-
+//
 //     console.log(method)
 //     console.log(url)
-
+//
 //     $.ajax({
 //       method: method,
 //       url: url,
