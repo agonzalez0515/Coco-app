@@ -2,28 +2,92 @@ body {
 	background-color: white;
 	max-width: 1200px;
 	min-width: 200px;
+	display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
+}
+
+main {
+  flex: 1 0 auto;
+}
+.container.parallax {
+  position: absolute;
+  left:0px;
+  top:0px;
+  width:100%;
+  height:100%;
+}
+
+
+.coco-bar {
+	text-align: center;
+	font-family: Helvetica;
+	font-size: 35px;
+	text-shadow: 1px 1px 1px #000;
 }
 
 #map {
-    height: 500px;
+  height: 500px;
+  max-width: 50%;
+}
+
+#small_map {
+    height: 400px;
     max-width: 50%;
 }
 
 .nav-wrapper {
-	background-color: #49274A;
+	background-color: #42649b;
+	font-family: Helvetica;
+	font-size: 20px;
 }
 
 .footer {
-  bottom:0;
-  position:fixed;
-  z-index:150;
-  height:35px;
+	background-color: #6B7A8F;
+	font-family: Helvetica;
+	font-size: 20px;
+	text-align: center;
+  bottom: 0;
+  position: fixed;
+  z-index: 150;
+  height: 40px;
 }
+
 .btn {
+
+	background-color: #F2882F;	
+}
+
+.btn:hover {
+	background-color: #F7C331;	
+}
+
+.container.col.s12.z-depth-5 {
+	width: 100%;
+	text-align: center;
+	position: inline-block;
+}
+
+.container.new-form {
+	margin-top: 15%;
 	background-color: grey;
-	
+
 }
 
 table {
 	border-style: none;
+}
+
+
+#chats-table {
+	max-height: 20%;
+}
+.chat {
+	background-color: lightgrey;
+}
+.chat-content-en {
+	background-color: #F2882F;
+}
+.chat-content-es {
+	background-color: grey;
 }
