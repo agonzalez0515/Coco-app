@@ -1,4 +1,5 @@
-<h1>Sign Up</h1>
+<div class="container new-form">
+<h3>Signup form:</h3>
 
 <% if @errors %>
     <ul>
@@ -51,6 +52,7 @@
     <input class="with-gap" name="user[grade_level]" value="11" type="radio" id="11"/>
     <label for="11">11th</label>
   </p>
-  <input type="submit">
+  <button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons center"></i>
+  </button>
 </form>
-
+</div>
