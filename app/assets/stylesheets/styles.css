@@ -50,17 +50,6 @@ main {
 .nav-wrapper {
 	background-color: #42649b;
 }
-
-.footer {
-	background-color: #6B7A8F;
-	font-size: 10px;
-	text-align: center;
-  bottom: 0;
-  position: fixed;
-  z-index: 150;
-  height: 50px;
-}
-
 #new-form, h3.form {
 	background-color: white;
 }
