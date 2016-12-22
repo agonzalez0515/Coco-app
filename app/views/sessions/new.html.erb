@@ -1,18 +1,3 @@
 <h1>Log In</h1>
 
-<%= form_tag '/login' do %>
-
-  <% if @errors %>
-    <ul>
-    <% @errors.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-    </ul>
-  <% end %>
-
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
-
-<% end %>
-
+<%= render 'form' %>
