@@ -52,7 +52,7 @@ private
 
   def comment_params
     @message = Message.find(params[:message_id])
-    message_params = { body: params[:comment][:body],
+    comment_params = { body: params[:comment][:body],
                        message_id: @message.id,
                        user_id: current_user.id }
   end
