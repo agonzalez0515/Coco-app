@@ -10,8 +10,7 @@ body {
 main {
   flex: 1 0 auto;
 }
-
-.container {
+.container.parallax {
   position: absolute;
   left:0px;
   top:0px;
