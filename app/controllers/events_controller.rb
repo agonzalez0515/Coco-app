@@ -16,6 +16,7 @@ class EventsController < ApplicationController
     @event = Event.new(user_id: @user.id, sat_id: @sat.id, completed: false)
 
     if @event.save
+      redirect_to user_events_path
       event_information = {
         name: @user.first_name,
         phone_number: @user.phone_number,
@@ -26,7 +27,6 @@ class EventsController < ApplicationController
 
       ReminderJob.set(wait: 1.minute).perform_later(event_information)
 
-      redirect_to user_events_path
     else
       render 'new'
     end

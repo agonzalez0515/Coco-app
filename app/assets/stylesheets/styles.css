@@ -40,10 +40,6 @@ main {
 	text-shadow: 1px 1px 1px #000;
 }
 
-#map {
-  height: 500px;
-  max-width: 50%;
-}
 
 #small_map {
     height: 400px;
@@ -66,13 +62,15 @@ main {
   z-index: 150;
   height: 40px;
 }
-
+#new-form, h3.form {
+	background-color: white;
+}
 .btn {
-	background-color: #F2882F;	
+	background-color: #F2882F;
 }
 
 .btn:hover {
-	background-color: #F7C331;	
+	background-color: #F7C331;
 }
 
 h1.header, h5.header {
@@ -96,20 +94,3 @@ h1.header, h5.header {
 	background-color: grey;
 }
 
-table {
-	border-style: none;
-}
-
-
-#chats-table {
-	max-height: 20%;
-}
-.chat {
-	background-color: lightgrey;
-}
-.chat-content-en {
-	background-color: #F2882F;
-}
-.chat-content-es {
-	background-color: grey;
-}
