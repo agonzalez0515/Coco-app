@@ -1,3 +1,5 @@
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -15,7 +17,5 @@
  *= require_self
  */
 
-@import "materialize";
-@import "styles";
-
-
+ @import "materialize";
+ @import "styles";
