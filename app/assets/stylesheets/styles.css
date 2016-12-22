@@ -8,6 +8,11 @@ body {
     max-width: 50%;
 }
 
+#small_map {
+    height: 400px;
+    max-width: 50%;
+}
+
 .nav-wrapper {
 	background-color: #49274A;
 }

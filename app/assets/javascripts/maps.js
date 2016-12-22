@@ -5,6 +5,7 @@ $(document).ready(function() {
 var map;
 var markers = [];
 
+// Initialize a Map for SAT Location selection.
 var initMap = function() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 33.999656, lng: -118.087183},
@@ -13,8 +14,6 @@ var initMap = function() {
 
   $('#date').on('submit', fetchParams)
   var infoWindow = new google.maps.InfoWindow({map: map});
-
-
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
@@ -36,14 +35,28 @@ var initMap = function() {
   }
 };
 
+// Create a small map for Event Page
+var initSmallMap = function() {
+  smallMap = new google.maps.Map(document.getElementById('small_map'), {
+    center: {lat: 37.784, lng: -122.55},
+    zoom: 10
+  });
 
+  var latlng = new google.maps.LatLng(37.784, -122.55);
+  new_marker = new google.maps.Marker({
+    position: latlng,
+    map: smallMap
+  });
+};
+
+// Listen to SAT Location selector form
 $('form').on('click','.sat-locations', function(event){
   event.preventDefault();
   var checked = $(":checked").val();
   console.log(checked);
 });
 
-
+// Find 10 closest SAT locations to center of SAT selection map
 function fetchParams(e) {
   e.preventDefault();
   var date = $('#date').serialize();
@@ -53,20 +66,20 @@ function fetchParams(e) {
   $.getJSON('/sats?'+date+'&user_lat='+ajax_lat+'&user_long='+ajax_long, null, fetchSats);
 }
 
+// Plot markers of 10 closest SAT locations and dynamically populate SAT
+// location selection form
 function fetchSats(response) {
   deleteMarkers();
   for (var i = 0; i < response.length; i++) {
     var sat = response[i];
-    console.log(response)
     placeMarkers(sat.latitude, sat.longitude)
     //Append input into form with sat id
     $('.sat-locations').append('<li><input type="radio" name="sat_id" value=" class="new-event-sat-location"'+sat.id+'">'+sat.address+'</li>')
 
   }
 }
-
+// Plot a marker
 function placeMarkers(lat, lng) {
-
     var latlng = new google.maps.LatLng(lat, lng);
     new_marker = new google.maps.Marker({
       position: latlng,
@@ -98,45 +111,3 @@ var getMapCenter = function() {
   var user_long = map.getCenter().lng();
   return [user_lat, user_long];
 }
-
-// google.maps.event.addListener(map, "click", function(latLng) {
-//     document.getElementById("latFld").value = latLng.lat();
-//     document.getElementById("longFld").value = latLng.lng();
-//     alert(latLng);
-// });
-
-
-// function getSatsNearMapCenter() {
-//   var geocoder = new google.maps.Geocoder;
-//   var lat = map.getCenter().lat()
-//   var lng = map.getCenter().lng()
-//
-//   var latlng = {lat: lat, lng: lng};
-//   geocoder.geocode({'location': latlng}, getNearbySats);
-// }
-
-// $(document).ready(function(){
-//   voteForPost();
-// })
-
-// var voteForPost = function(){
-//   $(".testing1").on("click", function(event){
-//     event.preventDefault();
-//     var $button = $(this);
-//     var method = $button.attr("method");
-//     var url = $button.attr("action");
-
-//     console.log(method)
-//     console.log(url)
-
-//     $.ajax({
-//       method: method,
-//       url: url,
-//       // data: $button.parent().serialize
-//     }).done(function(response){
-//       console.log(response);
-//     }).fail(function(err) {
-//       console.log(err)
-//     })
-//   })
-// }
