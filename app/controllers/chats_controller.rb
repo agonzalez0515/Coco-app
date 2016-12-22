@@ -1,5 +1,4 @@
 class ChatsController < ApplicationController
-  # before_action :logged_in_user
   before_action :get_chats
 
   def index
@@ -11,7 +10,6 @@ class ChatsController < ApplicationController
     chat.body_es = EasyTranslate.translate(chat.body, :to => :es, :key => ENV['NEW_KEY_TRANSLATE'])
     chat.save
     if chat.body_es && chat.body_en
-      p chat.body_es
       ActionCable.server.broadcast 'room_channel',
             body_en: chat.body_en,
             body_es: chat.body_es,
