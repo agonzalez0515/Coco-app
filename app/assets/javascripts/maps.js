@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
-  $('#nearest-locations').hide()
+  // $('#nearest-locations').hide();
+  // $.ajaxSetup({ cache: false });
 });
 var map;
 var markers = [];
@@ -54,14 +55,14 @@ var initSmallMap = function() {
 $('form').on('click','.sat-locations', function(event){
   event.preventDefault();
   var checked = $(":checked").val();
-  console.log(checked);
+  // console.log(checked);
 });
 
 // Find 10 closest SAT locations to center of SAT selection map
 
 function fetchParams(e) {
   e.preventDefault();
-  $('#nearest-locations').show();
+  $("#nearest-locations").css('visibility', 'visible');
   $('#date').hide()
   var date = $('#date').serialize();
   var ajax_lat = map.getCenter().lat();
