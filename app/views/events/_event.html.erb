@@ -1,0 +1,14 @@
+<ul>
+<% if current_user.events.length == 0 %>
+  <p> You have no upcoming events.</p>
+<% else %>
+  <% current_user.events.each do |event| %>
+    <li>
+      <b>Title:</b> <%= event.title %>
+        <li><b>Date:</b> <%= event.sat.date.strftime('%A %b %e %Y') %></li>
+        <li><b>Location:</b> <%= event.sat.location_name.capitalize %></li>
+        <li><b>Address:</b> <%= event.sat.address %></li>
+    </li><br>
+  <% end %>
+<% end %>
+</ul>
