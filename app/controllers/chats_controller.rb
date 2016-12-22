@@ -15,7 +15,8 @@ class ChatsController < ApplicationController
       ActionCable.server.broadcast 'room_channel',
             body_en: chat.body_en,
             body_es: chat.body_es,
-            name: chat.user.first_name
+            name: chat.user.first_name,
+            created_at: chat.created_at
       head :ok 
     end
   end
