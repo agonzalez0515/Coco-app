@@ -29,6 +29,13 @@
           <li>June 3, 2017 | Deadline: May 09, 2017</li>
         </ul>
       </h4>
+      <h3>
+        <% if current_user %>
+          <%= link_to 'Click here to add your SAT date', new_user_event_path(current_user.id) %><br>
+        <% else %>
+          <%= link_to 'Click here to add your SAT date', login_path %>
+        <% end %>
+      </h3>
     </p>
   </div>
 </div>
