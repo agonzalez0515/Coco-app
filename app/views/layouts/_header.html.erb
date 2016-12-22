@@ -1,14 +1,16 @@
 <nav>
   <div class="row size">
   <div class="nav-wrapper grid-example col s12">
-  	<ul class="center">
+    <a href="#" class="brand-logo"><%=image_tag('hat.png')%></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+  	<!-- <ul class="center"> -->
 		<% if current_user %>
-			<li><%= link_to "Your profile", user_path(current_user) %></li>
-		  <li><%= link_to 'Home', root_path %></li> 
+			<li><%= link_to "#{current_user.first_name}'s profile", user_path(current_user) %></li>
+		  <li><%= link_to 'Home', root_path %></li>
 		  <li><%= link_to 'Log Out', logout_path, method: "delete" %></li>
-		<% else %>  
-		  	<li><%= link_to 'Home', root_path %></li> 
-		  	<li><%= link_to 'Log In', "#login-form", "data-toggle" => "modal" %></li>  
+		<% else %>
+		  	<li><%= link_to 'Home', root_path %></li>
+		  	<li><%= link_to 'Log In', "#login-form", "data-toggle" => "modal" %></li>
 		  	<li><%= link_to 'Sign Up', "#signup-form" %></li>
 		<% end %>
 		</ul>
