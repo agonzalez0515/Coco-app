@@ -31,6 +31,11 @@ main {
   max-width: 50%;
 }
 
+#small_map {
+    height: 400px;
+    max-width: 50%;
+}
+
 .nav-wrapper {
 	background-color: #42649b;
 	font-family: Helvetica;
@@ -49,6 +54,7 @@ main {
 }
 
 .btn {
+
 	background-color: #F2882F;	
 }
 
@@ -64,11 +70,14 @@ main {
 
 .container.new-form {
 	margin-top: 15%;
+	background-color: grey;
+
 }
 
 table {
 	border-style: none;
 }
+
 
 #chats-table {
 	max-height: 20%;
