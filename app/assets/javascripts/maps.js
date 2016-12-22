@@ -1,9 +1,7 @@
 
 $(document).ready(function() {
-
+  $('#nearest-locations').hide()
 });
-
-
 var map;
 var markers = [];
 
@@ -16,6 +14,7 @@ var initMap = function() {
 
   $('#date').on('submit', fetchParams)
   var infoWindow = new google.maps.InfoWindow({map: map});
+
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
@@ -62,6 +61,7 @@ $('form').on('click','.sat-locations', function(event){
 
 function fetchParams(e) {
   e.preventDefault();
+  $('#nearest-locations').show();
   var date = $('#date').serialize();
   var ajax_lat = map.getCenter().lat();
   var ajax_long = map.getCenter().lng();
@@ -82,12 +82,12 @@ function fetchSats(response) {
 }
 // Plot a marker
 function placeMarkers(lat, lng) {
-    var latlng = new google.maps.LatLng(lat, lng);
-    new_marker = new google.maps.Marker({
-      position: latlng,
-      map: map
-    });
-    markers.push(new_marker);
+  var latlng = new google.maps.LatLng(lat, lng);
+  new_marker = new google.maps.Marker({
+    position: latlng,
+    map: map
+  });
+  markers.push(new_marker);
 }
 
 // Sets the map on all markers in the array.

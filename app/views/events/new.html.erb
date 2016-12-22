@@ -7,7 +7,7 @@
 
 
     <div class="col s3 m3">
-      <h6>Google Map for SAT locations</h6>
+      <h8>Choose the best location for you and add it to your calendar to get SAT tips and reminders:</h8>
       <form id='date'>
         <% i = 0 %>
         <% @dates.each do |date| %>
@@ -20,9 +20,9 @@
         <% end %>
         <input type="submit">
       </form>
-      <h8>Choose the best location for you and add it to your calendar to get SAT tips and reminders</h8>
-      <h6>Here are the nearest SAT locations:</h6><br>
-      <h8>Select only ONE location:</h8>
+      
+      <div id="nearest-locations">
+        <h6>Here are the nearest SAT locations(select only ONE location):</h6><br>
 
         <%= form_for :event, url: user_events_path(current_user.id), :html => {:class => "sat-form"}, remote: true do |f| %>
           <ul class="sat-locations">
@@ -31,6 +31,7 @@
 
           <%= f.submit %>
         <% end %>
+      </div>
 
       <h8>***Remember to <b>register</b> on: </h8><a href="https://collegereadiness.collegeboard.org/sat/register">SAT registration</a>
     </div>
