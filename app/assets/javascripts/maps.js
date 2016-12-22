@@ -37,19 +37,6 @@ var initMap = function() {
   }
 };
 
-// Create a small map for Event Page
-var initSmallMap = function() {
-  smallMap = new google.maps.Map(document.getElementById('small_map'), {
-    center: {lat: 37.784, lng: -122.55},
-    zoom: 10
-  });
-
-  var latlng = new google.maps.LatLng(37.784, -122.55);
-  new_marker = new google.maps.Marker({
-    position: latlng,
-    map: smallMap
-  });
-};
 
 // Listen to SAT Location selector form
 $('form').on('click','.sat-locations', function(event){
@@ -87,7 +74,7 @@ function placeMarkers(lat, lng, loc_name) {
     size: null, /* size is determined at runtime */
     origin: new google.maps.Point(0,0), /* origin is 0,0 */
     anchor: null, /* anchor is bottom center of the scaled image */
-    scaledSize: null 
+    scaledSize: null
   };
 
     var latlng = new google.maps.LatLng(lat, lng);
