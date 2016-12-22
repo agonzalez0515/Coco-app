@@ -1,0 +1,9 @@
+<h1> Track your Requirements </h1>
+
+<% @requirements.each do |requirement| %>
+  <center><div class="col s12 buttons">
+  Subject:<%= requirement.subject %> <div id="years-<%= requirement.id %>"> Required years: <%= requirement.years %></div>
+  Add: <%= button_to '+1', user_requirement_path(current_user.id, requirement.id), class: 'btn-floating btn  waves-effect #F7C331', remote: true, method: :put %> Remove: <%= button_to '-1', decrease_years_user_requirement_path(current_user.id, requirement.id), class: 'btn-floating btn waves-effect #F7C331', remote: true, method: :post %>
+  </div></center><br>
+<% end %>
+

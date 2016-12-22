@@ -1,0 +1,38 @@
+<div class="messages-index">
+  <h1>CoCo Forums</h1>
+
+  <h4>Chat about schools, scholarships, the application process and more!</h4>
+  <hr>
+  <div class="row">
+    <div class="col s4">
+      <h5>Topic</h5>
+    </div>
+    <div class="col s8">
+      <h5>Most Recent Reply</h5>
+    </div>
+  </div>
+    <% @messages.each do |message| %>
+      <div class="row">
+        <div class="col s4" style="">
+          <h5><%= link_to message.title, message_comments_path(message) %></h5>
+        </div>
+        <div class="col s8" style="padding-top:16px;">
+          <% last_comment = message.comments.last %>
+          <% if last_comment %>
+            <%= last_comment.body %>
+          <% else %>
+            No responses yet...
+          <% end %>
+        </div>
+      </div>
+
+      <div class="container">
+
+      </div>
+      <p>
+
+      </p>
+    <% end %>
+
+    <%= button_to 'Add a Topic', new_message_path, :class => "waves-effect waves-light btn" %>
+</div>
