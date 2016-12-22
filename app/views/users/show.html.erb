@@ -1,7 +1,53 @@
 
-<h3> user#show </h3>
+<h3> Hello, <%= current_user.first_name %> </h3>
+<div class="row">
+  <div class="col s4">
+    <div>
+      <h5> Profile Details </h5>
+      <%= render 'information' %>
+    </div>
+    <br><br>
 
-<%= link_to 'A-G Requirements', user_requirements_path(@user) %>  |  
-<%= link_to 'Events', user_events_path(@user) %>  |  
-<%= link_to 'Add Your SAT Date', new_user_event_path(current_user.id) %><br>
+    <div class="divider"></div>
 
+    <div>
+      <% if current_user.user_type == "student" %>
+        <h5> Upcoming Events </h5>
+      <% else %>
+        <h5> Child's Upcoming Events </h5>
+      <% end %>
+      <%= button_to 'Add SAT', new_user_event_path(current_user.id), method: :get, class: 'btn' %>
+      <%= render 'events/event' %>
+    </div>
+
+    <div class="divider"></div>
+
+    <div>
+      <ul><h5> Useful Links </h5>
+        <li> Link 1 </li>
+        <li> Link 2 </li>
+        <li> Link 3 </li>
+        <li> Link 4 </li>
+        <li> Link 5 </li></ul>
+    </div>
+  </div>
+
+  <div class="col s8">
+    <div>
+      <%= render 'events/calendar' %>
+    </div>
+
+    <br><br>
+    <div class="divider"></div>
+
+    <div>
+      <% if current_user.user_type == "student" %>
+        <h5> Track your A-G Requirements </h5>
+      <% else %>
+        <h5> Track your Child's A-G Requirements </h5>
+      <% end %>
+      <%= render 'requirements/requirement' %>
+    </div>
+
+  </div>
+</div>
