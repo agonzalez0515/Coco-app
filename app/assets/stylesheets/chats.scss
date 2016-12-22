@@ -2,39 +2,66 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-table {
-	border-style: none;
+
+.chat-wr {
+  height: 75vh;
+  margin: auto;
+  width: 80vw;
+  }
+
+.chats {
+  background-color: #fff;
+  box-shadow: 0 0 0 5px #f4f2ed inset;
+  box-sizing: border-box;
+  height: 87%;
+  overflow: scroll;
+  padding: 20px;
 }
-
-
-#chats-table {
-	max-height: 20%;
+.chats-table{
+  display: table;
+  width: 100%;
+}
+.chat{
+  line-height: 1.6;
+  &:last-child {
+    margin-bottom: 10px;
+  }
+  display: table-row;
+  &:nth-child(2n) div ~ div 
+  > div {
+    display: table-cell;
+    padding: 13px 10px 10px;
+  }
+}
+.chat-user {
+  color: #666;
+  font-size: 13px;
+  margin-right: 10px;
 }
 .chat-content-en {
-
-	background-color: #f9da81;
-}
-.chat-content-es {
-
-	background-color: #f9ecc7;
+  width: 100%;
 }
 
-.chat {
-	background-color: #F7C331;
-	min-width: 10%;
-	max-width: 70%;
-	padding: 1%;
-	padding-letf: 3%;
-	padding-right: 3%;
+.chat-content-es{
+  width: 100%;
 }
 
-.chat-user {
-	background-color: white;
-	color: #42649b;
-	font-weight: bold;
-}
 .chat-input {
-	min-width: 10%;
-	max-width: 70%;
-	padding: 1%;
-}
+  background-color: rgba(0,0,0,0.03);
+  box-sizing: border-box;
+  height: 13%;
+  padding: 0 5px 5px;
+  form {
+    height: 100%;
+  }
+  textarea {
+    height: 100%;
+    width: 84.5%;
+   }
+  input {
+    float: right;
+    height: 100%;
+    vertical-align: top;
+    width: 14.5%; 
+    }
+  }

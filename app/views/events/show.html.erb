@@ -9,8 +9,16 @@ Here is this particular event's detail.
 <b>Location:</b> <%= @event.sat.location_name %><br>
 <b>Address:</b> <%= @event.sat.address %><br>
 
-<div class="map", id="small_map">
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['MAP']%>&callback=initSmallMap"></script>
+<input type="hidden" id="sat_lat" value=<%= @event.sat.latitude%>>
+<input type="hidden" id="sat_long" value=<%= @event.sat.longitude%>>
+
+<div class="row">
+  <div class="map col s6", id="small_map">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['MAP']%>&callback=initialize"></script>
+  </div>
+</div>
+  <div id="directionsPanel" class="col s6"></div>
+
 </div>
 
 
