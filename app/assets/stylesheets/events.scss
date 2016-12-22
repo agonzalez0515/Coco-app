@@ -1,3 +1,26 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// .grid-example col s12 {
+//   background-color: pink;
+// }
+//
+// .col.m12.s12.12 {
+//   text-align: center;
+// }
+
+// .col.s6.m6.6
+.col {
+  padding:0px;
+  background-color: pink;
+  box-sizing:border-box;
+}
+
+body.events {
+  max-width: 1200px;
+  min-width: 300px;
+  background-color: pink;
+  padding:0px;
+  margin:0px;
+}
