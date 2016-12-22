@@ -1,0 +1,6 @@
+<%= month_calendar events: current_user.events do |date, events| %>
+  <%= date.strftime("%d") %><br>
+  <% events.each do |event|%>
+    <%=link_to "SAT Day!", user_event_path(current_user.id, event)%><br>
+    <% end %>
+  <% end %>

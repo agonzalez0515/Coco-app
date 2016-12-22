@@ -4,8 +4,6 @@ class RequirementsController < ApplicationController
   end
 
   def index
-    userid=current_user.id
-    @requirements = Requirement.where(user_id: userid).reorder('id')
   end
 
   def new

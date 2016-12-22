@@ -20,3 +20,11 @@ Here is this particular event's detail.
   <div id="directionsPanel" class="col s6"></div>
 
 </div>
+
+
+
+
+
+
+
+<%= link_to 'Delete Event', user_event_path(current_user.id, @event), method: :delete, data: {confrim: "Are you sure?"} %>
