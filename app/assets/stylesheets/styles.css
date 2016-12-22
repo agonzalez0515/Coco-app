@@ -6,9 +6,9 @@ body {
 }
 
 body.index {
-	background-image: url(https://s23.postimg.org/tcaxzkdwb/books_magazines_building_school.jpg);
 	background-repeat: no-repeat;
-  background-position: top; 
+  background-position: top;
+
 }
 
 main {
@@ -23,13 +23,7 @@ main {
   height:100%;
 }
 
-.container.parallax {
-  position: absolute;
-  left:0px;
-  top:0px;
-  width:100%;
-  height:100%;
-}
+
 .row.size {
 	font-size: 25px;
 }
@@ -40,6 +34,13 @@ main {
 	font-size: 35px;
 	text-shadow: 1px 1px 1px #000;
 }
+
+
+#map {
+  height: 500px;
+  max-width: 50%;
+}
+
 
 #small_map {
   height: 400px;
@@ -52,6 +53,7 @@ main {
 #new-form, h3.form {
 	background-color: white;
 }
+
 .btn {
 	background-color: #F2882F;
 }
@@ -83,3 +85,24 @@ h1.header, h5.header {
 	background-color: grey;
 }
 
+table {
+	border-style: none;
+}
+
+
+#chats-table {
+	max-height: 20%;
+}
+.chat {
+	background-color: lightgrey;
+}
+.chat-content-en {
+	background-color: #F2882F;
+}
+.chat-content-es {
+	background-color: grey;
+}
+
+.material-icons{
+	color: #F2882F;
+}
