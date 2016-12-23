@@ -19998,7 +19998,7 @@ Picker.extend( 'pickadate', DatePicker )
     received: function(data) {
       var scroll_bottom;
       if (data.body_es.blank == null) {
-        $('#chats-table').append('<div class="chat">' + '<div class="chat-user">' + '<p>' + data.name + " at " + data.created_at + ":" + '</p>' + '</div>' + '<div class="chat-content-en">' + '<p>' + data.body_en + '</p>' + '</div>' + '<div class="chat-content-es">' + '<p>' + data.body_es + '</p>' + '</div>' + '<br>');
+        $('#chats-table').append('<div class="chat">' + '<div class="chat-user">' + '<p>' + data.name + " at " + data.created_at + ":" + '</p>' + '</div>' + '<div class="chat-content-en">' + '<p>' + data.body_en + '</p>' + '</div>' + '<div class="chat-content-es">' + '<p>' + data.body_es + '</p>' + '</div>');
         $('#chat_body').val(' ');
         scroll_bottom = function() {};
         return $('#chats').scrollTop($('#chats')[0].scrollHeight);
