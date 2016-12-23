@@ -16,15 +16,15 @@
   </p>
   <% if current_user %>
     <p>
-      <%=link_to "Click here if you would like to use our A-G Tracker", user_requirements_path(current_user)%>
+      <%=button_to "Click here if you would like to use our A-G Tracker", user_requirements_path(current_user), method: :get, class: "btn" %>
     </p>
   <% else %>
     <p>
-      <%=link_to "Click here if you would like to use our A-G Tracker", login_path %>
+      <%=button_to "Click here if you would like to use our A-G Tracker", login_path, method: :get, class: "btn" %>
     </p>
   <% end %>
-
-  <div>
+</div>
+  <div class="ag-table" >
     <table class="highlight requirements">
       <tr>
         <th class="requirements">Subject</th>
@@ -63,4 +63,3 @@
       </tr>
     </table>
   </div>
-</div>

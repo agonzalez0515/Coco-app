@@ -13,10 +13,16 @@ th.requirements, td.requirements {
 
 .requirements-show {
 	text-align: center;
+  margin: auto; 
 }
 
 .floated {
   float:left;
   margin-right: 10px;
   position: inline-block;
+}
+
+.ag-table {
+  width: 700px; 
+  margin: auto;  
 }
