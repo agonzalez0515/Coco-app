@@ -119,8 +119,9 @@
 # comment4 = Comment.create(body:"Where can I apply for scholarships and financial aid?", user_id: rob.id, message_id: message4.id)
 
 ################################################################################
-users = [zara, rob, julia, angie, jose, maria, arlene]
-users.each do |user|
+@users = User.all
+
+@users.each do |user|
   user.requirements.create(subject:"History", years_required: 2, years: 0)
   user.requirements.create(subject:"English", years_required: 4, years: 0)
   user.requirements.create(subject:"Math", years_required: 3, years: 0)
