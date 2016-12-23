@@ -1,20 +1,24 @@
 <div class="message">
 
-  <p><strong><%= message.title %></strong></p>
-  <p><%= message.body %></p>
+  <h4><%= message.title %></strong></h4>
+  <p style="font-size:1.25em;"><%= message.body %></p>
+  <p style="font-size:1.10em;"><%= message.user.first_name %></p>
 
   <% if current_user && current_user.id == message.user_id %>
   <p>
-    <%= link_to 'Delete Review', [review.recipe, review],
+    <%= link_to 'Delete Review', message_path,
     method: :delete,
     data: { confirm: 'Are you sure?' } %>
   </p>
   <% end %>
 
-  <h2>Comments</h2>
-  <%= render message.comments %>
-
-  <h2>Add a comment:</h2>
+  <br><br><hr>
+  <p style="font-size:1.15em;"><strong>Reply:</strong></p>
   <%= render 'comments/form' %>
+
+  <h5>Comments</h5>
+  <% message.comments.each do |comment| %>
+    <%= render comment %>
+  <% end %>
 
 </div>
