@@ -6,7 +6,7 @@
 .chat-wr {
   height: 75vh;
   margin: auto;
-  width: 80vw;
+  width: 50vw;
   }
 
 .chats {
@@ -39,10 +39,12 @@
   margin-right: 10px;
 }
 .chat-content-en {
+  background-color: #f2f2f2;
   width: 100%;
 }
 
 .chat-content-es{
+  background-color: #e0eaf9;
   width: 100%;
 }
 
@@ -64,4 +66,9 @@
     vertical-align: top;
     width: 14.5%; 
     }
+  }
+
+  .name {
+    font-weight: bold;
+    color: #42649b;
   }
