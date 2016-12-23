@@ -47,7 +47,6 @@ class RequirementsController < ApplicationController
   end 
 
 private
-
   def requirement_params
     current_years = @requirement.years
     requirement_params = { years: (current_years + 1) }

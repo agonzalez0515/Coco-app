@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :get_user
 
   def index
     @message = Message.find(params[:message_id])
@@ -49,6 +50,12 @@ class CommentsController < ApplicationController
   end
 
 private
+
+  def get_user
+    if !current_user
+      redirect_to root_path
+    end
+  end
 
   def comment_params
     @message = Message.find(params[:message_id])
