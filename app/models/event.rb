@@ -8,7 +8,7 @@
 #  completed  :boolean          default("false")
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  title      :string
+#  title      :string           default("SAT Day")
 #
 
 class Event < ApplicationRecord

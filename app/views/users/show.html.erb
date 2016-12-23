@@ -1,5 +1,5 @@
 
-<h3> Hello, <%= current_user.first_name %> </h3>
+<h3> Hello, <%= current_user.first_name.capitalize %> </h3>
 <div class="row">
   <div class="col s4">
     <div>
@@ -23,12 +23,24 @@
     <div class="divider"></div>
 
     <div>
-      <ul><h5> Useful Links </h5>
-        <li> Link 1 </li>
-        <li> Link 2 </li>
-        <li> Link 3 </li>
-        <li> Link 4 </li>
-        <li> Link 5 </li></ul>
+    <% if current_user.user_type == "student" %>
+      <ul><h5> Useful Websites </h5>
+        <li><a href="https://collegereadiness.collegeboard.org/sat/register/online-registration-help">Tips on SAT Registering</li>
+        <li><a href="https://collegereadiness.collegeboard.org/sample-questions">Sample SAT Questions</li>
+        <li><a href="https://collegereadiness.collegeboard.org/sat/taking-the-test/test-day-checklist">Test Day Checklist</li>
+        <li><a href="https://admissions.universityofcalifornia.edu/applicant/login.htm"> UC Application Site</li>
+        <li><a href="http://www.csumentor.edu/">CSU Application Site</li>
+      </ul>
+    <% else %>
+      <ul><h5> Useful Websites </h5>
+        <li><a href="http://www.supercollege.com/guide/guide.cfm?t_id=1&g_id=17&step=1">How to Get my Child into College</a></li>
+        <li><a href="https://bigfuture.collegeboard.org/get-started/for-parents/parent-action-plan-11th-grade">Parent Action Plan Guide</a></li>
+        <li><a href="http://blog.prepscholar.com/how-to-teach-the-sat-tips-for-tutors-and-parents">Tips on SAT for Parents</a></li>
+        <li><a href="https://studentaid.ed.gov/sa/resources/parents">College Financial Planning</a></li>
+        <li><a href="https://admissions.universityofcalifornia.edu/applicant/login.htm"> UC Application Site</a></li>
+        <li><a href="http://www.csumentor.edu/">CSU Application Site</a></li>
+      </ul>
+    <% end %>
     </div>
   </div>
 

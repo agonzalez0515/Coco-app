@@ -4,7 +4,7 @@
 <% else %>
   <% current_user.events.reorder("id").each do |event| %>
     <li>
-      <b>Title:</b> <%= event.title %>
+      <b>Title:</b> <%= link_to event.title, user_event_path(current_user.id, event.id) %>
         <li><b>Date:</b> <%= event.sat.date.strftime('%A %b %e %Y') %></li>
         <li><b>Location:</b> <%= event.sat.location_name.titlecase %></li>
         <li><b>Address:</b> <%= event.sat.address %></li>
