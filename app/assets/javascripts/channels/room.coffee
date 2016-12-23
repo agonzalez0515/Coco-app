@@ -10,7 +10,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
       $('#chats-table').append '<div class="chat">' +
         '<div class="chat-user">' + '<p>' + data.name + " at " + data.created_at + ":" + '</p>' + '</div>' +
         '<div class="chat-content-en">' + '<p>' + data.body_en + '</p>' + '</div>' +
-        '<div class="chat-content-es">' + '<p>' + data.body_es + '</p>' + '</div>' + '<br>'
+        '<div class="chat-content-es">' + '<p>' + data.body_es + '</p>' + '</div>'
       $('#chat_body').val ' '
       scroll_bottom = () ->
       $('#chats').scrollTop($('#chats')[0].scrollHeight)
