@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161221005934) do
+ActiveRecord::Schema.define(version: 20161222235617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(version: 20161221005934) do
     t.integer  "user_id"
     t.integer  "sat_id"
     t.boolean  "completed",  default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.string   "title"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "title",      default: "SAT Day"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -53,8 +53,9 @@ ActiveRecord::Schema.define(version: 20161221005934) do
     t.string   "subject"
     t.float    "years"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.float    "years_required"
   end
 
   create_table "sats", force: :cascade do |t|

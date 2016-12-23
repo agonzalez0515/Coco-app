@@ -121,13 +121,13 @@ comment4 = Comment.create(body:"Where can I apply for scholarships and financial
 ################################################################################
 users = [zara, rob, julia, angie, jose, maria, arlene]
 users.each do |user|
-  user.requirements.create(subject:"History", years: 0)
-  user.requirements.create(subject:"English", years: 0)
-  user.requirements.create(subject:"Math", years: 0)
-  user.requirements.create(subject:"Science", years: 0)
-  user.requirements.create(subject:"Language", years: 0)
-  user.requirements.create(subject:"Arts", years: 0)
-  user.requirements.create(subject:"Elective", years: 0)
+  user.requirements.create(subject:"History", years_required: 2, years: 0)
+  user.requirements.create(subject:"English", years_required: 4, years: 0)
+  user.requirements.create(subject:"Math", years_required: 3, years: 0)
+  user.requirements.create(subject:"Science", years_required: 2, years: 0)
+  user.requirements.create(subject:"Language", years_required: 2, years: 0)
+  user.requirements.create(subject:"Arts", years_required: 1, years: 0)
+  user.requirements.create(subject:"Elective", years_required: 1, years: 0)
 end
 
 
@@ -150,3 +150,10 @@ school_csv.each do |school|
               latitude:school[4].to_f,
               longitude:school[5].to_f})
             end
+
+################################################################################
+
+25.times do 
+  Event.create(user_id: rand(7), sat_id: rand(100))
+end 
+

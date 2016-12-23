@@ -26,10 +26,18 @@ class UsersController < ApplicationController
     end
 
     def requirements(user)
-      subjects = ["History", "English", "Math", "Science", "Language", "Arts", "Elective"]
-      subjects.each do |subject|
-        user.requirements.create(subject: subject, years: 0, user_id: user.id)
+      subjects = {"History": 2, 
+                  "English": 4, 
+                  "Math": 3, 
+                  "Science": 2, 
+                  "Language": 2, 
+                  "Arts": 1, 
+                  "Elective": 1}                  
+      subjects.each do |subject, year|
+        user.requirements.create(subject: subject, years_required: year, years: 0, user_id: user.id)
       end
     end
 
 end
+
+

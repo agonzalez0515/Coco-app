@@ -19,3 +19,11 @@
   <div id="directionsPanel" class="col s6"></div>
   <h5>Click on an address for directions to the site.</h5>
 </div>
+
+
+
+
+
+
+
+<%= link_to 'Delete Event', user_event_path(current_user.id, @event), method: :delete, data: {confrim: "Are you sure?"} %>

@@ -88,21 +88,3 @@ h1.header, h5.header {
 table {
 	border-style: none;
 }
-
-
-#chats-table {
-	max-height: 20%;
-}
-.chat {
-	background-color: lightgrey;
-}
-.chat-content-en {
-	background-color: #F2882F;
-}
-.chat-content-es {
-	background-color: grey;
-}
-
-.material-icons{
-	color: #F2882F;
-}
