@@ -3,5 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .card {
-  height: 275px;
+  height: 300px;
+}
+
+.card.tall{
+  height: 350px;  
 }
