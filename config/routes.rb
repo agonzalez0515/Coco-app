@@ -27,6 +27,9 @@ Rails.application.routes.draw do
   # FORUM ROUTES
   resources :messages do
     resources :comments
+    collection do
+      post 'search'
+    end
   end
 
 

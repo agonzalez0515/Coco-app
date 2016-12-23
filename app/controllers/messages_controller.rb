@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
+
+  protect_from_forgery except: :search
   before_action :get_user
-    
   before_action :set_message, only: [ :show, :edit, :update, :destroy]
 
   def index
@@ -42,6 +43,13 @@ class MessagesController < ApplicationController
       redirect to message_comments_path(@message)
     end
   end
+
+  def search
+    if params[:message_string] && params[:message_string].length > 0
+      @messages = (helpers.message_search(params[:message_string]))
+    end
+    render "messages/_search"
+end
 
 private
   def get_user
