@@ -96,10 +96,6 @@ angie = User.create(first_name:"Angie", last_name: "Gonzalez", email:"angie@angi
 
 arlene = User.create(first_name:"Arlene", last_name: "Perez", email:"arlene@arlene.com", password: "password", phone_number: "+15623221545", street_address: "6504 Pardall Rd", city:"Isla Vista", state: "CA", zip_code: 93117, lang_preference: "spanish", grade_level: 11, user_type: "student")
 
-jose = User.create(first_name:"Jose", last_name: "Gonzalez", email:"jose@jose.com", password: "password", phone_number: "+13102920098", street_address: "2543 Congress Street", city:"San Diego", state: "CA", zip_code: 92110, lang_preference: "english", grade_level: 12, user_type: "student")
-
-maria = User.create(first_name:"Maria", last_name: "Yulak", email:"maria@maria.com", password: "password", phone_number: "+14155188406", street_address: "8735 Holbrook Street", city:"Los Angeles", state: "CA", zip_code: 90660, lang_preference: "english", grade_level: 10, user_type: "parent")
-
 ################################################################################
 chat1 = Chat.create(body:"What is an AP course?", user_id: julia.id)
 chat2 = Chat.create(body:"An AP course is an Advanced Placement Course that provides an exam at the end of the year, and if passed, you receive college credit!", user_id: angie.id)
@@ -119,7 +115,7 @@ comment3 = Comment.create(body:"Simple and free resources on Khan Academy for SA
 comment4 = Comment.create(body:"Where can I apply for scholarships and financial aid?", user_id: rob.id, message_id: message4.id)
 
 ################################################################################
-users = [zara, rob, julia, angie, jose, maria, arlene]
+users = [zara, rob, julia, angie, arlene]
 users.each do |user|
   user.requirements.create(subject:"History", years_required: 2, years: 0)
   user.requirements.create(subject:"English", years_required: 4, years: 0)
@@ -153,7 +149,6 @@ school_csv.each do |school|
 
 ################################################################################
 
-25.times do 
-  Event.create(user_id: rand(7), sat_id: rand(100))
-end 
-
+25.times do
+  Event.create(user_id: rand(5), sat_id: rand(100))
+end
