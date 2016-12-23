@@ -22,8 +22,12 @@ class ChatsController < ApplicationController
   private
 
     def get_chats
-      @chats = Chat.for_display
-      @chat  = current_user.chats.build
+      if current_user
+        @chats = Chat.for_display
+        @chat  = current_user.chats.build
+      else
+        redirect_to '/login'
+      end
     end
 
     def chat_params
