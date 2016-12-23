@@ -11,7 +11,7 @@
         <li><%= link_to 'Chat Room', chats_path %></li>
         <li><%= link_to 'Forums', messages_path %></li>
         <li><%= link_to 'Log Out', logout_path, method: "delete" %></li>
-        <li><%= link_to "#{current_user.first_name}'s profile", user_path(current_user) %></li>
+        <li><%= link_to "#{current_user.first_name}'s Profile", user_path(current_user) %></li>
       <% else %>
         <li><%= link_to 'Home', root_path %></li>
         <li><%= link_to 'Log In', "#login-form", "data-toggle" => "modal" %></li>
