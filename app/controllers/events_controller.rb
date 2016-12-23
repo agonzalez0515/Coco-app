@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :get_user
   before_action :set_event, only: [:index, :create, :show, :edit, :update, :destroy]
 
   def index
@@ -74,6 +75,12 @@ class EventsController < ApplicationController
   end
 
 private
+
+  def get_user
+    if !current_user
+      redirect_to root_path
+    end
+  end
 
   def event_params
       params.require(:event).permit(:user_id, :sat_id)
