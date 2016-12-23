@@ -1,7 +1,15 @@
 <div class="messages-index">
-  <h1>CoCo Forums</h1>
+  <h2>CoCo Forums</h2>
 
-  <h4>Chat about schools, scholarships, the application process and more!</h4>
+  <h4>Discuss schools, scholarships, the application process and more!</h4>
+  <td id="search-field" colspan=2>
+    <hr>
+    <div class="input-field" style="width:50%; display:block; text-align:center;">
+      <form class="form input-field" action="/messages/search" method="post" style="display:inline-block; text-align:center;">
+        <input type="text" name="message_string" placeholder="Search forum by content..." style="display:inline-block; text-align:center;">
+        <input class="btn" type="submit" name="submit" value = "Search">
+      </form>
+    </div>
   <hr>
   <div class="row">
     <div class="col s4">

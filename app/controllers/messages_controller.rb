@@ -1,9 +1,11 @@
 class MessagesController < ApplicationController
-    
+
+  protect_from_forgery except: :search
+  before_action :get_user
   before_action :set_message, only: [ :show, :edit, :update, :destroy]
 
   def index
-    @messages = Message.all
+     @messages = Message.all
   end
 
   def new
@@ -42,7 +44,19 @@ class MessagesController < ApplicationController
     end
   end
 
+  def search
+    if params[:message_string] && params[:message_string].length > 0
+      @messages = (helpers.message_search(params[:message_string]))
+    end
+    render "messages/_search"
+end
+
 private
+  def get_user
+    if !current_user
+      redirect_to root_path
+    end
+  end
 
   def set_message
     @message = Message.find(params[:id])
