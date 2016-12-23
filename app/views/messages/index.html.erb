@@ -27,7 +27,7 @@
         <div class="col s8" style="padding-top:16px;">
           <% last_comment = message.comments.last %>
           <% if last_comment %>
-            <%= last_comment.body %>
+            <p class="light"><%= last_comment.body %></p>
           <% else %>
             No responses yet...
           <% end %>
