@@ -152,8 +152,3 @@ school_csv.each do |school|
             end
 
 ################################################################################
-
-25.times do 
-  Event.create(user_id: rand(7), sat_id: rand(100))
-end 
-
