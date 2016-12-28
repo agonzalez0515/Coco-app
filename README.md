@@ -1,25 +1,15 @@
-# README
+# CoCo: The College Counselor
+### keeping students on track & parents informed
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+----
+## About CoCo
+CoCo is an on demand college counselor web app. When you set up an account with CoCo, you can keep track of your A-G requirements, learn more about the SAT exam and dates, and get text reminders about your upcoming SAT.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+----
+### Team
+* Zara Aslam
+* Julka Dolgoszyja
+* Angelica Gonzalez
+* Arlene Perez
+* Rob Turner
 
