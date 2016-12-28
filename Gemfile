@@ -40,6 +40,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'dotenv-rails'
   gem 'rake'
+  gem 'rspec-rails'
 end
 
 group :development do
