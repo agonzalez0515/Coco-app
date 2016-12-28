@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/agonzalez0515/coco-app.svg?branch=development)](https://travis-ci.org/agonzalez0515/coco-app)
+
 # CoCo: The College Counselor
 ### keeping students on track & parents informed
 
