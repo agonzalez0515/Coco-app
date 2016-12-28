@@ -1,0 +1,55 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.app-title {
+  font-family: 'Pacifico', serif;
+  font-size: 48px;
+  padding: 0px;
+  margin: 8px
+}
+
+.app-statement {
+  font-family: 'Architects Daughter', serif;
+  font-size: 24px;
+  padding: 0px;
+  margin:4px;
+}
+
+.header-btn
+
+.header-btn .header-log-btn {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: #6b7a8f;
+}
+
+.header-nav-btn {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: #6b7a8f;
+}
+
+.parallax-container {
+     height: "500px";
+   }
+
+.material-icons{
+  color: #F2882E;
+}
+
+.info-title{
+  color: #F2882E;
+}
+
+.mission-statement {
+  color: #F2882E;
+  font-size: 60px;
+  text-align: center; 
+}
+
+.snippet {
+  font-color: gray; 
+  font-size: 25px;
+}

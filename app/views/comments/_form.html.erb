@@ -1,0 +1,14 @@
+<%= form_for([@message, @message.comments.build]) do |f| %>
+
+  <p>
+  Add a comment: <br />
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Add Reply
+      <i class="material-icons right">send</i>
+      </button>
+  </p>
+
+<% end %>

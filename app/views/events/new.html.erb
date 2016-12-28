@@ -1,0 +1,48 @@
+<body class="events">
+  <div class="row">
+
+    <div class="grid-example col s12 light">
+      <h2>SAT Events Reminder Form</h2>
+    </div>
+
+
+    <div class="col s3 m3 light">
+      <form id='date'>
+        <h8>Choose the best location for you and add it to your calendar to get SAT tips and reminders:</h8>
+        <% i = 0 %>
+        <% @dates.each do |date| %>
+
+        <p>
+          <input class="with-gap" name="date" value="<%=date%>" type="radio" id="test<%= i %>">
+          <label for="test<%= i %>"><%=date.strftime('%A %b %e %Y')%></label>
+        </p>
+        <% i += 1 %>
+        <% end %>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+          </button>
+        <!-- <input type="submit"> -->
+      </form>
+
+      <div id="nearest-locations">
+        <h6>Here are the nearest SAT locations(select only ONE location):</h6>
+
+        <%= form_for :event, url: user_events_path(current_user.id), :html => {:class => "sat-form"}, remote: true do |f| %>
+          <ul class="sat-locations">
+
+          </ul>
+          <button class="btn waves-effect waves-light" type="submit" name="action">Add Event
+            <i class="material-icons right">send</i>
+          </button>
+        <% end %>
+      </div>
+
+      <br><h8>***Remember to <b>register</b> on: </h8><a href="https://collegereadiness.collegeboard.org/sat/register">SAT registration</a>
+    </div>
+    <div class="col s9 m9">
+      <div id="map">
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['MAP']%>&callback=initMap"></script>
+      </div>
+    </div>
+  </div>
+</body>

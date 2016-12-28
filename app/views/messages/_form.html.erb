@@ -1,0 +1,23 @@
+<%= form_for @message do |f| %>
+
+  <% if @errors %>
+    <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+    </ul>
+  <% end %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Post Topic
+      <i class="material-icons right">send</i>
+    </button>
+  </p>
+<% end %>
