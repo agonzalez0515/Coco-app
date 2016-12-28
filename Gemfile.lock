@@ -195,6 +195,7 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
+  rake
   redis (~> 3.0)
   sass-rails (~> 5.0)
   simple_calendar (~> 2.0)
