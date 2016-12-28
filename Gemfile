@@ -41,6 +41,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'rake'
   gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :test do
