@@ -74,6 +74,11 @@ GEM
       thread_safe
     erubis (2.7.0)
     execjs (2.7.0)
+    factory_girl (4.8.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.8.0)
+      factory_girl (~> 4.8.0)
+      railties (>= 3.0.0)
     ffi (1.9.14)
     geocoder (1.4.1)
     globalid (0.3.7)
@@ -219,6 +224,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   dotenv-rails
   easy_translate
+  factory_girl_rails (~> 4.0)
   geocoder
   hirb
   jbuilder (~> 2.5)
