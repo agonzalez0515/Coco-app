@@ -4,3 +4,6 @@ rvm:
 
 services:
  - postgresql
+
+before_script:
+  - psql -c 'create database coco_test;' -U postgres
