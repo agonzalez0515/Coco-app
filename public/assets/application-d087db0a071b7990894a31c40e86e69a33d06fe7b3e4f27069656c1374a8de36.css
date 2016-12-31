@@ -59,14 +59,19 @@
 .simple-calendar .next-month {
   background: #DDD;
 }
+/* line 9, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/applications.scss */
+.month {
+  font-weight: bold;
+}
 /* line 6, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
 .chat-wr {
+  margin-top: 4%;
+  margin-left: 15%;
   height: 75vh;
-  margin: auto;
   width: 50vw;
 }
 
-/* line 12, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
+/* line 13, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
 .chats {
   background-color: #fff;
   box-shadow: 0 0 0 5px #f4f2ed inset;
@@ -76,64 +81,64 @@
   padding: 20px;
 }
 
-/* line 20, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
+/* line 21, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
 .chats-table {
   display: table;
   width: 100%;
 }
 
-/* line 24, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
+/* line 25, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
 .chat {
   line-height: 1.6;
   display: table-row;
 }
-/* line 26, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
+/* line 27, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
 .chat:last-child {
   margin-bottom: 10px;
 }
-/* line 30, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
+/* line 31, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
 .chat:nth-child(2n) div ~ div
 > div {
   display: table-cell;
   padding: 13px 10px 10px;
 }
 
-/* line 36, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
+/* line 37, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
 .chat-user {
   color: #666;
   font-size: 13px;
   margin-right: 10px;
 }
 
-/* line 41, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
+/* line 42, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
 .chat-content-en {
   background-color: #f2f2f2;
   width: 100%;
 }
 
-/* line 46, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
+/* line 47, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
 .chat-content-es {
   background-color: #e0eaf9;
   width: 100%;
 }
 
-/* line 51, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
+/* line 52, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
 .chat-input {
   background-color: rgba(0, 0, 0, 0.03);
   box-sizing: border-box;
   height: 13%;
   padding: 0 5px 5px;
 }
-/* line 56, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
+/* line 57, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
 .chat-input form {
   height: 100%;
 }
-/* line 59, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
+/* line 60, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
 .chat-input textarea {
   height: 100%;
   width: 84.5%;
 }
-/* line 63, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
+/* line 64, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
 .chat-input input {
   float: right;
   height: 100%;
@@ -141,7 +146,7 @@
   width: 14.5%;
 }
 
-/* line 71, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
+/* line 72, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
 .name {
   font-weight: bold;
   color: #42649b;
@@ -262,13 +267,29 @@ th.requirements, td.requirements {
 /* line 14, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/requirements.scss */
 .requirements-show {
   text-align: center;
+  margin: auto;
 }
 
-/* line 18, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/requirements.scss */
+/* line 19, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/requirements.scss */
 .floated {
   float: left;
   margin-right: 10px;
   position: inline-block;
+}
+
+/* line 25, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/requirements.scss */
+.ag-table {
+  width: 700px;
+  margin: auto;
+}
+/* line 5, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/sats.scss */
+.card {
+  height: 300px;
+}
+
+/* line 9, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/sats.scss */
+.card.tall {
+  height: 350px;
 }
 body {
 	font-family: Helvetica;
@@ -406,6 +427,19 @@ table {
 /* line 42, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/welcome.scss */
 .info-title {
   color: #F2882E;
+}
+
+/* line 46, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/welcome.scss */
+.mission-statement {
+  color: #F2882E;
+  font-size: 60px;
+  text-align: center;
+}
+
+/* line 52, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/welcome.scss */
+.snippet {
+  font-color: gray;
+  font-size: 25px;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

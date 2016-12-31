@@ -19387,10 +19387,6 @@ Picker.extend( 'pickadate', DatePicker )
 
 
 (function() {
-
-
-}).call(this);
-(function() {
   var slice = [].slice;
 
   this.ActionCable = {
@@ -20000,10 +19996,12 @@ Picker.extend( 'pickadate', DatePicker )
     connected: function() {},
     disconnected: function() {},
     received: function(data) {
+      var scroll_bottom;
       if (data.body_es.blank == null) {
-        $('#chats-table').append('<div class="chat">' + '<div class="chat-user">' + '<p>' + data.name + ":" + '</p>' + '</div>' + '<div class="chat-content-en">' + '<p>' + data.body_en + '</p>' + '</div>' + '</div>' + '<div class="chat-content-es">' + '<p>' + data.body_es + '</p>' + '</div>' + '</div>' + '<br>');
+        $('#chats-table').append('<div class="chat">' + '<div class="chat-user">' + '<p>' + data.name + " at " + data.created_at + ":" + '</p>' + '</div>' + '<div class="chat-content-en">' + '<p>' + data.body_en + '</p>' + '</div>' + '<div class="chat-content-es">' + '<p>' + data.body_es + '</p>' + '</div>');
         $('#chat_body').val(' ');
-        return scroll_bottom();
+        scroll_bottom = function() {};
+        return $('#chats').scrollTop($('#chats')[0].scrollHeight);
       }
     }
   });
@@ -20020,17 +20018,13 @@ Picker.extend( 'pickadate', DatePicker )
 (function() {
   var chat_appender;
 
-  chat_appender = function(body) {
-    return $('#chats-table').append(body);
-  };
-
   $(document).on('turbolinks:load', function() {
     return chat_appender;
   });
 
-}).call(this);
-(function() {
-
+  chat_appender = function(body) {
+    return $('#chats-table').append(body);
+  };
 
 }).call(this);
 // $( document ).on('turbolinks:load', function() {
@@ -20134,22 +20128,22 @@ Picker.extend( 'pickadate', DatePicker )
 // // });
 
 $(document).ready(function() {
-
+  // $('#nearest-locations').hide();
+  // $.ajaxSetup({ cache: false });
 });
-
-
 var map;
 var markers = [];
 
 // Initialize a Map for SAT Location selection.
 var initMap = function() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 33.999656, lng: -118.087183},
+    center: {lat: 36.915294, lng:-120.20511},
     zoom: 5
   });
 
   $('#date').on('submit', fetchParams)
   var infoWindow = new google.maps.InfoWindow({map: map});
+
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
@@ -20171,31 +20165,20 @@ var initMap = function() {
   }
 };
 
-// Create a small map for Event Page
-var initSmallMap = function() {
-  smallMap = new google.maps.Map(document.getElementById('small_map'), {
-    center: {lat: 37.784, lng: -122.55},
-    zoom: 10
-  });
-
-  var latlng = new google.maps.LatLng(37.784, -122.55);
-  new_marker = new google.maps.Marker({
-    position: latlng,
-    map: smallMap
-  });
-};
 
 // Listen to SAT Location selector form
 $('form').on('click','.sat-locations', function(event){
   event.preventDefault();
   var checked = $(":checked").val();
-  console.log(checked);
+  // console.log(checked);
 });
 
 // Find 10 closest SAT locations to center of SAT selection map
 
 function fetchParams(e) {
   e.preventDefault();
+  $("#nearest-locations").css('visibility', 'visible');
+  $('#date').hide()
   var date = $('#date').serialize();
   var ajax_lat = map.getCenter().lat();
   var ajax_long = map.getCenter().lng();
@@ -20209,19 +20192,32 @@ function fetchSats(response) {
   deleteMarkers();
   for (var i = 0; i < response.length; i++) {
     var sat = response[i];
-    placeMarkers(sat.latitude, sat.longitude)
+    placeMarkers(sat.latitude, sat.longitude, sat.location_name)
     //Append input into form with sat id
     $('.sat-locations').append('<li><input type="radio" name="sat_id" value="'+sat.id+'" class="with-gap" id="'+sat.id+'" ><label for="'+sat.id+'">'+sat.address+'</label></li>' )
   }
 }
 // Plot a marker
-function placeMarkers(lat, lng) {
+
+function placeMarkers(lat, lng, loc_name) {
+  var pinIcon = {
+    url: "https://s30.postimg.org/68ej2wfu9/marker3.png",
+    size: null, /* size is determined at runtime */
+    origin: new google.maps.Point(0,0), /* origin is 0,0 */
+    anchor: null, /* anchor is bottom center of the scaled image */
+    scaledSize: null
+  };
+
     var latlng = new google.maps.LatLng(lat, lng);
+
     new_marker = new google.maps.Marker({
+      icon: pinIcon,
       position: latlng,
+      title: (loc_name),
       map: map
     });
     markers.push(new_marker);
+
 }
 
 // Sets the map on all markers in the array.
@@ -20258,34 +20254,77 @@ function getSatsNearMapCenter() {
   geocoder.geocode({'location': latlng}, getNearbySats);
 }
 ;
-(function() {
 
+var directionsDisplay;
+var directionsService;
+var dirMap;
+var clickLoc;
+var satLoc;
+var sat_lat;
+var sat_long;
+var clickListener;
+var click_lat;
+var click_long;
+var new_marker;
+var homeAddress;
+var geocoder;
 
-}).call(this);
-(function() {
+function initialize() {
+  sat_lat = $('#sat_lat').val();
+  sat_long = $('#sat_long').val();
+  satLoc = new google.maps.LatLng(sat_lat, sat_long);
 
+  directionsService = new google.maps.DirectionsService();
 
-}).call(this);
-(function() {
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  var mapOptions = {
+    zoom: 10,
+    center: satLoc
+  }
+  dirMap = new google.maps.Map(document.getElementById('small_map'), mapOptions);
+  directionsDisplay.setMap(dirMap);
+  directionsDisplay.setPanel(document.getElementById('directionsPanel'));
 
+  var pinIcon = {
+      url: "https://s30.postimg.org/68ej2wfu9/marker3.png",
+      size: null, /* size is determined at runtime */
+      origin: new google.maps.Point(0,0), /* origin is 0,0 */
+      anchor: null, /* anchor is bottom center of the scaled image */
+      scaledSize: null
+    };
 
-}).call(this);
-(function() {
+    new_marker = new google.maps.Marker({
+      position: satLoc,
+      icon: pinIcon,
+      map: dirMap
+    });
 
+    clickListener = google.maps.event.addListener(dirMap, 'click', function( event ){
+      click_lat = event.latLng.lat();
+      click_long = event.latLng.lng();
+      clickLoc = new google.maps.LatLng(click_lat, click_long);
+      calcRoute();
+    });
+}
 
-}).call(this);
-(function() {
+function calcRoute() {
+  var selectedMode = 'DRIVING'//document.getElementById('mode').value;
+  var request = {
+      origin: clickLoc,
+      destination: satLoc,
 
-
-}).call(this);
-(function() {
-
-
-}).call(this);
-(function() {
-
-
-}).call(this);
+      travelMode: google.maps.TravelMode[selectedMode]
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == 'OK') {
+      directionsDisplay.setDirections(response);
+    }
+  });
+}
+;
+$(document).ready(function(){
+  $('.parallax').parallax();
+});
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -20298,7 +20337,6 @@ function getSatsNearMapCenter() {
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
 
 
 
