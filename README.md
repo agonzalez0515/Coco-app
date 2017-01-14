@@ -1,25 +1,20 @@
-# README
+[![Build Status](https://travis-ci.org/agonzalez0515/coco-app.svg?branch=development)](https://travis-ci.org/agonzalez0515/coco-app)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# CoCo: The College Counselor
 
-Things you may want to cover:
+----
+A personal college counselor web application that keeps students on track and parents informed. 
 
-* Ruby version
+Main features: track A-G course requirements, learn about the college application process including scholarships and fee waivers, receive text notifications and tips about upcoming SAT dates
 
-* System dependencies
+Tech Stack: Ruby on Rails, JavaScript, Materialize, PostgreSQL, Google Maps API, Twilio API, Active Cable, Heroku, Git
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+----
+### Team
+* Zara Aslam
+* Julka Dolgoszyja
+* Angelica Gonzalez
+* Arlene Perez
+* Rob Turner
 
