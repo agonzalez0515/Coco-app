@@ -1,10 +1,10 @@
 <% if @errors %>
-    <ul>
-    <% @errors.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-    </ul>
+  <ul>
+  <% @errors.each do |error| %>
+    <li><%= error %></li>
   <% end %>
+  </ul>
+<% end %>
 
 
 <form id="new-form" method="POST" action="/users">
@@ -13,17 +13,17 @@
   <p>Last Name:<input type="text" name="user[last_name]"></p>
   <p>You are a:<input type="radio" name="user[user_type]"></p>
   <p>
-    <input class="with-gap" name="user[user_type]" value="student" type="radio" id="test3"/>
-    <label for="test3">Student</label>
+    <input class="with-gap" name="user[user_type]" value="student" type="radio" id="student-type"/>
+    <label for="student-type">Student</label>
   </p>
   <p>
-    <input name="user[user_type]" value="parent" type="radio" id="test4"/>
-    <label for="test4">Parent</label>
+    <input class="with-gap" name="user[user_type]" value="parent" type="radio" id="parent-type"/>
+    <label for="parent-type">Parent</label>
   </p>
   <p>Email Address:<input type="text" name="user[email]"></p>
   <p>Password:<input type="password" name="user[password]"></p>
   <p>Password Confirmation:<input type="password" name="user[password_confirmation]"></p>
-  <p>Phone Number:<input type="text" name="user[phone_number]"></p>
+  <p>Phone Number:<input type="text" name="user[phone_number]" placeholder="Please include your area code without any symbols (i.e. 4151234567)"></p>
   <p>Street Address:<input type="text" name="user[street_address]"></p>
   <p>City:<input type="text" name="user[city]"></p>
   <p>State:<input type="text" name="user[state]"></p>
