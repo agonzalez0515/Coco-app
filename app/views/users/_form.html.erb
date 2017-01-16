@@ -1,10 +1,10 @@
 <% if @errors %>
-    <ul>
-    <% @errors.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-    </ul>
+  <ul>
+  <% @errors.each do |error| %>
+    <li><%= error %></li>
   <% end %>
+  </ul>
+<% end %>
 
 
 <form id="new-form" method="POST" action="/users">
