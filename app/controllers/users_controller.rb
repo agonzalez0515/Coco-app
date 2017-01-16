@@ -17,6 +17,7 @@ class UsersController < ApplicationController
       @user.phone_number = "+1#{@user.phone_number}"
       session[:user_id] = @user.id 
       requirements(@user)
+      send_text(@user)
       redirect_to user_path(@user)
     else
       @errors = @user.errors.full_messages
@@ -43,6 +44,29 @@ class UsersController < ApplicationController
       end
     end
 
+    def send_text(user)
+      phone_number = user.phone_number
+      name = user.first_name
+      student_content = "Thank you for signing up with Coco! As a student, you will receive SAT event reminders and tips from this phone number."
+      parent_content = "Thank you for signing up with Coco! As a parent, you will receive tips on how to keep your child on track to graduating high school."
+      account_sid = ENV["ACCOUNT_KEY"] 
+      auth_token = ENV["SECRET_KEY"]
+      client = Twilio::REST::Client.new account_sid, auth_token
+
+      if user.user_type == "student"
+        message = client.account.messages.create(
+          :from => "+14152002640",
+          :to => phone_number,
+          :body => "Hi #{name}. #{student_content}"
+        )
+      elsif user.user_type == "parent"
+        message = client.account.messages.create(
+          :from => "+14152002640",
+          :to => phone_number,
+          :body => "Hi #{name}. #{parent_content}"
+        )
+      end 
+    end 
 end
 
 
