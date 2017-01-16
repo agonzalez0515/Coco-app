@@ -12,9 +12,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)    
-    # @user.phone_number = "+1#{@user.phone_number}"
+    @user = User.new(user_params) 
     if @user.save
+      @user.phone_number = "+1#{@user.phone_number}"
       session[:user_id] = @user.id 
       requirements(@user)
       redirect_to user_path(@user)
