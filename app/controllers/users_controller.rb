@@ -45,29 +45,28 @@ class UsersController < ApplicationController
     end
 
     def send_text(user)
-      @phone_number = user.phone_number
-      @name = user.first_name
-      @student_content = "Thank you for signing up with Coco! As a student, you will receive SAT event reminders and tips from this phone number."
-      @parent_content = "Thank you for signing up with Coco! As a parent, you will receive tips on how to keep your child on track to graduating high school."
-      p "*" * 100
+      phone_number = user.phone_number
+      name = user.first_name
+      student_content = "Thank you for signing up with Coco! As a student, you will receive SAT event reminders and tips from this phone number."
+      parent_content = "Thank you for signing up with Coco! As a parent, you will receive tips on how to keep your child on track to graduating high school."
       account_sid = ENV["ACCOUNT_KEY"] 
       auth_token = ENV["SECRET_KEY"]
-      @client = Twilio::REST::Client.new account_sid, auth_token
+      client = Twilio::REST::Client.new account_sid, auth_token
+
       if user.user_type == "student"
-        message = @client.account.messages.create(
+        message = client.account.messages.create(
           :from => "+14152002640",
-          :to => @phone_number,
-          :body => "Hi #{@name}. #{@student_content}"
+          :to => phone_number,
+          :body => "Hi #{name}. #{student_content}"
         )
       elsif user.user_type == "parent"
-        message = @client.account.messages.create(
+        message = client.account.messages.create(
           :from => "+14152002640",
-          :to => @phone_number,
-          :body => "Hi #{@name}. #{@parent_content}"
+          :to => phone_number,
+          :body => "Hi #{name}. #{parent_content}"
         )
       end 
     end 
-
 end
 
 
