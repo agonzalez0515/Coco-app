@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)    
-    @user.phone_number = "+1#{@user.phone_number}"
+    # @user.phone_number = "+1#{@user.phone_number}"
     if @user.save
       session[:user_id] = @user.id 
       requirements(@user)
