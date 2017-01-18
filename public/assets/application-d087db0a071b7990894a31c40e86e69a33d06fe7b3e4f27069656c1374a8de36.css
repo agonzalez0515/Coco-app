@@ -149,7 +149,7 @@
 /* line 72, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/chats.scss */
 .name {
   font-weight: bold;
-  color: #42649b;
+  color: #01579b;
 }
 /* line 15, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
 .col {
@@ -341,7 +341,7 @@ main {
 }
 
 .nav-wrapper {
-	background-color: #42649b;
+	background-color: #01579b;
 }
 #new-form, h3.form {
 	background-color: white;
@@ -356,8 +356,8 @@ main {
 }
 
 h1.header, h5.header {
-		color: #42649b;
-		text-shadow:10px 10px 10px #42649b;
+		color: #01579b;
+		text-shadow:10px 10px 10px #01579b;
 		font-style: bold;
 		background-color: white;
 	}
@@ -2599,12 +2599,12 @@ table {
 
 /* line 378, /Users/agonzalez/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/materialize-sass-0.97.8/app/assets/stylesheets/materialize/components/_color.scss */
 .orange.darken-3 {
-  background-color: #ef6c00 !important;
+  background-color: #b8c00 !important;
 }
 
 /* line 381, /Users/agonzalez/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/materialize-sass-0.97.8/app/assets/stylesheets/materialize/components/_color.scss */
 .orange-text.text-darken-3 {
-  color: #ef6c00 !important;
+  color: #b8c00 !important;
 }
 
 /* line 378, /Users/agonzalez/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/materialize-sass-0.97.8/app/assets/stylesheets/materialize/components/_color.scss */
@@ -9908,7 +9908,7 @@ main {
 
 /* line 50, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
 .nav-wrapper {
-  background-color: #42649b;
+  background-color: #01579b;
 }
 
 /* line 53, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
@@ -9928,8 +9928,8 @@ main {
 
 /* line 65, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
 h1.header, h5.header {
-  color: #42649b;
-  text-shadow: 10px 10px 10px #42649b;
+  color: #01579b;
+  text-shadow: 10px 10px 10px #01579b;
   font-style: bold;
   background-color: white;
 }
