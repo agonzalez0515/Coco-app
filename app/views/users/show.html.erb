@@ -5,6 +5,8 @@
     <div>
       <h5> Profile Details </h5>
       <%= render 'information' %>
+      <%= link_to 'Edit Profile', edit_user_path(current_user) %><br>
+      <%= link_to 'Delete Profile', user_path(current_user), method: :delete %>
     </div>
     <br><br>
 

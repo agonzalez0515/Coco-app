@@ -1,14 +1,9 @@
 class UsersController < ApplicationController
+
+  before_action :set_user, only: [:edit, :update, :destroy]
+
   def new
     @user = User.new
-  end
-
-  def show
-    if current_user
-      @user = User.find(params[:id])
-    else
-      redirect_to login_path
-    end
   end
 
   def create
@@ -25,7 +20,36 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    if current_user
+      @user = User.find(params[:id])
+    else
+      redirect_to login_path
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update_attributes(user_params)
+      redirect_to user_path(@user)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to root_path
+  end
+
+
   private
+
+    def set_user
+      @user = User.find(params[:id])
+    end
 
     def user_params
       params.require(:user).permit(:user_type, :first_name, :last_name, :email, :phone_number, :grade_level, :street_address, :city, :state, :zip_code, :lang_preference, :password, :password_confirmation)
