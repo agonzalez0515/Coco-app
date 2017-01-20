@@ -7,21 +7,12 @@
 <% end %>
 
 <div id=new-form>
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, :url => {:action => 'update', :id => @user.id}) do |f| %>
   <%= f.label(:first_name, "first name") %>
   <%= f.text_field(:first_name) %>
 
   <%= f.label(:last_name, "last name") %>
   <%= f.text_field(:last_name) %>
-
-  <%= f.label(:email,"email") %>
-  <%= f.text_field(:email) %>
-
-  <%= f.label(:password,"password") %>
-  <%= f.password_field(:password) %>
-
-  <%= f.label(:password_confirmation,"password confimation") %>
-  <%= f.password_field(:password_confirmation) %>
 
   You are a:<br>
   <%= f.radio_button :user_type, 'student' %> 
@@ -30,6 +21,9 @@
   <%= f.radio_button :user_type, 'parent' %>
   <%= f.label :user_type, 'Parent', :value => 'parent' %>
   <br>
+
+  <%= f.label(:email,"email") %>
+  <%= f.text_field(:email) %>
 
   <%= f.label(:phone_number,"phone number") %>
   <%= f.number_field(:phone_number) %>
@@ -68,6 +62,6 @@
   <%= f.label :grade_level, '12th', :value => 12 %>
   <br>
   <br>
-<%= submit_tag "Submit", class: 'btn orange darken-1' %>
+<%= submit_tag "Update Details", class: 'btn orange darken-1' %>
 <% end %>
 </div>
