@@ -6,55 +6,61 @@
   </ul>
 <% end %>
 
+<div id=new-form>
+<%= form_for(@user, :url => {:action => 'update', :id => @user.id}) do |f| %>
+  <%= f.label(:first_name, "first name") %>
+  <%= f.text_field(:first_name) %>
 
-<form id="new-form" method="post" action="/users/<%=@user.id%>">
-	<input type="hidden" name="_method" value="PUT">
-<%= token_tag %> 
-  <p>First Name:<input type="text" name="user[first_name]"></p>
-  <p>Last Name:<input type="text" name="user[last_name]"></p>
-  <p>You are a:<input type="radio" name="user[user_type]"></p>
-  <p>
-    <input class="with-gap" name="user[user_type]" value="student" type="radio" id="student-type"/>
-    <label for="student-type">Student</label>
-  </p>
-  <p>
-    <input class="with-gap" name="user[user_type]" value="parent" type="radio" id="parent-type"/>
-    <label for="parent-type">Parent</label>
-  </p>
-  <p>Email Address:<input type="text" name="user[email]"></p>
-  <p>Password:<input type="password" name="user[password]"></p>
-  <p>Password Confirmation:<input type="password" name="user[password_confirmation]"></p>
-  <p>Phone Number:<input type="text" name="user[phone_number]" placeholder="Please include your area code without any symbols (i.e. 4151234567)"></p>
-  <p>Street Address:<input type="text" name="user[street_address]"></p>
-  <p>City:<input type="text" name="user[city]"></p>
-  <p>State:<input type="text" name="user[state]"></p>
-  <p>Zip Code:<input type="text" name="user[zip_code]"></p>
-  <p>Language Preference:</p>
-    <p>
-    <input class="with-gap" name="user[lang_preference]" value="english" type="radio" id="lang1"/>
-    <label for="lang1">English</label>
-  </p>
-  <p>
-    <input class="with-gap" name="user[lang_preference]" value="spanish" type="radio" id="lang2"/>
-    <label for="lang2">Spanish</label>
-  </p>
-  <p>Grade level:</p>
-    <p>
-    <input class="with-gap" name="user[grade_level]" value="9" type="radio" id="9"/>
-    <label for="9">9th</label>
-  </p>
-  <p>
-    <input class="with-gap" name="user[grade_level]" value="10" type="radio" id="10"/>
-    <label for="10">10th</label>
-  </p>
-  <p>
-    <input class="with-gap" name="user[grade_level]" value="11" type="radio" id="11"/>
-    <label for="11">11th</label>
-  </p>
-  <p>
-    <input class="with-gap" name="user[grade_level]" value="12" type="radio" id="12"/>
-    <label for="12">12th</label>
-  </p>
-  <button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons center"></i>
-  </button>
-</form>
+  <%= f.label(:last_name, "last name") %>
+  <%= f.text_field(:last_name) %>
+
+  You are a:<br>
+  <%= f.radio_button :user_type, 'student' %> 
+  <%= f.label :user_type, 'Student', :value => 'student' %>
+  <br>
+  <%= f.radio_button :user_type, 'parent' %>
+  <%= f.label :user_type, 'Parent', :value => 'parent' %>
+  <br>
+
+  <%= f.label(:email,"email") %>
+  <%= f.text_field(:email) %>
+
+  <%= f.label(:phone_number,"phone number") %>
+  <%= f.number_field(:phone_number) %>
+
+  <%= f.label(:street_address, "street address") %>
+  <%= f.text_field(:street_address) %>
+
+  <%= f.label(:city,"city") %>
+  <%= f.text_field(:city) %>
+
+  <%= f.label(:state,"state") %>
+  <%= f.text_field(:state) %>
+
+  <%= f.label(:zip_code,"zip code") %>
+  <%= f.number_field(:zip_code) %>
+
+  Lang Preference:<br>
+  <%= f.radio_button :lang_preference, 'spanish' %> 
+  <%= f.label :lang_preference, 'Spanish', :value => 'spanish' %>
+  <br>
+  <%= f.radio_button :lang_preference, 'english' %>
+  <%= f.label :lang_preference, 'English', :value => 'english' %>
+  <br>
+
+  Grade Level:<br>
+  <%= f.radio_button :grade_level, 9 %> 
+  <%= f.label :grade_level, '9th', :value => 9 %>
+  <br>
+  <%= f.radio_button :grade_level, 10 %> 
+  <%= f.label :grade_level, '10th', :value => 10 %>
+  <br>
+  <%= f.radio_button :grade_level, 11 %> 
+  <%= f.label :grade_level, '11th', :value => 11 %>
+  <br>
+  <%= f.radio_button :grade_level, 12 %> 
+  <%= f.label :grade_level, '12th', :value => 12 %>
+  <br>
+<%= submit_tag "update details", class: 'btn orange darken-1' %>
+<% end %>
+</div>
