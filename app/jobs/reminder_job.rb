@@ -17,4 +17,14 @@ class ReminderJob < ApplicationJob
       :body => "Hi #{@name}, you have an SAT test coming up on #{@date} at #{@location}: #{@address}",
     )
   end
+
+
+# RemindJob = Struct.new(:text, :emails) do
+#   def perform
+#     emails.each { |e| NewsletterMailer.deliver_text_to_email(text, e) }
+#   end
+# end
+
+
+
 end

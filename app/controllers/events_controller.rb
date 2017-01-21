@@ -26,7 +26,8 @@ class EventsController < ApplicationController
         address: @sat.address
             }
 
-      ReminderJob.set(wait: 1.minute).perform_later(event_information)
+      # ReminderJob.set(wait: 1.minute).perform_later(event_information)
+      Delayed::Job.enqueue ReminderJob.new.perform_later(event_information)
 
     else
       render 'new'
