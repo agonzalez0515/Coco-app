@@ -6,7 +6,7 @@
 
   <% if current_user && current_user.id == message.user_id %>
   <p>
-    <%= link_to 'Delete Review', message_path(@message),
+    <%= link_to 'Delete Message', message_path(@message),
     method: :delete,
     data: { confirm: 'Are you sure?' } %>
   </p>
@@ -18,7 +18,9 @@
 
   <h5>Replies</h5>
   <% message.comments.each do |comment| %>
-    <%= render comment %>
+    <% if comment.body %>
+      <%= render comment %>
+    <% end %>
   <% end %>
 
 </div>
