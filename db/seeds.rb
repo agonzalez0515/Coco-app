@@ -152,6 +152,16 @@ comment9= Comment.new(body: "Remember, some scholarships are listed on nonprofit
 comment10= Comment.new(body: "It's definitely a thing. You're not alone. But remember, you can't succeed if you don't try." ,message_id: message5.id ,user_id: rob.id)
 comment11= Comment.new(body: "UC Berkeley is pretty great. Beautiful campus, great professors, wonderful diversity. Go Bears!",message_id: message6.id ,user_id: zara.id)
 ################################################################################
+tag1 = Tag.create(message_id: message2.id, title: "Like")
+tag2 = Tag.create(message_id: message2.id, title: "Study")
+tag3 = Tag.create(message_id: message3.id, title: "Love")
+tag4 = Tag.create(message_id: message3.id, title: "Love")
+tag5 = Tag.create(message_id: message1.id, title: "Scholarships")
+tag6 = Tag.create(message_id: message4.id, title: "Scholarships")
+tag7 = Tag.create(message_id: message5.id, title: "Anxiety")
+tag8 = Tag.create(message_id: message5.id, title: "Applying")
+tag9 = Tag.create(message_id: message6.id, title: "Bears")
+################################################################################
 @users = User.all
 
 
