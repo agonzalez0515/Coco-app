@@ -118,13 +118,25 @@ arlene = User.create(first_name:"Arlene", last_name: "Perez", email:"arlene@arle
 chat1 = Chat.create(body:"What is an AP course?", user_id: julia.id)
 chat2 = Chat.create(body:"An AP course is an Advanced Placement Course that provides an exam at the end of the year, and if passed, you receive college credit!", user_id: angie.id)
 chat3 = Chat.create(body:"I can't afford to pay for my child's SAT tests. ", user_id: julia.id)
-chat4 = Chat.create(body:"There's waivers for SAT tests, ask your school counselor!", user_id: angie.id)
+chat4 = Chat.create(body:"There are waivers for SAT tests, ask your school counselor!", user_id: angie.id)
 
 ################################################################################
-message1 = Message.create(title: "Scholarships",body:"Are there scholarships available for CA schools?", user_id: julia.id)
-message2 = Message.create(title: "SAT",body:"What are some tips for taking the SAT?", user_id: angie.id)
-message3 = Message.create(title: "SAT",body:"Simple and free resources on Khan Academy for SAT courses!", user_id: julia.id)
-message4 = Message.create(title: "Financial Aid",body:"Where can I apply for scholarships and financial aid?", user_id: angie.id)
+general = Topic.create(title: "General")
+sat_prep = Topic.create(title: "SAT Preparation")
+financial_aid = Topic.create(title: "Financial Aid")
+college_discussion = Topic.create(title: "College Discussion")
+################################################################################
+message1 = Message.create(title: "Scholarships",body:"Are there scholarships available for CA schools?", user_id: julia.id, topic_id: financial_aid.id)
+
+message2 = Message.create(title: "SAT",body:"What are some tips for taking the SAT?", user_id: angie.id, topic_id: sat_prep.id)
+
+message3 = Message.create(title: "SAT",body:"Simple and free resources on Khan Academy for SAT courses!", user_id: arlene.id, topic_id: sat_prep.id)
+
+message4 = Message.create(title: "Financial Aid",body:"Where can I apply for scholarships and financial aid?", user_id: zara.id, topic_id: financial_aid.id)
+
+message5 = Message.create(title: "Application Anxiety",body:"Are other people completely freaking out about sending out applications?", user_id: angie.id, topic_id: general.id)
+
+message5 = Message.create(title: "Bears",body:"I hear that Cal Berkeley is awesome. Is that true?", user_id: rob.id, topic_id: college_discussion.id)
 
 
 ################################################################################
@@ -152,18 +164,18 @@ end
 #   Tip.create(body: tip)
 # end
 # ################################################################################
-# # Read SAT locations from csv file
-# school_file = File.open('./db/school_data.csv', 'r')
-# school_csv = CSV.parse(school_file, :headers => false)
-#
-# school_csv.each do |school|
-#   Sat.create({date:school[1],
-#               location_name:school[2],
-#               address:school[3],
-#               latitude:school[4].to_f,
-#               longitude:school[5].to_f})
-#             end
-#
+# Read SAT locations from csv file
+school_file = File.open('./db/school_data.csv', 'r')
+school_csv = CSV.parse(school_file, :headers => false)
+
+school_csv.each do |school|
+  Sat.create({date:school[1],
+              location_name:school[2],
+              address:school[3],
+              latitude:school[4].to_f,
+              longitude:school[5].to_f})
+            end
+
 # ################################################################################
 #
 # 25.times do
