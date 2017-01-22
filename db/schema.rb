@@ -72,9 +72,9 @@ ActiveRecord::Schema.define(version: 20170121215414) do
   create_table "tags", force: :cascade do |t|
     t.string   "title"
     t.integer  "message_id"
-    t.integer  "count"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "count",      default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "tips", force: :cascade do |t|
