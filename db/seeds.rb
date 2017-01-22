@@ -140,17 +140,17 @@ message6 = Message.create(title: "Bears",body:"I hear that Cal Berkeley is aweso
 
 
 ################################################################################
-comment= Comment.new(body: "Of course, there are both federal and state scholarships available.",message_id: message1.id ,user_id: zara.id)
-comment= Comment.new(body: "Most schools have links to scholarship sites in their Financial Aid pages. Look there!",message_id: message1.id ,user_id: arlene.id)
-comment= Comment.new(body: "Thanks for the info!",message_id: message1.id ,user_id: julia.id)
-comment= Comment.new(body: "Get and use a SAT prep book. It will get you used to the format and typical question structure." ,message_id: message2.id ,user_id: julia.id)
-comment= Comment.new(body: "Thanks! I didn't know that." ,message_id: message3.id ,user_id: rob.id)
-comment= Comment.new(body: "There are also lots of videos on Youtube.",message_id: message3.id ,user_id: angie.id)
-comment= Comment.new(body: "Remember to fill out your FAFSA, that's really important.",message_id: message4.id ,user_id: rob.id)
-comment= Comment.new(body: "A lot of scholarships have specific application instructions and requirements. Be sure to read them carefully.",message_id: message4.id ,user_id: angie.id)
-comment= Comment.new(body: "Remember, some scholarships are listed on nonprofit sites. Apply for all that you're eligible for!",message_id: message4.id ,user_id: julia.id)
-comment= Comment.new(body: "It's definitely a thing. You're not alone. But remember, you can't succeed if you don't try." ,message_id: message5.id ,user_id: rob.id)
-comment= Comment.new(body: "UC Berkeley is pretty great. Beautiful campus, great professors, wonderful diversity. Go Bears!",message_id: message6.id ,user_id: zara.id)
+comment1= Comment.new(body: "Of course, there are both federal and state scholarships available.",message_id: message1.id ,user_id: zara.id)
+comment2= Comment.new(body: "Most schools have links to scholarship sites in their Financial Aid pages. Look there!",message_id: message1.id ,user_id: arlene.id)
+comment3= Comment.new(body: "Thanks for the info!",message_id: message1.id ,user_id: julia.id)
+comment4= Comment.new(body: "Get and use a SAT prep book. It will get you used to the format and typical question structure." ,message_id: message2.id ,user_id: julia.id)
+comment5= Comment.new(body: "Thanks! I didn't know that." ,message_id: message3.id ,user_id: rob.id)
+comment6= Comment.new(body: "There are also lots of videos on Youtube.",message_id: message3.id ,user_id: angie.id)
+comment7= Comment.new(body: "Remember to fill out your FAFSA, that's really important.",message_id: message4.id ,user_id: rob.id)
+comment8= Comment.new(body: "A lot of scholarships have specific application instructions and requirements. Be sure to read them carefully.",message_id: message4.id ,user_id: angie.id)
+comment9= Comment.new(body: "Remember, some scholarships are listed on nonprofit sites. Apply for all that you're eligible for!",message_id: message4.id ,user_id: julia.id)
+comment10= Comment.new(body: "It's definitely a thing. You're not alone. But remember, you can't succeed if you don't try." ,message_id: message5.id ,user_id: rob.id)
+comment11= Comment.new(body: "UC Berkeley is pretty great. Beautiful campus, great professors, wonderful diversity. Go Bears!",message_id: message6.id ,user_id: zara.id)
 ################################################################################
 @users = User.all
 

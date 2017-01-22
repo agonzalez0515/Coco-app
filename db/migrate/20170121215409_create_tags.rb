@@ -3,7 +3,7 @@ class CreateTags < ActiveRecord::Migration[5.0]
     create_table :tags do |t|
       t.string :title
       t.integer :message_id
-      t.integer :count
+      t.integer :count, default: 0
 
       t.timestamps
     end
