@@ -6,7 +6,8 @@ class MessagesController < ApplicationController
 
   def index
     @user = User.new
-     @messages = Message.all
+    @messages = Message.all
+    @topics = Topic.all
   end
 
   def new

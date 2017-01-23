@@ -15,31 +15,24 @@
   <hr>
   <div class="row">
     <div class="col s4">
-      <h5>FORUM TOPICS</h5>
+      <h5>FORUMS</h5>
     </div>
-    <div id="all-tab" class="col s4">
-      <input id="gen-tab-btn" class="btn col s12" type="submit" name="submit" value = "Most Recent Posts" action = "/" >
+    <div id="all-link" class="col s4">
+      <h5><%= link_to "Most Recent Posts", messages_path %></h5>
     </div>
   </div>
 
   <div id="topic-tabs" class="row">
-    <div id="general-tab" class="col s3">
-      <input id="gen-tab-btn" class="btn col s12" type="submit" name="submit" value = "General" action = "/topics/show/1" >
-    </div>
-    <div id="sat-prep-tab" class="col s3">
-      <input id="sat-prep-btn" class="btn col s12" type="submit" name="submit" value = "SAT Preparation" action = "/topics/show/2">
-    </div>
-    <div id="fin-aid-tab" class="col s3">
-      <input id="fin-aid-btn" class="btn col s12" type="submit" name="submit" value = "Financial Aid" action = "/topics/show/3">
-    </div>
-    <div id="college-disc-tab" class="col s3">
-      <input id="college-disc-btn" class="btn col s12" type="submit" name="submit" value = "College Talk"  action = "/topics/show/4">
-    </div>
+    <% @topics.each do |topic| %>
+      <div id=<%= "topic-tab-#{topic.id}" %> class="col s3 forum-link">
+        <%= link_to topic.title, topic_path(topic) %>
+      </div>
+    <% end %>
   </div>
   <hr>
   <div class="row">
     <div class="col s4">
-      <h5>Message</h5>
+      <h5>Topic</h5>
     </div>
     <div class="col s2">
       <h5>No. of Replies</h5>
@@ -48,33 +41,26 @@
       <h5>Most Recent Reply</h5>
     </div>
   </div>
-    <% @messages.each do |message| %>
-      <div class="row">
-        <div class="col s4" style="">
-          <h5><%= link_to message.title, message_comments_path(message) %></h5>
-        </div>
-        <div class="col s2">
-          <% if message.comments %>
-            <p><%= message.comments.length %></p>
-          <% else %>
-            <p>0</p>
-          <% end %>
-        </div>
-        <div class="col s6">
-          <% last_comment = message.comments.last %>
-          <% if last_comment %>
-            <p class="light"><%= last_comment.body %></p>
-          <% else %>
-            No responses yet...
-          <% end %>
-        </div>
+  <% @messages.each do |message| %>
+    <div class="row">
+      <div class="col s4">
+        <h5><%= link_to message.title, message_comments_path(message) %></h5>
       </div>
-
-      <div class="container">
-
+      <div class="col s2">
+        <% if message.comments %>
+          <p><%= message.comments.length %></p>
+        <% else %>
+          <p>0</p>
+        <% end %>
       </div>
-      <p>
-
-      </p>
-    <% end %>
+      <div class="col s6">
+        <% last_comment = message.comments.last %>
+        <% if last_comment %>
+          <p class="light"><%= last_comment.body %></p>
+        <% else %>
+          No responses yet...
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
