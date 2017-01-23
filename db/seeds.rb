@@ -152,17 +152,17 @@ end
 #   Tip.create(body: tip)
 # end
 # ################################################################################
-# # Read SAT locations from csv file
-# school_file = File.open('./db/school_data.csv', 'r')
-# school_csv = CSV.parse(school_file, :headers => false)
-#
-# school_csv.each do |school|
-#   Sat.create({date:school[1],
-#               location_name:school[2],
-#               address:school[3],
-#               latitude:school[4].to_f,
-#               longitude:school[5].to_f})
-#             end
+# Read SAT locations from csv file
+school_file = File.open('./db/school_data.csv', 'r')
+school_csv = CSV.parse(school_file, :headers => false)
+
+school_csv.each do |school|
+  Sat.create({date:school[1],
+              location_name:school[2],
+              address:school[3],
+              latitude:school[4].to_f,
+              longitude:school[5].to_f})
+            end
 #
 # ################################################################################
 #
