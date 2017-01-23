@@ -1,6 +1,7 @@
 class SatsController < ApplicationController
   # include EventHelper 
   def index
+    @user = User.new
     if params[:date]
       @sats = helpers.close_by_sats(params[:date], params[:user_lat], params[:user_long]).take(10)
 

@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action :get_user
 
   def index
+    @user = User.new
     @message = Message.find(params[:message_id])
     @comments = @message.comments
   end
@@ -20,6 +21,7 @@ class CommentsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @message = Message.find(params[:message_id])
     @comment = Comment.find(params[:id])
   end
