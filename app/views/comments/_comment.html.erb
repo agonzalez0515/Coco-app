@@ -1,17 +1,19 @@
-<div class="comment-body row" style="background-color:#efb18d; border-radius: 3px; padding:10px;">
-  <div class="cols s10">
-    <%= comment.body %><br/ >
+<div class="comment-full container" style="background-color:#ffe0b2; border-radius: 5px; padding:10px; margin:5px">
+  <div class="comment-body row">
+    <div class="col s10 offset-s1">
+      <%= comment.body %><br/ >
+    </div>
   </div>
-</div>
 
-<div class="comment-author row">
-  <div class="cols s8">
-    <p>
-
-      <% if current_user == comment.user %>
-        <%= link_to 'Edit Comment', edit_message_comment_path(@message, comment) %>  |
-        <%= link_to 'Delete Comment', message_comment_path(@message, comment), method: :delete, data: {confirm: 'Are you sure?' } %>
-      <% end %>
-    </p>
+  <div class="comment-author row">
+    <div class="col s9 offset-s2">
+      <p><%= comment.user.first_name %></p>
+        <% if current_user == comment.user %>
+          <%= "<p>" %>
+            <%= link_to 'Edit Comment', edit_message_comment_path(@message, comment) %>  |
+            <%= link_to 'Delete Comment', message_comment_path(@message, comment), method: :delete, data: {confirm: 'Are you sure?' } %>
+          <%= "</p>" %>
+        <% end %>
+    </div>
   </div>
 </div>
