@@ -1,9 +1,10 @@
 class TopicsController < ApplicationController
 
   protect_from_forgery except: :search
-  before_action :get_user
-  before_action :set_topic, only: [ :index]
 
-  def index
+  def show
+    @user = current_user
     @messages = Message.where(topic_id: params[:id])
+    @topic_id = params[:id]
   end
+end

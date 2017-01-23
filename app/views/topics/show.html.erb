@@ -1,4 +1,4 @@
-<div class="messages-index">
+<div class="topics-index">
   <h2>CoCo Forums</h2>
 
   <h4>Discuss schools, scholarships, the application process and more!</h4>
@@ -24,16 +24,16 @@
 
   <div id="topic-tabs" class="row">
     <div id="general-tab" class="col s3">
-      <input id="gen-tab-btn" class="btn col s12" type="submit" name="submit" value = "General" action = "/topics/show/1" >
+      <input id="gen-tab-btn" class="btn col s12" type="submit" name="submit" value = "General" action = "" >
     </div>
     <div id="sat-prep-tab" class="col s3">
-      <input id="sat-prep-btn" class="btn col s12" type="submit" name="submit" value = "SAT Preparation" action = "/topics/show/2">
+      <input id="sat-prep-btn" class="btn col s12" type="submit" name="submit" value = "SAT Preparation" action = "">
     </div>
     <div id="fin-aid-tab" class="col s3">
-      <input id="fin-aid-btn" class="btn col s12" type="submit" name="submit" value = "Financial Aid" action = "/topics/show/3">
+      <input id="fin-aid-btn" class="btn col s12" type="submit" name="submit" value = "Financial Aid" action = "">
     </div>
     <div id="college-disc-tab" class="col s3">
-      <input id="college-disc-btn" class="btn col s12" type="submit" name="submit" value = "College Talk"  action = "/topics/show/4">
+      <input id="college-disc-btn" class="btn col s12" type="submit" name="submit" value = "College Talk"  action = "">
     </div>
   </div>
   <hr>
@@ -70,11 +70,10 @@
         </div>
       </div>
 
-      <div class="container">
 
-      </div>
-      <p>
-
-      </p>
     <% end %>
+    <form action="/messages/new" method="get">
+      <input type="submit" value="Add a Topic" class="waves-effect waves-light btn">
+      <input type="hidden" name="topic_id" value=<% @topic_id %> >
+    </form>
 </div>

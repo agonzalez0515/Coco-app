@@ -32,7 +32,9 @@ Rails.application.routes.draw do
     end
   end
 
-
+  # TOPIC ROUTES
+  resources :topics, only: [:show]
+  
   # HOMEPAGE ROUTES
   root 'welcome#index'
   get '/home' => 'welcome#index'
