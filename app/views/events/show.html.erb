@@ -18,6 +18,6 @@
 </div>
   <div id="directionsPanel" class="col s6"></div>
   <h5>Click on an address for directions to the site.</h5>
-  <%= link_to 'Delete Event', user_event_path(current_user.id, @event), method: :delete, data: {confirm: "Are you sure?"} %>
+  <%= link_to 'Delete Event', user_event_path(current_user.id, @event), method: :delete, data: {confirm: "Are you sure?"} %> |
   <%= link_to 'Edit Event', edit_user_event_path(current_user.id, @event) %>
 </div>
