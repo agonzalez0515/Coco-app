@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
 
   def index
     @user = User.new
-    @messages = Message.all
+    @messages = Message.all.order("updated_at")
     @topics = Topic.all
   end
 
