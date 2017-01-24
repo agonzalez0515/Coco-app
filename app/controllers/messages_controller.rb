@@ -13,6 +13,7 @@ class MessagesController < ApplicationController
   def new
     @user = current_user
     @message = Message.new
+    @topics = Topic.all
   end
 
   def create
@@ -21,7 +22,7 @@ class MessagesController < ApplicationController
       redirect_to messages_path
     else
       @errors = @message.errors.full_messages
-      render "new"
+      render "/messages/new"
     end
   end
 
@@ -69,6 +70,7 @@ private
   def message_params
     message_params = { title: params[:message][:title],
                      body: params[:message][:body],
+                     topic_id: params[:message][:topic_id],
                      user_id: current_user.id }
   end
 

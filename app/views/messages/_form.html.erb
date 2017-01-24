@@ -2,9 +2,9 @@
 
   <% if @errors %>
     <ul>
-    <% @errors.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
     </ul>
   <% end %>
   <p>
@@ -14,6 +14,13 @@
   <p>
     <%= f.label :body %><br>
     <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <% @topics.each do |topic| %>
+      <%= f.radio_button(:topic_id, topic.id) %>
+      <%= f.label(:topic_id, topic.title.upcase, :value=> topic.id) %>
+    <% end %>
   </p>
   <p>
     <button class="btn waves-effect waves-light" type="submit" name="action">Post Topic
