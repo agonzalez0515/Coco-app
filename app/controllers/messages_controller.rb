@@ -22,7 +22,7 @@ class MessagesController < ApplicationController
       redirect_to messages_path
     else
       @errors = @message.errors.full_messages
-      render "/messages/new"
+      render "new"
     end
   end
 
@@ -31,12 +31,17 @@ class MessagesController < ApplicationController
   end
 
   def edit
+    @user = current_user
+    @message = Message.find(params[:id])
+    @topics = Topic.all
   end
 
   def update
+    @message = Message.find(params[:id])
     if @message.update(message_params)
-      redirect_to message_comments_path(@message)
+      redirect_to @message
     else
+      @errors = @message.errors.full_messages
       render "edit"
     end
   end

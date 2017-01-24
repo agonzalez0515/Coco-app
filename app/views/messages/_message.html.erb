@@ -5,11 +5,16 @@
   <p style="font-size:1.10em;"><%= message.user.first_name %></p>
 
   <% if current_user && current_user.id == message.user_id %>
-  <p>
-    <%= link_to 'Delete Message', message_path(@message),
-    method: :delete,
-    data: { confirm: 'Are you sure?' } %>
-  </p>
+  <div class="row">
+    <div class="col s2">
+      <%= link_to 'Edit Topic', edit_message_path(@message) %>
+    </div>
+    <div class="col s2">
+      <%= link_to 'Delete Topic', message_path(@message),
+      method: :delete,
+      data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
   <% end %>
 
   <br><br><hr>
