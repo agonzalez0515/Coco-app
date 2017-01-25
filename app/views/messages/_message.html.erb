@@ -5,17 +5,6 @@
     <p style="font-size:1.25em;"><%= message.body %></p>
     <p style="font-size:1.10em;"><%= message.user.first_name %></p>
 
-    <% if message.tags %>
-    <div class="tags row">
-      <span style="font-weight:bold;">Tags:</span>
-      <% message.tags.each do |tag| %>
-      <button type="button" class="tag-btn" name="tag_id" value=<%= tag.id %> >
-        <%= tag.title %>
-      </button>
-      <% end %>
-    </div>
-    <% end %>
-
     <% if current_user && current_user.id == message.user_id %>
     <div class="row">
       <div class="col s2">
@@ -28,6 +17,29 @@
       </div>
     </div>
     <% end %>
+
+    <% if message.tags %>
+    <div class="tags row">
+      <span style="font-weight:bold;">Tags:</span>
+      <% message.tags.each do |tag| %>
+      <button type="button" class="tag-btn" name="tag_id" value=<%= tag.id %> >
+        <%= tag.title %>    (<%= Tag.where(message_id: message.id).length %>)
+      </button>
+      <% end %>
+    </div>
+    <% end %>
+    <div class="add-tag-form">
+      <form class="" action="/tags" method="post">
+        <table>
+          <tr>
+            <td><input type="text" name="tag[title]" placeholder="Tag..."></td>
+            <input type="hidden" name="tag[message_id]" value=<%=message.id %> >
+            <input type="hidden" name="tag[count]" value=1 >
+            <td><button class="tag-btn" type="submit" name="submit">Add Tag</button></td>
+          </tr>
+        </table>
+      </form>
+    </div>
   </div>
 
   <p style="font-size:1.15em;"><strong>Reply:</strong></p>

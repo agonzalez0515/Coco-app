@@ -1,7 +1,6 @@
 <%= form_for([@message, @message.comments.build]) do |f| %>
 
   <p>
-  Add a Reply: <br />
     <%= f.text_area :body %>
   </p>
 
