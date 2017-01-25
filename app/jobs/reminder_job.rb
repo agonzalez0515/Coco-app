@@ -1,18 +1,18 @@
 class ReminderJob < ApplicationJob
   queue_as :default
+  after_enqueue :add_event_id
 
-  after_enqueue do |job|
+  def add_event_id
+    # @event = Event.where(user_id: params[:user_id], sat_id: params[:sat_id])
+    p "**" * 50 
+    p @event
+    p Delayed::Job.find(self.provider_job_id)
     p "**" * 50
-    p job.id
-    p "**" * 50
-  end
+  end 
 
   def perform(event)
-    p "**" * 50
-    p self.id
-    p "**" * 50
-
     @event = event
+    self.event_id = @event.id
     @name = @event.user.first_name
     @phone_number = @event.user.phone_number
     @date = @event.sat.date.to_s
@@ -27,14 +27,4 @@ class ReminderJob < ApplicationJob
       :body => "Hi #{@name}, you have an SAT test coming up on #{@date} at #{@location}: #{@address}",
     )
   end
-
-
-# RemindJob = Struct.new(:text, :emails) do
-#   def perform
-#     emails.each { |e| NewsletterMailer.deliver_text_to_email(text, e) }
-#   end
-# end
-
-
-
 end

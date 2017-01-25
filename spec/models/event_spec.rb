@@ -9,6 +9,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  title      :string           default("SAT Day")
+#  job        :string
 #
 
 require 'rails_helper'
