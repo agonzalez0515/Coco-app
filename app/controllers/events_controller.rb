@@ -45,6 +45,8 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to new_user_event_path
   end
 
   def update
