@@ -1,7 +1,17 @@
 class ReminderJob < ApplicationJob
   queue_as :default
 
+  after_enqueue do |job|
+    p "**" * 50
+    p job.id
+    p "**" * 50
+  end
+
   def perform(event)
+    p "**" * 50
+    p self.id
+    p "**" * 50
+
     @event = event
     @name = @event.user.first_name
     @phone_number = @event.user.phone_number
