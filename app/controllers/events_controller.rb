@@ -19,16 +19,11 @@ class EventsController < ApplicationController
 
     if @event.save
       redirect_to user_events_path
-      event_information = {
-        name: @user.first_name,
-        phone_number: @user.phone_number,
-        date: @sat.date.to_s,
-        location: @sat.location_name,
-        address: @sat.address
-            }
+      ReminderJob.new.delay(run_at: 3.minutes.from_now).perform(@event)
 
-      # ReminderJob.set(wait: 1.minute).perform_later(event_information)
-      Delayed::Job.enqueue ReminderJob.new.perform_later(event_information)
+
+      # # ReminderJob.set(wait: 1.minute).perform_later(event_information)
+      # Delayed::Job.enqueue ReminderJob.new.perform_later(event_information)
 
     else
       render 'new'

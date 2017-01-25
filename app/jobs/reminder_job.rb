@@ -1,13 +1,13 @@
 class ReminderJob < ApplicationJob
   queue_as :default
 
-  def perform(args = {})
-    @name = args[:name]
-    @phone_number = args[:phone_number]
-    @date = args[:date]
-    @location = args[:location]
-    @address = args[:address]
-    p "********" * 50
+  def perform(event)
+    @event = event
+    @name = @event.user.first_name
+    @phone_number = @event.user.phone_number
+    @date = @event.sat.date.to_s
+    @location = @event.sat.location_name
+    @address = @event.sat.address
     account_sid = ENV["ACCOUNT_KEY"] 
     auth_token = ENV["SECRET_KEY"]
     @client = Twilio::REST::Client.new account_sid, auth_token 
