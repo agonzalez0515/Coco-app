@@ -8,9 +8,11 @@ class ReminderJob < ApplicationJob
     p @event
     p Delayed::Job.find(self.provider_job_id)
     p "**" * 50
+    p "**" * 50
+    
   end 
 
-  def perform(event)
+  def perform(args = {})
     @event = event
     self.event_id = @event.id
     @name = @event.user.first_name
