@@ -1,12 +1,14 @@
 class RequirementsController < ApplicationController
 
   def information
+    @user = User.new
   end
 
   def index
   end
 
   def new
+    @user = User.new
     @requirement = Requirement.new
   end
 

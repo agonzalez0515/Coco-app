@@ -48,7 +48,7 @@ main {
 }
 
 .nav-wrapper {
-	background-color: #42649b;
+	background-color: #01579b;
 }
 #new-form, h3.form {
 	background-color: white;
@@ -63,8 +63,8 @@ main {
 }
 
 h1.header, h5.header {
-		color: #42649b;
-		text-shadow:10px 10px 10px #42649b;
+		color: #01579b;
+		text-shadow:10px 10px 10px #01579b;
 		font-style: bold;
 		background-color: white;
 	}

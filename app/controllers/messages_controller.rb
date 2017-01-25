@@ -5,10 +5,12 @@ class MessagesController < ApplicationController
   before_action :set_message, only: [ :show, :edit, :update, :destroy]
 
   def index
+    @user = User.new
      @messages = Message.all
   end
 
   def new
+    @user = current_user
     @message = Message.new
   end
 
@@ -23,6 +25,7 @@ class MessagesController < ApplicationController
   end
 
   def show
+    @user = current_user
   end
 
   def edit
