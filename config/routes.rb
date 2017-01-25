@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   resources :topics, only: [:show]
 
   # MESSAGE TAG ROUTES
-  resources :tags, only [:new, :create]
+  resources :tags, only: [:new, :create]
 
   # HOMEPAGE ROUTES
   root 'welcome#index'
