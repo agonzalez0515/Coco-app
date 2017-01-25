@@ -1,32 +1,35 @@
 <div class="message">
 
-  <h4><%= message.title %></strong></h4>
-  <p style="font-size:1.25em;"><%= message.body %></p>
-  <p style="font-size:1.10em;"><%= message.user.first_name %></p>
+  <div class="message-full col s8 offset-s2">
+    <h4><%= message.title %></strong></h4>
+    <p style="font-size:1.25em;"><%= message.body %></p>
+    <p style="font-size:1.10em;"><%= message.user.first_name %></p>
 
-  <% if message.tags %>
+    <% if message.tags %>
     <div class="tags row">
-      <strong>Tags:</strong>
+      <span style="font-weight:bold;">Tags:</span>
       <% message.tags.each do |tag| %>
-        <button type="button" class="tag-btn" disabled><%= tag.title %> </button>
+      <button type="button" class="tag-btn" name="tag_id" value=<%= tag.id %> >
+        <%= tag.title %>
+      </button>
       <% end %>
     </div>
-  <% end %>
+    <% end %>
 
-  <% if current_user && current_user.id == message.user_id %>
-  <div class="row">
-    <div class="col s2">
-      <%= link_to 'Edit Topic', edit_message_path(@message) %>
+    <% if current_user && current_user.id == message.user_id %>
+    <div class="row">
+      <div class="col s2">
+        <%= link_to 'Edit Topic', edit_message_path(@message) %>
+      </div>
+      <div class="col s2">
+        <%= link_to 'Delete Topic', message_path(@message),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+      </div>
     </div>
-    <div class="col s2">
-      <%= link_to 'Delete Topic', message_path(@message),
-      method: :delete,
-      data: { confirm: 'Are you sure?' } %>
-    </div>
+    <% end %>
   </div>
-  <% end %>
 
-  <br><br><hr>
   <p style="font-size:1.15em;"><strong>Reply:</strong></p>
   <%= render 'comments/form' %>
 

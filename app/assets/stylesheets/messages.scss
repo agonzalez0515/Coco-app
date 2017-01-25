@@ -13,3 +13,24 @@
 .forum-link:hover {
   background-color: #ffe0b2;
 }
+
+.message-full {
+  background-color:#64b5f6;
+  border-radius: 5px;
+  padding:10px;
+  margin:5px
+}
+
+.comment-full {
+  background-color:#ffe0b2;
+  border-radius: 5px;
+  padding:10px;
+
+}
+.tag-btn {
+  color: #01579b;
+  border-radius: 5px;
+  font-size: 11px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  background: #ffe0b2;
+}
