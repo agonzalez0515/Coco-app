@@ -59,7 +59,7 @@ class MessagesController < ApplicationController
       @messages = (helpers.message_search(params[:message_string]))
     end
     render "messages/_search"
-end
+  end
 
 private
   def get_user

@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   resources :tips, only: [:index]
 
 
-  # FORUM ROUTES
+  # MESSAGE ROUTES
   resources :messages do
     resources :comments
     collection do
@@ -32,9 +32,12 @@ Rails.application.routes.draw do
     end
   end
 
-  # TOPIC ROUTES
+  # FORUM TOPIC ROUTES
   resources :topics, only: [:show]
-  
+
+  # MESSAGE TAG ROUTES
+  resources :tags, only [:new, :create]
+
   # HOMEPAGE ROUTES
   root 'welcome#index'
   get '/home' => 'welcome#index'
