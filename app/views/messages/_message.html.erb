@@ -20,12 +20,14 @@
 
     <% if message.tags %>
     <div class="tags row">
-      <span style="font-weight:bold;">Tags:</span>
-      <% message.tags.each do |tag| %>
-      <button type="button" class="tag-btn" name="tag_id" value=<%= tag.id %> >
-        <%= tag.title %>    (<%= tag.count %>)
-      </button>
-      <% end %>
+      <div class="col s11 offset-s1"
+        <span style="font-weight:bold;">Tags:</span>
+        <% message.tags.each do |tag| %>
+        <button type="button" class="tag-btn" name="tag_id" value=<%= tag.id %> >
+          <%= tag.title %>    (<%= tag.count %>)
+        </button>
+        <% end %>
+      </div>
     </div>
     <% end %>
     <div class="add-tag-form">
