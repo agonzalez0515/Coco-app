@@ -9,15 +9,20 @@ class TagsController < ApplicationController
   def create
     @user = current_user
     @message = Message.find(params[:tag][:message_id])
-    @tag = Tag.new(tag_params)
-    # if @message.tags.where(title: params[:tag][:title]).length > 1
-    #   @tag.count += 1
-    # end
-    if @tag.save
+    temp_tags = @message.tags
+    if temp_tags.where(title: params[:tag][:title]).length >= 1
+      @tag_to_increment = temp_tags.where(title: params[:tag][:title])[0]
+      @tag_to_increment.count += 1
+      @tag_to_increment.save
       redirect_to Message.find(params[:tag][:message_id])
     else
-      @errors = @tag.errors.full_messages
-      redirect_to Message.find(params[:tag][:message_id])
+      @tag = Tag.new(tag_params)
+      if @tag.save
+        redirect_to Message.find(params[:tag][:message_id])
+      else
+        @errors = @tag.errors.full_messages
+        redirect_to Message.find(params[:tag][:message_id])
+      end
     end
   end
 

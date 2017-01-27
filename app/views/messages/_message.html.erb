@@ -23,7 +23,7 @@
       <span style="font-weight:bold;">Tags:</span>
       <% message.tags.each do |tag| %>
       <button type="button" class="tag-btn" name="tag_id" value=<%= tag.id %> >
-        <%= tag.title %>    (<%= Tag.where(message_id: message.id).length %>)
+        <%= tag.title %>    (<%= tag.count %>)
       </button>
       <% end %>
     </div>
