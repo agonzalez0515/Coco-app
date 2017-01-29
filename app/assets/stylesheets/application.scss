@@ -17,6 +17,14 @@
  *= require_self
  */
 
+ @import "materialize/components/color";
+ $primary-color: color("light-blue", "darken-4") !default;
+ $primary-color-light: lighten($primary-color, 15%) !default;
+ $primary-color-dark: darken($primary-color, 15%) !default;
 
+ $secondary-color: color("orange", "darken-1") !default;
+ $success-color: color("amber", "lighten-1") !default;
+ $error-color: color("red", "base") !default;
+ $link-color: color("light-blue", "darken-1") !default;
  @import "materialize";
  @import "styles";
