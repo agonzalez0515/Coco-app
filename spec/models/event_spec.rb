@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  sat_id     :integer
+#  completed  :boolean          default("false")
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  title      :string           default("SAT Day")
+#
+
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do

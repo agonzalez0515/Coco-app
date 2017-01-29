@@ -62,7 +62,7 @@ function fetchParams(e) {
 // location selection form
 function fetchSats(response) {
   deleteMarkers();
-  for (var i = 0; i < response.length; i++) {
+  for (var i = 0; i <= response.length; i++) {
     var sat = response[i];
     placeMarkers(sat.latitude, sat.longitude, sat.location_name)
     //Append input into form with sat id

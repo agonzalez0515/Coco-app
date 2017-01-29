@@ -2,6 +2,7 @@ class ChatsController < ApplicationController
   before_action :get_chats
 
   def index
+    @user = current_user
   end
 
   def create
