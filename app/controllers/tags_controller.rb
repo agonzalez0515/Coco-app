@@ -26,6 +26,14 @@ class TagsController < ApplicationController
     end
   end
 
+  def like
+    @tag = Tag.find(params[:id])
+    @tag.count += 1
+    @tag.save
+
+    render json: {'title': @tag.title, 'count': @tag.count.to_s}
+  end
+
 private
   def tag_params
     tag_params = { title: params[:tag][:title],

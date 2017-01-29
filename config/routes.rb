@@ -36,7 +36,12 @@ Rails.application.routes.draw do
   resources :topics, only: [:show]
 
   # MESSAGE TAG ROUTES
-  resources :tags, only: [:new, :create]
+  resources :tags, only: [:new, :create] do
+    member do
+      # post 'like'
+      put 'like', to: 'tags#like'
+    end
+  end
 
   # HOMEPAGE ROUTES
   root 'welcome#index'

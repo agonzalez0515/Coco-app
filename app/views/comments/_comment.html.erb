@@ -3,7 +3,9 @@
     <div class="col s10 offset-s1">
       <%= comment.body %><br/ >
       <p style="font-weight: bold;"><%= comment.user.first_name %></p>
-      Posted:  <%= comment.updated_at.to_formatted_s(:long)  %>
+      <p style="font-style:italic;">
+        Posted:  <%= comment.updated_at.to_formatted_s(:long)  %>
+      </p>
       <% if current_user == comment.user %>
       <%= "<p>" %>
         <%= link_to 'Edit Comment', edit_message_comment_path(@message, comment) %>  |
