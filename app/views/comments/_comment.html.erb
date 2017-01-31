@@ -1,17 +1,17 @@
-<div class="comment-body row" style="background-color:#efb18d; border-radius: 3px; padding:10px;">
-  <div class="cols s10">
-    <%= comment.body %><br/ >
-  </div>
-</div>
-
-<div class="comment-author row">
-  <div class="cols s8">
-    <p>
-
+<div class="comment-full container" style="margin-bottom: 15px;">
+  <div class="comment-body row">
+    <div class="col s10 offset-s1">
+      <%= comment.body %><br/ >
+      <p style="font-weight: bold;"><%= comment.user.first_name %></p>
+      <p style="font-style:italic;">
+        Posted:  <%= comment.updated_at.to_formatted_s(:long)  %>
+      </p>
       <% if current_user == comment.user %>
+      <%= "<p>" %>
         <%= link_to 'Edit Comment', edit_message_comment_path(@message, comment) %>  |
         <%= link_to 'Delete Comment', message_comment_path(@message, comment), method: :delete, data: {confirm: 'Are you sure?' } %>
-      <% end %>
-    </p>
+        <%= "</p>" %>
+        <% end %>
+    </div>
   </div>
 </div>

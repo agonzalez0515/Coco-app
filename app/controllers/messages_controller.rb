@@ -6,12 +6,14 @@ class MessagesController < ApplicationController
 
   def index
     @user = User.new
-     @messages = Message.all
+    @messages = Message.all.order("updated_at")
+    @topics = Topic.all
   end
 
   def new
     @user = current_user
     @message = Message.new
+    @topics = Topic.all
   end
 
   def create
@@ -29,12 +31,17 @@ class MessagesController < ApplicationController
   end
 
   def edit
+    @user = current_user
+    @message = Message.find(params[:id])
+    @topics = Topic.all
   end
 
   def update
+    @message = Message.find(params[:id])
     if @message.update(message_params)
-      redirect_to message_comments_path(@message)
+      redirect_to @message
     else
+      @errors = @message.errors.full_messages
       render "edit"
     end
   end
@@ -52,7 +59,7 @@ class MessagesController < ApplicationController
       @messages = (helpers.message_search(params[:message_string]))
     end
     render "messages/_search"
-end
+  end
 
 private
   def get_user
@@ -68,6 +75,7 @@ private
   def message_params
     message_params = { title: params[:message][:title],
                      body: params[:message][:body],
+                     topic_id: params[:message][:topic_id],
                      user_id: current_user.id }
   end
 
