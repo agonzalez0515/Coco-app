@@ -146,15 +146,15 @@ comment10= Comment.create!(body: "It's definitely a thing. You're not alone. But
 
 comment11= Comment.create!(body: "UC Berkeley is pretty great. Beautiful campus, great professors, wonderful diversity. Go Bears!",message_id: message6.id ,user_id: zara.id)
 ################################################################################
-tag1 = Tag.create!(message_id: message2.id, title: "Like")
-tag2 = Tag.create!(message_id: message2.id, title: "Study")
-tag3 = Tag.create!(message_id: message3.id, title: "Love")
-tag4 = Tag.create!(message_id: message3.id, title: "Love")
-tag5 = Tag.create!(message_id: message1.id, title: "Scholarships")
-tag6 = Tag.create!(message_id: message4.id, title: "Scholarships")
-tag7 = Tag.create!(message_id: message5.id, title: "Anxiety")
-tag8 = Tag.create!(message_id: message5.id, title: "Applying")
-tag9 = Tag.create!(message_id: message6.id, title: "Bears")
+tag1 = Tag.create!(message_id: message2.id, count:1, title: "Like")
+tag2 = Tag.create!(message_id: message2.id, count:1, title: "Study")
+tag3 = Tag.create!(message_id: message3.id, count:1, title: "Love")
+tag4 = Tag.create!(message_id: message3.id, count:1, title: "Love")
+tag5 = Tag.create!(message_id: message1.id, count:1, title: "Scholarships")
+tag6 = Tag.create!(message_id: message4.id, count:1, title: "Scholarships")
+tag7 = Tag.create!(message_id: message5.id, count:1, title: "Anxiety")
+tag8 = Tag.create!(message_id: message5.id, count:1, title: "Applying")
+tag9 = Tag.create!(message_id: message6.id, count:1, title: "Bears")
 ################################################################################
 
 
