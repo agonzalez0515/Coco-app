@@ -16,7 +16,16 @@ class EventsController < ApplicationController
     @sat = Sat.find(params[:sat_id])
     @event = Event.new(user_id: @user.id, sat_id: @sat.id, completed: false)
 
-    if @event.save
+    @all_dates = []
+
+    @user.sats.each do |sat|
+      @all_dates.push(sat.date)
+    end
+
+    if @all_dates.include?(@sat.date)
+       redirect_to new_user_event_path
+    else
+      @event.save
       redirect_to user_events_path
       event_information = {
         name: @user.first_name,
@@ -24,13 +33,11 @@ class EventsController < ApplicationController
         date: @sat.date.to_s,
         location: @sat.location_name,
         address: @sat.address
-            }
+      }
 
       ReminderJob.set(wait: 1.minute).perform_later(event_information)
-
-    else
-      render 'new'
     end
+
   end
 
   def show
