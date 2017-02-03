@@ -1,0 +1,71 @@
+<div class="topics-index">
+  <h2>CoCo Forums</h2>
+
+  <h4>Discuss schools, scholarships, the application process and more!</h4>
+  <hr>
+  <div class="row">
+    <div class="col offset-s3 s6">
+      <form class="form input-field" action="/messages/search" method="post" style="text-align:center;">
+        <input type="text" name="message_string" placeholder="Search forum by content..." style="text-align:center;">
+        <input class="btn" type="submit" name="submit" value = "Search">
+      </form>
+    </div>
+  </div>
+
+  <hr>
+  <div class="row">
+    <div class="col s4">
+      <h5>FORUMS</h5>
+    </div>
+    <div id="all-link" class="col s4 forum-link">
+      <%= link_to "Most Recent Posts", messages_path %>
+    </div>
+  </div>
+
+  <div id="topic-links" class="row">
+    <% @topics.each do |topic| %>
+      <div id=<%= "topic-link-#{topic.id}" %> class="col s3 forum-link">
+        <%= link_to topic.title, topic_path(topic) %>
+      </div>
+    <% end %>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col s4">
+      <h5>Message</h5>
+    </div>
+    <div class="col s2">
+      <h5>No. of Replies</h5>
+    </div>
+    <div class="col s6">
+      <h5>Most Recent Reply</h5>
+    </div>
+  </div>
+    <% @messages.each do |message| %>
+      <div class="row">
+        <div class="col s4" style="">
+          <h5><%= link_to message.title, message_comments_path(message) %></h5>
+        </div>
+        <div class="col s2">
+          <% if message.comments %>
+            <p><%= message.comments.length %></p>
+          <% else %>
+            <p>0</p>
+          <% end %>
+        </div>
+        <div class="col s6">
+          <% last_comment = message.comments.last %>
+          <% if last_comment %>
+            <p class="light"><%= last_comment.body %></p>
+          <% else %>
+            No responses yet...
+          <% end %>
+        </div>
+      </div>
+
+
+    <% end %>
+    <form action="/messages/new" method="get">
+      <input type="submit" value="Add a Topic" class="waves-effect waves-light btn">
+    </form>
+</div>
