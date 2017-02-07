@@ -261,6 +261,43 @@ body.events {
 }
 
  
+/* line 5, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/messages.scss */
+.forum-link {
+  font-size: 1.1em;
+  font-weight: bolder;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 7px;
+}
+
+/* line 13, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/messages.scss */
+.forum-link:hover {
+  background-color: #ffe0b2;
+}
+
+/* line 17, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/messages.scss */
+.message-full {
+  background-color: #64b5f6;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+}
+
+/* line 24, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/messages.scss */
+.comment-full {
+  background-color: #ffe0b2;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* line 30, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/messages.scss */
+.tag-btn {
+  color: #01579b;
+  border-radius: 5px;
+  font-size: 11px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  background: #ffe0b2;
+}
 /* line 6, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/requirements.scss */
 table.requirements.stripped, th.requirements, td.requirements {
   border: 1px solid black;
