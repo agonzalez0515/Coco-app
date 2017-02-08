@@ -11,7 +11,7 @@
 }
 
 .sats-index {
-  height: 250px;
+  height: 225px;
   font-family: helvetica;
   font-style: italic;
   text-align: center;
@@ -23,5 +23,10 @@
 }
 
 .answers{
+  font-size: 20px;
+  max-width: 900px;
+}
+
+li {
   font-size: 20px;
 }
