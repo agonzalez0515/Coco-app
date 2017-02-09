@@ -35,9 +35,12 @@
       <h5>Topic</h5>
     </div>
     <div class="col s2">
+      <h5>Forum</h5>
+    </div>
+    <div class="col s2">
       <h5>No. of Replies</h5>
     </div>
-    <div class="col s6">
+    <div class="col s4">
       <h5>Most Recent Reply</h5>
     </div>
   </div>
@@ -47,13 +50,16 @@
         <h5><%= link_to message.title, message_comments_path(message) %></h5>
       </div>
       <div class="col s2">
+        <h5><%= link_to message.topic.title, topic_path(message.topic) %></h5>
+      </div>
+      <div class="col s2">
         <% if message.comments %>
           <p><%= message.comments.length %></p>
         <% else %>
           <p>0</p>
         <% end %>
       </div>
-      <div class="col s6">
+      <div class="col s4">
         <% last_comment = message.comments.last %>
         <% if last_comment %>
           <p class="light"><%= last_comment.body %></p>
@@ -63,4 +69,9 @@
       </div>
     </div>
   <% end %>
+  <div class="row">
+    <div class="col offset-s3 s6">
+      <%= will_paginate @messages %>
+    </div>
+  </div>
 </div>
