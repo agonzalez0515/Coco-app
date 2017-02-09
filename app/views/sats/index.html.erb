@@ -1,15 +1,13 @@
 <div class="light">
   <div class="row">
-    <div class=" col s12 sats-index center orange lighten-4">
-      <h1>What are the SATS?</h1>
+    <div class=" col s12 sats-index center blue lighten-2">
+      <h1 class="page-header">What are the SATS?</h1>
       <p>
-        <h6>
-          <% if current_user %>
-          <%= button_to 'Add your SAT date', new_user_event_path(current_user.id), class: 'waves-effect waves-light btn #F7C331'%><br>
-          <% else %>
-          <%= button_to 'Add your SAT date', login_path, class: 'waves-effect waves-light btn #F7C331' %>
-          <% end %>
-        </h6>
+        <% if current_user %>
+        <%= button_to 'Add your SAT date', new_user_event_path(current_user.id), class: 'waves-effect waves-light btn'%><br>
+        <% else %>
+        <%= button_to 'Add your SAT date', login_path, class: 'waves-effect waves-light btn' %>
+        <% end %>
       </p>
     </div>
   </div>
