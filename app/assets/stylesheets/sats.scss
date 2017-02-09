@@ -24,9 +24,22 @@
 
 .answers{
   font-size: 20px;
-  max-width: 900px;
+  // max-width: 900px;
 }
 
 li {
   font-size: 20px;
+}
+
+.waivers{
+  text-align: center;
+}
+
+.waiver-text {
+  font-size: 30px;
+}
+
+.waivers-horizontal{
+  background-color: #65b5f6;
+  color: white;
 }
