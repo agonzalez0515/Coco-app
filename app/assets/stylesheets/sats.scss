@@ -7,5 +7,39 @@
 }
 
 .card.tall{
-  height: 350px;  
+  height: 350px;
+}
+
+.sats-index {
+  height: 225px;
+  font-family: helvetica;
+  font-style: italic;
+  text-align: center;
+}
+
+.icons {
+  color: #fb8c00;
+  font-size: 70px;
+}
+
+.answers{
+  font-size: 20px;
+  // max-width: 900px;
+}
+
+li {
+  font-size: 20px;
+}
+
+.waivers{
+  text-align: center;
+}
+
+.waiver-text {
+  font-size: 30px;
+}
+
+.waivers-horizontal{
+  background-color: #65b5f6;
+  color: white;
 }
