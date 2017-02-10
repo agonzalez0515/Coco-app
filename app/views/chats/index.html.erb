@@ -1,9 +1,13 @@
+<div class="light">
 <div class="title">
-<p> COCO CHAT</p>
-<p> Hi, <%= current_user.first_name %>!</p>
-<p> Share your thoughts and recent experience with other students and/or parents. </p> 
+	<h1> Coco Chat Room</h1>
 </div>
-	<div class="chat-wr">
-	  <%= render 'chats' %>
-	  <%= render 'chat_form' %>
-	</div>
+<div class="welcome">
+	<p> Hi, <%= current_user.first_name %>!</p>
+	<p> Share your thoughts and recent experience with other students and/or parents. </p>
+</div>
+<div class="chat-wr">
+  <%= render 'chats' %>
+  <%= render 'chat_form' %>
+</div>
+</div>
