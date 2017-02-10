@@ -80,6 +80,8 @@ GEM
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
     ffi (1.9.14)
+    font-awesome-sass (4.7.0)
+      sass (>= 3.2)
     geocoder (1.4.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -229,6 +231,7 @@ DEPENDENCIES
   dotenv-rails
   easy_translate
   factory_girl_rails (~> 4.0)
+  font-awesome-sass
   geocoder
   hirb
   jbuilder (~> 2.5)
@@ -255,4 +258,4 @@ DEPENDENCIES
   will_paginate (~> 3.1.0)
 
 BUNDLED WITH
-   1.13.6
+   1.14.3

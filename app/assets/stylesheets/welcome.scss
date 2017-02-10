@@ -47,3 +47,13 @@
   font-color: gray;
   font-size: 25px;
 }
+
+.header-image {
+  // width: 100%;
+  min-height: 700px;
+  background: url(asset-path('coco-header.png'));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center center;
+
+}
