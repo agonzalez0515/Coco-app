@@ -1,12 +1,12 @@
 <div class="light">
   <div class="row">
-    <div class="col s12 sats-index center blue lighten-2">
-      <h1 class="page-header">What are the SATS?</h1>
+    <div class="col s12 sats-index center blue lighten-2 page-header">
       <p>
+        <h1>What are the SATS?</h1>
         <% if current_user %>
-        <%= button_to 'Add your SAT date', new_user_event_path(current_user.id), class: 'waves-effect waves-light btn'%><br>
+        <h4><%= button_to 'Add your SAT date', new_user_event_path(current_user.id), class: 'waves-effect waves-light btn'%></h4><br>
         <% else %>
-        <%= button_to 'Add your SAT date', login_path, class: 'waves-effect waves-light btn' %>
+        <h5><%= button_to 'Add your SAT date', login_path, class: 'waves-effect waves-light btn' %></h5>
         <% end %>
       </p>
     </div>
@@ -18,6 +18,7 @@
           <p class="answers">The SAT is an all around exam created by College Board that is used by universities and colleges to see where you are academically in regards to other students. This is only <b>one</b> of many factors that an admission team takes into account.</p>
       </div>
     </div>
+    <br><br><br><br><br><br><br><br><br>
     <div class="row">
       <div class="col s12">
         <h3 class="questions"><%=icon('question-circle-o', class: "icons")%> When do I register?</h3>
