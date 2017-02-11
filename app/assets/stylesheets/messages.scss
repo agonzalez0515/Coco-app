@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//
 .forum-link {
   font-size: 1.1em;
   font-weight: bolder;
@@ -33,4 +34,28 @@
   font-size: 11px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   background: #ffe0b2;
+}
+
+.description {
+  font-family: helvetica;
+  font-style: italic;
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  position: absolute;
+    top: 70%;
+    left: 30%;
+  margin:  -210px 0 0 -290px;
+}
+
+.for-title {
+  font-family: helvetica;
+  font-style: italic;
+  font-size: 75px;
+  text-align: center;
+  color: white;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+  margin:  -250px 0 0 -150px;
 }

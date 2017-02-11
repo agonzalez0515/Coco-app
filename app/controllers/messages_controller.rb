@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
 
   def index
     @user = User.new
-    @messages = Message.all.order("updated_at")
+    @messages = Message.paginate(:page => params[:page], :per_page => 5).order("updated_at")
     @topics = Topic.all
   end
 
