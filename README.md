@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/agonzalez0515/coco-app.svg?branch=development)](https://travis-ci.org/agonzalez0515/coco-app)
 
 
-![Coco Logo](https://s23.postimg.org/4l8rxhe97/coco_logo.png)
+<p align="center"><img width=50% src="https://s23.postimg.org/4l8rxhe97/coco_logo.png"></p>
 
 
 ----
