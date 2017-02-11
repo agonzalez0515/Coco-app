@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/agonzalez0515/coco-app.svg?branch=development)](https://travis-ci.org/agonzalez0515/coco-app)
 
 
-![Coco Logo](https://s23.postimg.org/4l8rxhe97/coco_logo.png)
+<p align="center"><img width=50% src="https://s23.postimg.org/4l8rxhe97/coco_logo.png"></p>
 
 
 ----
@@ -13,6 +13,28 @@ Main features: track A-G course requirements, learn about the college applicatio
 Tech Stack: Ruby on Rails, JavaScript, Materialize, PostgreSQL, Google Maps API, Twilio API, Active Cable, Heroku, Git
 
 
+**[Authors](#Authors)**
+
+  **   [Installation](#installation)**
+
+   * [Getting Started](#Getting)
+
+   * [Prerequisites](#Prerequisites)
+
+**  [Main Features](#Main)**
+
+- [Student Profile Page](#Personalized)
+
+
+
+**[Deployment](#Deployment)**
+
+**[Tech Stack](#Built)**
+
+**[License](#license)**
+
+**[Acknowledgments](#Acknowledgments)**
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -22,7 +44,7 @@ These instructions will get you a copy of the project up and running on your loc
 Our project runs on Rails 5 so make sure to have updated versions of Ruby, Javascript and PostgreSQL.
 
 
-### Installing
+### Installation
 
 Once you have cloned our repo, make sure to:
 
