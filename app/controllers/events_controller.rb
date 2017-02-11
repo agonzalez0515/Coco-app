@@ -18,11 +18,15 @@ class EventsController < ApplicationController
     @event = Event.new(user_id: @user.id, sat_id: @sat.id, completed: false)
 
     if @event.save
-      @event = Event.where(user_id: @user.id, sat_id: @sat.id)[0]
-      p @event
+
+      event_information = {
+        name: @sat.location_name
+      }
+
       redirect_to user_events_path
-      ReminderJob.new(@event)
-      # .delay(run_at: 1.minute.from_now).perform
+      # ReminderJob.new.delay(run_at: 1.minute.from_now).perform(event_information)
+      ReminderJob.new.delay.perform(event_information)
+
     else
       render 'new'
     end
