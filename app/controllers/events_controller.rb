@@ -27,7 +27,7 @@ class EventsController < ApplicationController
     else
       @event.save
       redirect_to user_events_path
-      ReminderJob.new.delay(run_at: 50.minutes.from_now).perform(@event)
+      ReminderJob.new.delay(run_at: 2.minutes.from_now).perform(@event)
     end
   end
 
