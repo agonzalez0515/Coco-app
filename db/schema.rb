@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 20170125082649) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "title",      default: "SAT Day"
-    t.string   "job"
   end
 
   create_table "messages", force: :cascade do |t|
