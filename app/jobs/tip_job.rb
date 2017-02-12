@@ -10,7 +10,7 @@ class TipJob < ApplicationJob
     auth_token = ENV["SECRET_KEY"]
     @client = Twilio::REST::Client.new account_sid, auth_token
     message = @client.account.messages.create(
-      :from => "+14152002640",
+      :from => "+14152003527",
       :to => @phone_number,
       :body => "Hi #{@name}. #{@content}"
     )
