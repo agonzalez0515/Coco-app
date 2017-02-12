@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20170125082649) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "topic_id"
   end
 
   create_table "requirements", force: :cascade do |t|
@@ -86,8 +87,22 @@ ActiveRecord::Schema.define(version: 20170125082649) do
     t.float    "longitude"
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "message_id"
+    t.integer  "count",      default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "tips", force: :cascade do |t|
     t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

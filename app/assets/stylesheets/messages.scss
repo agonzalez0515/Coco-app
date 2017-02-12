@@ -1,3 +1,61 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//
+.forum-link {
+  font-size: 1.1em;
+  font-weight: bolder;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 7px;
+}
+
+.forum-link:hover {
+  background-color: #ffe0b2;
+}
+
+.message-full {
+  background-color:#64b5f6;
+  border-radius: 5px;
+  padding:10px;
+  margin:5px
+}
+
+.comment-full {
+  background-color:#ffe0b2;
+  border-radius: 5px;
+  padding:10px;
+
+}
+.tag-btn {
+  color: #01579b;
+  border-radius: 5px;
+  font-size: 11px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  background: #ffe0b2;
+}
+
+.description {
+  font-family: helvetica;
+  font-style: italic;
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  position: absolute;
+    top: 70%;
+    left: 30%;
+  margin:  -210px 0 0 -290px;
+}
+
+.for-title {
+  font-family: helvetica;
+  font-style: italic;
+  font-size: 75px;
+  text-align: center;
+  color: white;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+  margin:  -250px 0 0 -150px;
+}

@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   resources :tips, only: [:index]
 
 
-  # FORUM ROUTES
+  # MESSAGE ROUTES
   resources :messages do
     resources :comments
     collection do
@@ -32,6 +32,16 @@ Rails.application.routes.draw do
     end
   end
 
+  # FORUM TOPIC ROUTES
+  resources :topics, only: [:show]
+
+  # MESSAGE TAG ROUTES
+  resources :tags, only: [:new, :create] do
+    member do
+      # post 'like'
+      put 'like', to: 'tags#like'
+    end
+  end
 
   # HOMEPAGE ROUTES
   root 'welcome#index'

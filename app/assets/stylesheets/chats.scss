@@ -3,11 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.title p {
-  font-family: 'Architects Daughter', serif;
-  font-size: 28px;
+.title h1 {
   color: #01579b;
   text-align: center;
+}
+
+.welcome {
+  font-size: 24px;
+  text-align: center;
+
 }
 
 .chat-wr {
@@ -35,7 +39,7 @@
     margin-bottom: 10px;
   }
   display: table-row;
-  &:nth-child(2n) div ~ div 
+  &:nth-child(2n) div ~ div
   > div {
     display: table-cell;
     padding: 13px 10px 10px;
@@ -72,7 +76,7 @@
     float: right;
     height: 100%;
     vertical-align: top;
-    width: 14.5%; 
+    width: 14.5%;
     }
   }
 

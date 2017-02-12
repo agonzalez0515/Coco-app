@@ -31,9 +31,12 @@ gem 'easy_translate'
 gem 'geocoder'
 gem 'annotate'
 gem 'hirb'
+# Use will paginate to limit the number of forum messages per page
+gem 'will_paginate', '~> 3.1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'materialize-sass'
+gem 'font-awesome-sass'
 gem 'simple_calendar', "~>2.0"
 gem 'twilio-ruby'
 gem 'delayed_job_active_record'

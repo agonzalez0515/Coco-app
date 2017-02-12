@@ -1,30 +1,69 @@
-<div class="messages-index">
-  <h2>CoCo Forums</h2>
-
-  <h4>Discuss schools, scholarships, the application process and more!</h4>
-  <td id="search-field" colspan=2>
-    <hr>
-    <div class="input-field" style="width:50%; display:block; text-align:center;">
-      <form class="form input-field" action="/messages/search" method="post" style="display:inline-block; text-align:center;">
-        <input type="text" name="message_string" placeholder="Search forum by content..." style="display:inline-block; text-align:center;">
-        <input class="btn" type="submit" name="submit" value = "Search">
-      </form>
-    </div>
-  <hr>
+<div class="light">
   <div class="row">
-    <div class="col s4">
-      <h5>Topic</h5>
-    </div>
-    <div class="col s8">
-      <h5>Most Recent Reply</h5>
+    <div class="col s12 sats-index center blue lighten-2">
+      <h1 class="for-title">Forums</h1>
+      <h4 class="description" >Discuss schools, scholarships, the application process and more!</h4>
     </div>
   </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col offset-s3 s6">
+        <form class="form input-field" action="/messages/search" method="post" style="text-align:center;">
+          <input type="text" name="message_string" placeholder="Search forum by content..." style="text-align:center;">
+          <input class="btn" type="submit" name="submit" value = "Search">
+        </form>
+      </div>
+    </div>
+
+    <hr>
+    <div class="row">
+      <div class="col s4" >
+        <h5>FORUMS</h5>
+      </div>
+      <div id="all-link" class="col s4 forum-link" >
+        <%= link_to "Most Recent Posts", messages_path %>
+      </div>
+    </div>
+
+    <div id="topic-tabs" class="row">
+      <% @topics.each do |topic| %>
+        <div id=<%= "topic-tab-#{topic.id}" %> class="col s3 forum-link">
+          <%= link_to topic.title, topic_path(topic) %>
+        </div>
+      <% end %>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col s4">
+        <h5>Topic</h5>
+      </div>
+      <div class="col s2">
+        <h5>Forum</h5>
+      </div>
+      <div class="col s2">
+        <h5>No. of Replies</h5>
+      </div>
+      <div class="col s4">
+        <h5>Most Recent Reply</h5>
+      </div>
+    </div>
     <% @messages.each do |message| %>
       <div class="row">
-        <div class="col s4" style="">
+        <div class="col s4">
           <h5><%= link_to message.title, message_comments_path(message) %></h5>
         </div>
-        <div class="col s8" style="padding-top:16px;">
+        <div class="col s2">
+          <h5><%= link_to message.topic.title, topic_path(message.topic) %></h5>
+        </div>
+        <div class="col s2">
+          <% if message.comments %>
+            <p><%= message.comments.length %></p>
+          <% else %>
+            <p>0</p>
+          <% end %>
+        </div>
+        <div class="col s4">
           <% last_comment = message.comments.last %>
           <% if last_comment %>
             <p class="light"><%= last_comment.body %></p>
@@ -33,15 +72,11 @@
           <% end %>
         </div>
       </div>
-
-      <div class="container">
-
-      </div>
-      <p>
-
-      </p>
     <% end %>
-    <form action="/messages/new" method="get">
-      <input type="submit" value="Add a Topic" class="waves-effect waves-light btn">
-    </form>
+    <div class="row">
+      <div class="col offset-s3 s6">
+        <%= will_paginate @messages %>
+      </div>
+    </div>
+  </div>
 </div>

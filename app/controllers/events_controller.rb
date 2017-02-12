@@ -8,7 +8,6 @@ class EventsController < ApplicationController
   end
 
   def new
-    @user = User.new
     @event = Event.new
     @dates = Sat.pluck(:date).uniq
   end
@@ -17,19 +16,28 @@ class EventsController < ApplicationController
     @sat = Sat.find(params[:sat_id])
     @event = Event.new(user_id: @user.id, sat_id: @sat.id, completed: false)
 
-    if @event.save
+    @all_dates = []
 
+    @user.sats.each do |sat|
+      @all_dates.push(sat.date)
+    end
+
+    if @all_dates.include?(@sat.date)
+       redirect_to new_user_event_path
+    else
+      @event.save
+      redirect_to user_events_path
       event_information = {
-        name: @sat.location_name
+        name: @user.first_name,
+        phone_number: @user.phone_number,
+        date: @sat.date.to_s,
+        location: @sat.location_name,
+        address: @sat.address
       }
 
-      redirect_to user_events_path
-      # ReminderJob.new.delay(run_at: 1.minute.from_now).perform(event_information)
-      ReminderJob.new.delay.perform(event_information)
-
-    else
-      render 'new'
+      ReminderJob.set(wait: 1.minute).perform_later(event_information)
     end
+
   end
 
   def show
@@ -44,6 +52,8 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to new_user_event_path
   end
 
   def update
@@ -51,6 +61,16 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 
     if @event.update(event_params)
+      event_information = {
+        name: @user.first_name,
+        phone_number: @user.phone_number,
+        date: @sat.date.to_s,
+        location: @sat.location_name
+            }
+
+      ReminderJob.set(wait: 1.minute).perform_later(event_information)
+      ReminderJob.set(wait: 3.minutes).perform_later(event_information)
+
       redirect_to user_event_path
     else
       render 'edit'
