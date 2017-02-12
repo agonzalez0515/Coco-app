@@ -1,25 +1,9 @@
 class ReminderJob < ApplicationJob
   queue_as :default
-  # after_enqueue :add_event_id
-
-  # def add_event_id
-  #   p "**" * 50
-  #   p "completed"
-  #   p self
-  #   p "**" * 50
-  # end 
-
-
-  after_enqueue do |job|
-    p Delayed::Job.last.handler
-  end
 
   def perform(event)   
     @event = event
-    if @event 
-      p "**" * 50
-      p @event
-      p "**" * 50
+    if @event != nil 
       @name = @event.user.first_name
       @phone_number = @event.user.phone_number
       @date = @event.sat.date.to_s
@@ -40,4 +24,5 @@ class ReminderJob < ApplicationJob
       p "**" * 50
     end 
   end
+  
 end

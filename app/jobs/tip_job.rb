@@ -5,7 +5,7 @@ class TipJob < ApplicationJob
     @phone_number = args[:phone_number]
     @name = args[:name]
     @content = args[:content]
-    p "*******" * 100
+    p "**" * 100
     account_sid = ENV["ACCOUNT_KEY"] 
     auth_token = ENV["SECRET_KEY"]
     @client = Twilio::REST::Client.new account_sid, auth_token

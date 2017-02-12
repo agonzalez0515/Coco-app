@@ -24,10 +24,12 @@ class EventsController < ApplicationController
 
     if @all_dates.include?(@sat.date)
        redirect_to new_user_event_path
-    else
+    else 
       @event.save
       redirect_to user_events_path
-      ReminderJob.new.delay(run_at: 2.minutes.from_now).perform(@event)
+      ReminderJob.new.delay(run_at: @sat.date - 5).perform(@event)
+    # code for testing reminder (replace line 30 with line 32): 
+      # ReminderJob.new.delay(run_at: 1.minute.from_now).perform(@event)
     end
   end
 
@@ -49,7 +51,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 
     if @event.update(event_params)
-      ReminderJob.new.delay(run_at: 1.minute.from_now).perform(@event)
+      ReminderJob.new.delay(run_at: @sat.date - 5).perform(@event)
       redirect_to user_event_path
     else
       render 'edit'
