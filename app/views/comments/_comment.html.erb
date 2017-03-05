@@ -7,10 +7,10 @@
         Posted:  <%= comment.updated_at.to_formatted_s(:long)  %>
       </p>
       <% if current_user == comment.user %>
-      <%= "<p>" %>
+      <p>
         <%= link_to 'Edit Comment', edit_message_comment_path(@message, comment) %>  |
         <%= link_to 'Delete Comment', message_comment_path(@message, comment), method: :delete, data: {confirm: 'Are you sure?' } %>
-        <%= "</p>" %>
+      </p>
         <% end %>
     </div>
   </div>
