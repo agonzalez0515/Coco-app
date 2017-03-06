@@ -26,7 +26,7 @@ class EventsController < ApplicationController
        redirect_to new_user_event_path
     else
       @event.save
-      redirect_to user_events_path
+      redirect_to user_path
       event_information = {
         name: @user.first_name,
         phone_number: @user.phone_number,
