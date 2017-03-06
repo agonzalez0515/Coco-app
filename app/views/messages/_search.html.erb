@@ -1,33 +1,35 @@
-<div class="messages-index">
-  <h2>Search Results</h2>
+<div class="container">
+  <div class="messages-index">
+    <h2>Search Results</h2>
 
-  <div class="row">
-    <div class="col s4">
-      <h5>Topic</h5>
+    <div class="row">
+      <div class="col s4">
+        <h5>Topic</h5>
+      </div>
+      <div class="col s8">
+        <h5>Most Recent Reply</h5>
+      </div>
     </div>
-    <div class="col s8">
-      <h5>Most Recent Reply</h5>
-    </div>
-  </div>
-  <% if @messages && @messages.length > 0 %>
-    <% @messages.each do |message| %>
-      <div class="row">
+    <% if @messages && @messages.length > 0 %>
+      <% @messages.each do |message| %>
+        <div class="row">
+          <div class="col s4" style="">
+            <h5><%= link_to message.title, message_comments_path(message) %></h5>
+          </div>
+          <div class="col s8" style="padding-top:16px;">
+            <% last_comment = message.comments.last %>
+            <% if last_comment %>
+              <%= last_comment.body %>
+            <% else %>
+              No responses yet...
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
         <div class="col s4" style="">
-          <h5><%= link_to message.title, message_comments_path(message) %></h5>
+          <h5>No Results Found</h5>
         </div>
-        <div class="col s8" style="padding-top:16px;">
-          <% last_comment = message.comments.last %>
-          <% if last_comment %>
-            <%= last_comment.body %>
-          <% else %>
-            No responses yet...
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-  <% else %>
-      <div class="col s4" style="">
-        <h5>No Results Found</h5>
-      </div>
-    <% end %>
+      <% end %>
+  </div>
 </div>
