@@ -1,25 +1,26 @@
-<h2>Event Details</h2>
-<hr>
-.
-<h4>Here are details for your upcoming SAT:</h4>
+<div class="container light">
+  <h2>Event Details</h2>
+  <hr>
+
+  <h4>Here are details for your upcoming SAT:</h4>
 
 
-<b>Date:</b> <%= @event.sat.date %><br>
-<b>Location:</b> <%= @event.sat.location_name %><br>
-<b>Address:</b> <%= @event.sat.address %><br>
-
-<input type="hidden" id="sat_lat" value=<%= @event.sat.latitude%>>
-<input type="hidden" id="sat_long" value=<%= @event.sat.longitude%>>
-
-
-<div id="small_map">
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['MAP']%>&callback=initialize"></script>
-</div>
-
-
-<div class="row">
-  <div id="directionsPanel" class="col s6"></div>
-  <h5>Click on an address for directions to the site.</h5>
+  <b>Date:</b> <%= @event.sat.date %><br>
+  <b>Location:</b> <%= @event.sat.location_name %><br>
+  <b>Address:</b> <%= @event.sat.address %><br>
   <%= link_to 'Delete My Event', user_event_path(current_user.id, @event), method: :delete, data: {confirm: "Are you sure you want to permanently delete this event?"} %> |
   <%= link_to 'Edit My Event', edit_user_event_path(current_user.id, @event), data: {confirm: "Are you sure you want to EDIT this event? This will permanently delete your saved event."} %>
+  <br><br>
+  <input type="hidden" id="sat_lat" value=<%= @event.sat.latitude%>>
+  <input type="hidden" id="sat_long" value=<%= @event.sat.longitude%>>
+
+
+  <div id="small_map">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['MAP']%>&callback=initialize"></script>
+  </div>
+
+  <div class="row">
+    <div id="directionsPanel" class="col s12"></div>
+    <h5>Click on your starting point for directions to the site.</h5>
+  </div>
 </div>
