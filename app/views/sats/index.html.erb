@@ -4,7 +4,7 @@
       <h1 class="page-header">What are the SATS?</h1>
       <p>
         <% if current_user %>
-        <%= button_to 'Add your SAT date', new_user_event_path(current_user.id), class: 'waves-effect waves-light btn'%><br>
+        <%= button_to 'Add your SAT date', new_user_event_path(current_user.id), method: :get, class: 'btn' %>
         <% else %>
         <%= button_to 'Add your SAT date', login_path, class: 'waves-effect waves-light btn' %>
         <% end %>
