@@ -188,12 +188,14 @@ body.events {
 }
 
 /* line 31, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
-#map {
+#small_map {
+  margin-left: 25%;
+  margin-right: 25%;
   height: 500px;
-  max-width: 100%;
+  max-width: 50%;
 }
 
-/* line 37, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
+/* line 39, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
 .simple-calendar table {
   -webkit-border-horizontal-spacing: 0px;
   -webkit-border-vertical-spacing: 0px;
@@ -204,11 +206,11 @@ body.events {
   max-width: 100%;
   width: 100%;
 }
-/* line 48, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
+/* line 50, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
 .simple-calendar tr {
   border-collapse: collapse;
 }
-/* line 52, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
+/* line 54, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
 .simple-calendar th {
   padding: 6px;
   border-bottom: 2px solid #dddddd;
@@ -219,7 +221,7 @@ body.events {
   box-sizing: border-box;
   text-align: left;
 }
-/* line 63, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
+/* line 65, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
 .simple-calendar td {
   padding: 6px;
   vertical-align: top;
@@ -238,29 +240,29 @@ body.events {
   border-left-style: solid;
   border-left-width: 1px;
 }
-/* line 83, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
+/* line 85, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
 .simple-calendar .calendar-title {
   font-size: 24px;
 }
-/* line 87, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
+/* line 89, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
 .simple-calendar .date-btn {
   height: 24px;
   line-height: 24px;
   padding: 0 0.5rem;
 }
-/* line 93, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
+/* line 95, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
 .simple-calendar .day {
   height: 80px;
 }
-/* line 105, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
+/* line 107, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
 .simple-calendar .today {
   background: #F7C331;
 }
-/* line 114, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
+/* line 116, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
 .simple-calendar .prev-month {
   background: #F7E5B2;
 }
-/* line 117, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
+/* line 119, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/events.scss */
 .simple-calendar .next-month {
   background: #F7E5B2;
 }
@@ -314,23 +316,19 @@ body.events {
   font-size: 40px;
   text-align: center;
   color: white;
-  position: absolute;
-  top: 70%;
-  left: 30%;
-  margin: -210px 0 0 -290px;
+  position: relative;
+  top: 30%;
 }
 
-/* line 50, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/messages.scss */
+/* line 49, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/messages.scss */
 .msg-header {
   font-family: helvetica;
   font-style: italic;
   font-size: 75px;
   text-align: center;
   color: white;
-  position: absolute;
-  top: 55%;
-  left: 65%;
-  margin: -210px 0 0 -320px;
+  position: relative;
+  top: 25%;
 }
 /* line 6, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/requirements.scss */
 table.requirements.stripped, th.requirements, td.requirements {
@@ -379,39 +377,37 @@ th.requirements, td.requirements {
   font-size: 75px;
   text-align: center;
   color: white;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  margin: -210px 0 0 -320px;
+  position: relative;
+  top: 40%;
 }
 
-/* line 22, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/sats.scss */
+/* line 21, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/sats.scss */
 .icons {
   color: #fb8c00;
   font-size: 70px;
 }
 
-/* line 27, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/sats.scss */
+/* line 26, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/sats.scss */
 .answers {
   font-size: 20px;
 }
 
-/* line 32, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/sats.scss */
+/* line 31, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/sats.scss */
 li {
   font-size: 20px;
 }
 
-/* line 36, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/sats.scss */
+/* line 35, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/sats.scss */
 .waivers {
   text-align: center;
 }
 
-/* line 40, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/sats.scss */
+/* line 39, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/sats.scss */
 .waiver-text {
   font-size: 30px;
 }
 
-/* line 44, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/sats.scss */
+/* line 43, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/sats.scss */
 .waivers-horizontal {
   background-color: #65b5f6;
   color: white;
@@ -459,11 +455,6 @@ main {
   max-width: 50%;
 }
 
-
-#small_map {
-  height: 400px;
-  max-width: 50%;
-}
 
 .nav-wrapper {
 	background-color: #01579b;
@@ -12700,32 +12691,26 @@ main {
 }
 
 /* line 45, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
-#small_map {
-  height: 400px;
-  max-width: 50%;
-}
-
-/* line 50, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
 .nav-wrapper {
   background-color: #01579b;
 }
 
-/* line 53, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
+/* line 48, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
 #new-form, h3.form {
   background-color: white;
 }
 
-/* line 57, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
+/* line 52, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
 .btn, .btn-large {
   background-color: #F2882F;
 }
 
-/* line 61, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
+/* line 56, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
 .btn:hover, .btn-large:hover {
   background-color: #F7C331;
 }
 
-/* line 65, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
+/* line 60, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
 h1.header, h5.header {
   color: #01579b;
   text-shadow: 10px 10px 10px #01579b;
@@ -12733,25 +12718,25 @@ h1.header, h5.header {
   background-color: white;
 }
 
-/* line 73, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
+/* line 68, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
 .section no-pad-bot {
   width: 100%;
 }
 
-/* line 77, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
+/* line 72, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
 .container.col.s12 {
   width: 100%;
   text-align: center;
   position: inline-block;
 }
 
-/* line 83, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
+/* line 78, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
 .container.new-form {
   margin-top: 15%;
   background-color: grey;
 }
 
-/* line 88, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
+/* line 83, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/styles.css */
 table {
   border-style: none;
 }
