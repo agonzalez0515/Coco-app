@@ -28,9 +28,11 @@ body.events {
   margin-left: 0px;
 }
 
-#map {
+#small_map {
+  margin-left:25%;
+  margin-right: 25%;
   height: 500px;
-  max-width: 100%;
+  max-width: 50%;
 }
 
 .simple-calendar {
