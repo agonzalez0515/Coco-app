@@ -13,7 +13,7 @@ class TipsController < ApplicationController
           name: user.name,
           content: tip.content
         }
-        TipJob.set(wait: i.weeks).perform_later(tip_information)
+        TipJob.set(wait: 1.minute).perform_later(tip_information)
       end
     end
   end
@@ -21,4 +21,4 @@ class TipsController < ApplicationController
 end
 
 
-#triggered by admin once a year manually
+# triggered by admin once a year manually
