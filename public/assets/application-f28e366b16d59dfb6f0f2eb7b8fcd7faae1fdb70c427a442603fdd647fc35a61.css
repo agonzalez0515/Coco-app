@@ -321,16 +321,16 @@ body.events {
 }
 
 /* line 50, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/messages.scss */
-.for-title {
+.msg-header {
   font-family: helvetica;
   font-style: italic;
   font-size: 75px;
   text-align: center;
   color: white;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -250px 0 0 -150px;
+  top: 55%;
+  left: 65%;
+  margin: -210px 0 0 -320px;
 }
 /* line 6, /Users/agonzalez/devbootcamp/final-project/coco-app/app/assets/stylesheets/requirements.scss */
 table.requirements.stripped, th.requirements, td.requirements {
