@@ -15,13 +15,13 @@ Tech Stack: Ruby on Rails, JavaScript, Materialize, PostgreSQL, Google Maps API,
 
 **[Authors](#Authors)**
 
-  **   [Installation](#installation)**
+**[Installation](#installation)**
 
-   * [Getting Started](#Getting)
+- [Getting Started](#Getting)
 
-   * [Prerequisites](#Prerequisites)
+- [Prerequisites](#Prerequisites)
 
-**  [Main Features](#Main)**
+**[Main Features](#Main)**
 
 - [Student Profile Page](#Personalized)
 
@@ -75,15 +75,15 @@ Our app is deployed on [Heroku: CoCo](https://coco-counselor.herokuapp.com/).
 
 
 ## Authors
-** Zara Aslam **
+[Zara Aslam](https://github.com/zaslam72)
 
-** Julka Dolgoszyja**
+[Julka Dolgoszyja](https://github.com/yulkalongneck)
 
-** Angelica Gonzalez**
+[Angelica Gonzalez](https://github.com/agonzalez0515)
 
-** Arlene Perez**
+[Arlene Perez](https://github.com/Techforchange)
 
-** Rob Turner**
+[Rob Turner](https://github.com/georobGWJ)
 
 
 ## License
@@ -93,3 +93,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 Thank you to all our mentors for helping us!
+
+
+forkclone
+database
+local host

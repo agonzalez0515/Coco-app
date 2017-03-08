@@ -15,20 +15,17 @@ class EventsController < ApplicationController
   def create
     @sat = Sat.find(params[:sat_id])
     @event = Event.new(user_id: @user.id, sat_id: @sat.id, completed: false)
-
     @all_dates = []
-
     @user.sats.each do |sat|
       @all_dates.push(sat.date)
     end
-
     if @all_dates.include?(@sat.date)
        redirect_to new_user_event_path
-    else 
+    else
       @event.save
       redirect_to user_events_path
       ReminderJob.new.delay(run_at: @sat.date - 5).perform(@event)
-    # code for testing reminder (replace line 30 with line 32): 
+    # code for testing reminder (replace line 30 with line 32):
       # ReminderJob.new.delay(run_at: 1.minute.from_now).perform(@event)
     end
   end

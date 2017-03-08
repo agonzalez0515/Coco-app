@@ -1,8 +1,10 @@
-<h3>
+<div class="container">
+  <h3>
   Your Upcoming Events:
-</h3>
-<div>
-  Click here to check out all upcoming SAT dates: <%= link_to 'Add SAT to your calendar', new_user_event_path %>
+  </h3>
+  <div>
+    Click here to check out all upcoming SAT dates: <%= link_to 'Add SAT to your calendar', new_user_event_path %>
+  </div>
+  <div class="divider"></div>
+  <%= render 'calendar' %>
 </div>
-<div class="divider"></div>
-<%= render 'calendar' %>
