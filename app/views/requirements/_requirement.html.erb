@@ -1,0 +1,22 @@
+<table class="striped">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Years<br>Required</th>
+      <th>Years<br>Completed</th>
+      <th>Add</th>
+      <th>Subtract</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% current_user.requirements.reorder('id').each do |requirement| %>
+    <tr>
+      <td><%= requirement.subject %></td> 
+      <td><%= requirement.years_required %></td>
+      <td id="years-<%= requirement.id %>"><%= requirement.years %></td>
+      <td><%= button_to '+1', user_requirement_path(current_user.id, requirement.id), class: 'btn-floating btn  waves-effect #F7C331', remote: true, method: :put %></td>
+      <td><%= button_to '-1', decrease_years_user_requirement_path(current_user.id, requirement.id), class: 'btn-floating btn waves-effect #F7C331', remote: true, method: :post %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

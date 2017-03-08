@@ -1,0 +1,46 @@
+// Place all the styles related to the sats controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.sats-index {
+  height: 400px;
+
+}
+
+.page-header{
+  font-family: helvetica;
+  font-style: italic;
+  font-size: 75px;
+  text-align: center;
+  color: white;
+  position: relative;
+    top: 40%;
+
+}
+.icons {
+  color: #fb8c00;
+  font-size: 70px;
+}
+
+.answers{
+  font-size: 20px;
+  // max-width: 900px;
+}
+
+li {
+  font-size: 20px;
+}
+
+.waivers{
+  text-align: center;
+}
+
+.waiver-text {
+  font-size: 30px;
+}
+
+.waivers-horizontal{
+  background-color: #65b5f6;
+  color: white;
+}

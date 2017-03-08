@@ -1,0 +1,83 @@
+  <div class="light">
+    <div class="row">
+      <div class="col s12 sats-index center blue lighten-2">
+        <h1 class="msg-header">Forums</h1>
+        <h4 class="description center" >Discuss schools, scholarships, the application process and more!</h4>
+      </div>
+    </div>
+  </div>
+    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col offset-s3 s6">
+          <form class="form input-field" action="/messages/search" method="post" style="text-align:center;">
+            <input type="text" name="message_string" placeholder="Search forum by content..." style="text-align:center;">
+            <input class="btn" type="submit" name="submit" value = "Search">
+          </form>
+        </div>
+      </div>
+
+      <hr>
+      <div class="row">
+        <div class="col s4" >
+          <h5>FORUMS</h5>
+        </div>
+        <div id="all-link" class="col s4 forum-link" >
+          <%= link_to "Most Recent Posts", messages_path %>
+        </div>
+      </div>
+
+      <div id="topic-tabs" class="row">
+        <% @topics.each do |topic| %>
+          <div id=<%= "topic-tab-#{topic.id}" %> class="col s3 forum-link">
+            <%= link_to topic.title, topic_path(topic) %>
+          </div>
+        <% end %>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col s4">
+          <h5>Topic</h5>
+        </div>
+        <div class="col s2">
+          <h5>Forum</h5>
+        </div>
+        <div class="col s2">
+          <h5>No. of Replies</h5>
+        </div>
+        <div class="col s4">
+          <h5>Most Recent Reply</h5>
+        </div>
+      </div>
+      <% @messages.each do |message| %>
+        <div class="row">
+          <div class="col s4">
+            <h5><%= link_to message.title, message_comments_path(message) %></h5>
+          </div>
+          <div class="col s2">
+            <h5><%= link_to message.topic.title, topic_path(message.topic) %></h5>
+          </div>
+          <div class="col s2">
+            <% if message.comments %>
+              <p><%= message.comments.length %></p>
+            <% else %>
+              <p>0</p>
+            <% end %>
+          </div>
+          <div class="col s4">
+            <% last_comment = message.comments.last %>
+            <% if last_comment %>
+              <p class="light"><%= last_comment.body %></p>
+            <% else %>
+              No responses yet...
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <div class="row">
+        <div class="col offset-s3 s6">
+          <%= will_paginate @messages %>
+        </div>
+      </div>
+    </div>
+  </div>

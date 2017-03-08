@@ -1,0 +1,15 @@
+<%= form_tag '/login' do %>
+
+  <% if @errors %>
+    <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+    </ul>
+  <% end %>
+  Email:<br>
+  <%= text_field_tag :email %>
+  Password:<br>
+  <%= password_field_tag :password %>
+  <%= submit_tag "Submit", class: 'btn orange darken-1' %>
+<% end %>

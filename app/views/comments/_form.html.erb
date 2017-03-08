@@ -1,0 +1,11 @@
+<%= form_for([@message, @message.comments.build]) do |f| %>
+
+  <p>
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <button class="btn" type="submit" name="action">Add Reply </button>
+  </p>
+
+<% end %>
