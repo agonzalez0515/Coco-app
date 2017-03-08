@@ -1,12 +1,15 @@
-<h2>Event Details</h2>
-<hr>
-.
-<h4>Here are details for your upcoming SAT:</h4>
+<div class="row">
+  <div class="col 10 offset-1">
+    <h2>Event Details</h2>
+    <hr>
+    .
+    <h4>Here are details for your upcoming SAT:</h4>
 
-
-<b>Date:</b> <%= @event.sat.date %><br>
-<b>Location:</b> <%= @event.sat.location_name %><br>
-<b>Address:</b> <%= @event.sat.address %><br>
+    <b>Date:</b> <%= @event.sat.date %><br>
+    <b>Location:</b> <%= @event.sat.location_name %><br>
+    <b>Address:</b> <%= @event.sat.address %><br>
+  </div>
+</div>
 
 <input type="hidden" id="sat_lat" value=<%= @event.sat.latitude%>>
 <input type="hidden" id="sat_long" value=<%= @event.sat.longitude%>>
