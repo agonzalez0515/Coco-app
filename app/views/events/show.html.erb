@@ -3,12 +3,14 @@
   <div class="col 10 offset-1">
     <h2>Event Details</h2>
     <hr>
-    .
     <h4>Here are details for your upcoming SAT:</h4>
 
     <b>Date:</b> <%= @event.sat.date %><br>
     <b>Location:</b> <%= @event.sat.location_name %><br>
     <b>Address:</b> <%= @event.sat.address %><br>
+    <br>
+    <%= link_to 'Delete My Event', user_event_path(current_user.id, @event), method: :delete, data: {confirm: "Are you sure you want to permanently delete this event?"} %> |
+    <%= link_to 'Edit My Event', edit_user_event_path(current_user.id, @event), data: {confirm: "Are you sure you want to EDIT this event? This will permanently delete your saved event."} %>
   </div>
 </div>
 
@@ -22,9 +24,7 @@
 
 
 <div class="row">
-  <div id="directionsPanel" class="col s6"></div>
-  <h5>Click on an address for directions to the site.</h5>
-  <%= link_to 'Delete My Event', user_event_path(current_user.id, @event), method: :delete, data: {confirm: "Are you sure you want to permanently delete this event?"} %> |
-  <%= link_to 'Edit My Event', edit_user_event_path(current_user.id, @event), data: {confirm: "Are you sure you want to EDIT this event? This will permanently delete your saved event."} %>
+  <div id="directionsPanel" class="col s6"></div><br>
+  <h3 class="center">Click on an address for directions to the site.</h5>
 </div>
 </div>
