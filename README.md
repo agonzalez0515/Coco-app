@@ -1,11 +1,12 @@
-[![Build Status](https://travis-ci.org/agonzalez0515/coco-app.svg?branch=development)](https://travis-ci.org/agonzalez0515/coco-app)
 
 
 <p align="center"><img width=50% src="https://s23.postimg.org/4l8rxhe97/coco_logo.png"></p>
 
 
+
+
 ----
-##Basic Overview
+## Basic Overview
 A personal college counselor web application that keeps students on track and parents informed.
 
 Main features: track A-G course requirements, learn about the college application process including scholarships and fee waivers, receive text notifications and tips about upcoming SAT dates
@@ -53,8 +54,8 @@ bundle install
 ```
 
 
-##Main Features
-####Personalized Student Profile:
+## Main Features
+#### Personalized Student Profile:
 [![Screen Shot 2017-02-10 at 3.53.53 PM.png](https://s27.postimg.org/3s9hxpi43/Screen_Shot_2017_02_10_at_3_53_53_PM.png)](https://postimg.org/image/j0zfbhbsf/)
 
 This displays a calendar with details about upcoming SAT events as well as college deadlines
