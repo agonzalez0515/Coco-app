@@ -1,8 +1,6 @@
 
 
-<p align="center"><img width=50% src="https://s23.postimg.org/4l8rxhe97/coco_logo.png"></p>
-
-
+![landing page](app/assets/images/front.png)
 
 
 ----
@@ -59,6 +57,12 @@ bundle install
 [![Screen Shot 2017-02-10 at 3.53.53 PM.png](https://s27.postimg.org/3s9hxpi43/Screen_Shot_2017_02_10_at_3_53_53_PM.png)](https://postimg.org/image/j0zfbhbsf/)
 
 This displays a calendar with details about upcoming SAT events as well as college deadlines
+
+#### Directions to Test
+![test event](app/assets/images/event-details.png)
+
+#### Forums
+![forums](app/assets/images/forums.png)
 
 ## Deployment
 
