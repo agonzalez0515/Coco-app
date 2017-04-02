@@ -99,7 +99,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 Thank you to all our mentors for helping us!
 
-
-forkclone
-database
-local host
